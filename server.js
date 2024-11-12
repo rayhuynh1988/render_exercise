@@ -114,63 +114,22 @@ app.post('/cook-now', async (req, res) => {
 
       // Step 2: Aggregate dinner times (average)
       const dinnerTimes = postsToday.map(post => {
-          const timeString = post.dinner_time.trim();
-          const [time, modifier] = timeString.split(' ');
-          const [hours, minutes] = time.split(':').map(Number);
-          
-          let totalMinutes = 0;
-
-          // Convert to 24-hour format
-          if (modifier === 'PM' && hours !== 12) {
-              totalMinutes = (hours + 12) * 60 + minutes;
-          } else if (modifier === 'AM' && hours === 12) {
-              totalMinutes = minutes; // Midnight
-          } else {
-              totalMinutes = hours * 60 + minutes;
-          }
-
-          return totalMinutes;
+          const [hours, minutes] = post.dinner_time.split(':').map(Number);
+          return hours * 60 + minutes; // Convert dinner time to minutes
       });
 
       const avgDinnerTime = Math.round(dinnerTimes.reduce((a, b) => a + b, 0) / dinnerTimes.length); // Average in minutes
-      const avgDate = new Date(0);
-      avgDate.setMinutes(avgDinnerTime);
-
-      const avgHours24 = avgDate.getHours();
-      const avgMinutes = avgDate.getMinutes();
-      
-      let avgHours = avgHours24;
-      const modifier = avgHours >= 12 ? 'PM' : 'AM';
-      if (avgHours > 12) {
-          avgHours -= 12;
-      } else if (avgHours === 0) {
-          avgHours = 12;
-      }
+      const avgHours = Math.floor(avgDinnerTime / 60); // Convert minutes to hours
+      const avgMinutes = avgDinnerTime % 60; // Get remaining minutes
 
       // Step 3: Match cuisines or pick a random cuisine
       const cuisines = [...new Set(postsToday.map(post => post.cuisine))];
       const finalCuisine = cuisines.length === 1 ? cuisines[0] : cuisines[Math.floor(Math.random() * cuisines.length)];
 
-      // Step 4: Call Google Custom Search API to get restaurant suggestions
-      const apiKey = 'AIzaSyDe5lFxGaVA2a8fx7NAoaHRPq21FzXUSpA';  // Replace with your Google API Key
-      const cx = 'y1667bf791ec734baf';  // Replace with your Custom Search Engine ID
-      const searchQuery = `top trending dinner restaurants for ${finalCuisine}`;
-      const googleSearchUrl = `https://www.googleapis.com/customsearch/v1?q=${encodeURIComponent(searchQuery)}&key=${apiKey}&cx=${cx}`;
-      
-      const searchResults = await axios.get(googleSearchUrl);
-
-      // Step 5: Extract relevant restaurant information from the search results
-      const restaurants = searchResults.data.items.map(item => ({
-          title: item.title,
-          link: item.link,
-          snippet: item.snippet
-      }));
-
-      // Step 6: Send the results to the view
+      // Step 4: Send the results to the view
       res.render('pages/cook-now', {
-          avgDinnerTime: `${avgHours}:${avgMinutes < 10 ? '0' + avgMinutes : avgMinutes} ${modifier}`,
-          cuisine: finalCuisine,
-          restaurants: restaurants
+          avgDinnerTime: `${avgHours}:${avgMinutes < 10 ? '0' + avgMinutes : avgMinutes}`,
+          cuisine: finalCuisine
       });
   } catch (error) {
       console.log(error);
