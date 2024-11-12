@@ -91,7 +91,6 @@ app.listen(8080, () => {
 });
 
 const axios = require('axios');
-
 // Cook Now route
 app.post('/cook-now', async (req, res) => {
   try {
@@ -114,21 +113,50 @@ app.post('/cook-now', async (req, res) => {
 
       // Step 2: Aggregate dinner times (average)
       const dinnerTimes = postsToday.map(post => {
-          const [hours, minutes] = post.dinner_time.split(':').map(Number);
-          return hours * 60 + minutes; // Convert dinner time to minutes
+          // Trim the dinner time and convert from 12-hour format to 24-hour format
+          const timeString = post.dinner_time.trim();
+          const [time, modifier] = timeString.split(' '); // Separate time from AM/PM
+          const [hours, minutes] = time.split(':').map(Number);
+          
+          let totalMinutes = 0;
+
+          // Convert 12-hour time to 24-hour format
+          if (modifier === 'PM' && hours !== 12) {
+              totalMinutes = (hours + 12) * 60 + minutes; // Add 12 to PM hours except for 12 PM
+          } else if (modifier === 'AM' && hours === 12) {
+              totalMinutes = minutes; // 12 AM is midnight
+          } else {
+              totalMinutes = hours * 60 + minutes; // Regular conversion for AM and non-12 PM
+          }
+
+          return totalMinutes;
       });
 
+      // Calculate the average dinner time in minutes
       const avgDinnerTime = Math.round(dinnerTimes.reduce((a, b) => a + b, 0) / dinnerTimes.length); // Average in minutes
-      const avgHours = Math.floor(avgDinnerTime / 60); // Convert minutes to hours
-      const avgMinutes = avgDinnerTime % 60; // Get remaining minutes
+      const avgDate = new Date(0); // Start with a zero date
+      avgDate.setMinutes(avgDinnerTime); // Set the minutes of the date object
 
-      // Step 3: Match cuisines or pick a random cuisine
+      // Extract hours and minutes from the average time
+      const avgHours24 = avgDate.getHours(); // 24-hour format hour
+      const avgMinutes = avgDate.getMinutes();
+
+      // Step 3: Convert the average time back to a 12-hour format
+      let avgHours = avgHours24;
+      const modifier = avgHours >= 12 ? 'PM' : 'AM';
+      if (avgHours > 12) {
+          avgHours -= 12; // Convert to 12-hour format
+      } else if (avgHours === 0) {
+          avgHours = 12; // Handle midnight as 12 AM
+      }
+
+      // Step 4: Match cuisines or pick a random cuisine
       const cuisines = [...new Set(postsToday.map(post => post.cuisine))];
       const finalCuisine = cuisines.length === 1 ? cuisines[0] : cuisines[Math.floor(Math.random() * cuisines.length)];
 
-      // Step 4: Send the results to the view
+      // Step 5: Send the results to the view
       res.render('pages/cook-now', {
-          avgDinnerTime: `${avgHours}:${avgMinutes < 10 ? '0' + avgMinutes : avgMinutes}`,
+          avgDinnerTime: `${avgHours}:${avgMinutes < 10 ? '0' + avgMinutes : avgMinutes} ${modifier}`,
           cuisine: finalCuisine
       });
   } catch (error) {
