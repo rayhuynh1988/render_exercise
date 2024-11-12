@@ -86,6 +86,10 @@ app.post("/delete/:id", async (req, res) => {
         res.redirect('/');
     }
 });
+// Start the server on port 8080
+app.listen(8080, () => {
+  console.log("Server running on http://localhost:8080");
+});
 
 // Cook Now route
 app.post('/cook-now', async (req, res) => {
