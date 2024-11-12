@@ -146,8 +146,8 @@ app.post('/cook-now', async (req, res) => {
       const finalCuisine = cuisines.length === 1 ? cuisines[0] : cuisines[Math.floor(Math.random() * cuisines.length)];
 
       // Step 4: Call Google Custom Search API to get restaurant suggestions
-      const apiKey = process.env.GOOGLE_API_KEY;  // Get the API key from environment variables
-      const cx = process.env.GOOGLE_CX;  // Get the Custom Search Engine ID from environment variables
+      const apiKey = 'AIzaSyDe5lFxGaVA2a8fx7NAoaHRPq21FzXUSpA';  // Get the API key from environment variables
+      const cx = '1667bf791ec734baf';  // Get the Custom Search Engine ID from environment variables
 
       if (!apiKey || !cx) {
           console.log("Google API Key or CX missing in environment variables.");
