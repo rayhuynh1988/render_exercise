@@ -1,32 +1,73 @@
-<!DOCTYPE html>
-<html lang="en" data-theme="light">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cook Now</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"/>
-    <link rel="stylesheet" href="/css/style.css">
-</head>
-<body>
-    <main class="container">
-        <h2>Your Dinner Plan</h2>
-    
-        <p><strong>Average Dinner Time: </strong><%= avgDinnerTime %></p>
-        <p><strong>Suggested Cuisine: </strong><%= cuisine %></p>
-    
-        <h3>Top Restaurants for <%= cuisine %>:</h3>
-        <% if (restaurants && restaurants.length > 0) { %>
-            <ul>
-                <% restaurants.forEach(restaurant => { %>
-                    <li>
-                        <a href="<%= restaurant.link %>" target="_blank"><%= restaurant.title %></a>
-                        <p><%= restaurant.snippet %></p>
-                    </li>
-                <% }); %>
-            </ul>
-        <% } else { %>
-            <p>No restaurants found for this cuisine.</p>
-        <% } %>
-    </main>    
-</body>
-</html>
+// Cook Now route
+app.post('/cook-now', async (req, res) => {
+  try {
+      // Step 1: Get all posts with the same createdAt date
+      const today = new Date().toISOString().split('T')[0]; // Get current date (e.g. "2024-11-12")
+      
+      const postsToday = await prisma.post.findMany({
+          where: {
+              createdAt: {
+                  gte: new Date(`${today}T00:00:00Z`), // Start of today
+                  lt: new Date(`${today}T23:59:59Z`) // End of today
+              }
+          }
+      });
+
+      // If no posts exist for today, redirect to homepage
+      if (postsToday.length === 0) {
+          return res.redirect('/');
+      }
+
+      // Step 2: Aggregate dinner times (average)
+      const dinnerTimes = postsToday.map(post => {
+          // Trim the dinner time and convert from 12-hour format to 24-hour format
+          const timeString = post.dinner_time.trim();
+          const [time, modifier] = timeString.split(' '); // Separate time from AM/PM
+          const [hours, minutes] = time.split(':').map(Number);
+          
+          let totalMinutes = 0;
+
+          // Convert 12-hour time to 24-hour format
+          if (modifier === 'PM' && hours !== 12) {
+              totalMinutes = (hours + 12) * 60 + minutes; // Add 12 to PM hours except for 12 PM
+          } else if (modifier === 'AM' && hours === 12) {
+              totalMinutes = minutes; // 12 AM is midnight
+          } else {
+              totalMinutes = hours * 60 + minutes; // Regular conversion for AM and non-12 PM
+          }
+
+          return totalMinutes;
+      });
+
+      // Calculate the average dinner time in minutes
+      const avgDinnerTime = Math.round(dinnerTimes.reduce((a, b) => a + b, 0) / dinnerTimes.length); // Average in minutes
+      const avgDate = new Date(0); // Start with a zero date
+      avgDate.setMinutes(avgDinnerTime); // Set the minutes of the date object
+
+      // Extract hours and minutes from the average time
+      const avgHours24 = avgDate.getHours(); // 24-hour format hour
+      const avgMinutes = avgDate.getMinutes();
+
+      // Step 3: Convert the average time back to a 12-hour format
+      let avgHours = avgHours24;
+      const modifier = avgHours >= 12 ? 'PM' : 'AM';
+      if (avgHours > 12) {
+          avgHours -= 12; // Convert to 12-hour format
+      } else if (avgHours === 0) {
+          avgHours = 12; // Handle midnight as 12 AM
+      }
+
+      // Step 4: Match cuisines or pick a random cuisine
+      const cuisines = [...new Set(postsToday.map(post => post.cuisine))];
+      const finalCuisine = cuisines.length === 1 ? cuisines[0] : cuisines[Math.floor(Math.random() * cuisines.length)];
+
+      // Step 5: Send the results to the view
+      res.render('pages/cook-now', {
+          avgDinnerTime: `${avgHours}:${avgMinutes < 10 ? '0' + avgMinutes : avgMinutes} ${modifier}`,
+          cuisine: finalCuisine
+      });
+  } catch (error) {
+      console.log(error);
+      res.redirect('/');
+  }
+});
