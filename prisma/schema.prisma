@@ -19,5 +19,6 @@ model Post {
   name       String
   cuisine     String   // New field for the cuisine type
   dinner_time String   // New field for the dinner time
+  dinner_mood String   // New field for the dinner mood
   createdAt   DateTime @default(now()) // Optional field to track post creation time
 }

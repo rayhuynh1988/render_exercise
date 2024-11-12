@@ -47,17 +47,17 @@ app.get('/new', (req, res) => {
 app.post('/new', async (req, res) => {
     try {
         // Extract data from the form submission
-        const { name, cuisine, dinner_time } = req.body;
+        const { name, cuisine, dinner_time, dinner_mood } = req.body;
 
         // If any required fields are missing, re-render the form page
-        if (!name || !cuisine || !dinner_time) {
+        if (!name || !cuisine || !dinner_time || dinner_mood) {
             console.log("Required fields missing in form submission.");
             return res.render('pages/new');
         }
 
         // Create a new post in the database with the form data
         await prisma.post.create({
-            data: { name, cuisine, dinner_time },
+            data: { name, cuisine, dinner_time, dinner_mood },
         });
 
         // Redirect to the homepage after successful creation

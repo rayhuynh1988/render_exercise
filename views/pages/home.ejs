@@ -42,6 +42,7 @@
                 <h3><%= post.name %></h3>
                 <p><strong>Cuisine:</strong> <%= post.cuisine %></p>
                 <p><strong>Dinner Time:</strong> <%= post.dinner_time %></p>
+                <p><strong>Dinner Mood:</strong> <%= post.dinner_mood %></p>
                 <form action="/delete/<%= post.id %>" method="post" onsubmit="return confirm('Do you really want to delete this post?');">
                     <button class="outline primary" type="submit">Delete</button>
                 </form>
