@@ -3,35 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Create a Post</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"/>
     <link rel="stylesheet" href="/css/style.css">
+    <!-- Google Analytics (optional) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WJXZ0LZV6L"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-WJXZ0LZV6L');
+    </script>
 </head>
 <body>
     <main class="container">
-        <!-- Navbar which can be reused across other pages -->
         <%- include('../partials/navbar'); %>
 
-        <!-- Create a new post headline -->
+        <!-- Create a New Post Form -->
         <div class="welcome-container">
-            <h1>Create a new post</h1>
+            <h1>Create a New Post</h1>
             <h2>Write whatever comes to mind!</h2>
         </div>
 
-        <!-- Form to submit a new post -->
         <div class="create-post-container">
-            <form method="post">
+            <form method="post" action="/submit">
                 <fieldset>
                   <label>
                     Title
-                    <input name="title" placeholder="What cuisine do you feel like for dinner tonight?"/>
+                    <input name="title" placeholder="What cuisine do you feel like for dinner tonight?" required/>
                   </label>
                 </fieldset>
 
                 <fieldset>
                     <label>
                         Cuisine
-                        <select name="cuisine">
+                        <select name="cuisine" required>
                             <option value="Italian">Italian</option>
                             <option value="Mexican">Mexican</option>
                             <option value="Chinese">Chinese</option>
@@ -39,7 +45,6 @@
                             <option value="Japanese">Japanese</option>
                             <option value="French">French</option>
                             <option value="Mediterranean">Mediterranean</option>
-                            <!-- Add more options as needed -->
                         </select>
                     </label>
                 </fieldset>
@@ -47,7 +52,7 @@
                 <fieldset>
                     <label>
                         Dinner Time
-                        <select name="dinner_time">
+                        <select name="dinner_time" required>
                             <option value="6:00 PM">6:00 PM</option>
                             <option value="6:30 PM">6:30 PM</option>
                             <option value="7:00 PM">7:00 PM</option>
@@ -55,28 +60,22 @@
                             <option value="8:00 PM">8:00 PM</option>
                             <option value="8:30 PM">8:30 PM</option>
                             <option value="9:00 PM">9:00 PM</option>
-                            <!-- Add more options as needed -->
                         </select>
                     </label>
                 </fieldset>
 
                 <label>
                     Content
-                    <textarea name="content" placeholder="Write what's on your mind..."></textarea>
+                    <textarea name="content" placeholder="Write what's on your mind..." required></textarea>
                 </label>
               
-                <input
-                  type="submit"
-                  value="🚀 Create post"
-                />
-              </form>
+                <input type="submit" value="🚀 Create post" />
+            </form>
         </div>
 
-        <!-- Back to homepage -->
         <div class="cancel-create-post">
           <a href="/">Cancel! Take me back home!</a>
         </div>
-        
     </main>
 </body>
 </html>
