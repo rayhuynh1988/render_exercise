@@ -7,6 +7,7 @@ const app = express();
 const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
 const axios = require('axios');
+const puppeteer = require('puppeteer');  // Import puppeteer for web scraping
 
 // Set up EJS as the view engine
 app.set('view engine', 'ejs');
@@ -85,8 +86,6 @@ app.post("/delete/:id", async (req, res) => {
         res.redirect('/');
     }
 });
-const axios = require('axios');
-const puppeteer = require('puppeteer');  // Import puppeteer for web scraping
 
 // Cook Now route
 app.post('/cook-now', async (req, res) => {
@@ -139,9 +138,9 @@ app.post('/cook-now', async (req, res) => {
       const cuisines = [...new Set(postsToday.map(post => post.cuisine))];
       const finalCuisine = cuisines.length === 1 ? cuisines[0] : cuisines[Math.floor(Math.random() * cuisines.length)];
 
-      const apiKey = process.env.GOOGLE_API_KEY;  // Ensure the API key is loaded correctly
-      const cx = process.env.GOOGLE_CX;          // Ensure the CSE ID is loaded correctly
-      const searchQuery = `top restaurants for ${finalCuisine}`;
+      const apiKey = 'AIzaSyDe5lFxGaVA2a8fx7NAoaHRPq21FzXUSpA';  // Ensure the API key is loaded correctly
+      const cx = '1667bf791ec734baf';          // Ensure the CSE ID is loaded correctly
+      const searchQuery = `Suggested restaurants for ${finalCuisine}`;
       const googleSearchUrl = `https://www.googleapis.com/customsearch/v1?q=${encodeURIComponent(searchQuery)}&key=${apiKey}&cx=${cx}`;
       
       // Step 1: Perform the Google search
