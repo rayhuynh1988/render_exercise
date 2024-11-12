@@ -50,7 +50,7 @@ app.post('/new', async (req, res) => {
         const { name, cuisine, dinner_time, dinner_mood } = req.body;
 
         // If any required fields are missing, re-render the form page
-        if (!name || !cuisine || !dinner_time || dinner_mood) {
+        if (!name || !cuisine || !dinner_time || !dinner_mood) {
             console.log("Required fields missing in form submission.");
             return res.render('pages/new');
         }
