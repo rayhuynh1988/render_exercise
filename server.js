@@ -1,85 +1,74 @@
-// Needed for dotenv
+// Load environment variables from .env file
 require("dotenv").config();
 
-// Needed for Express
-var express = require('express')
-var app = express()
-
-// Needed for EJS
-app.set('view engine', 'ejs');
-
-// Needed for public directory
-app.use(express.static(__dirname + '/public'));
-
-// Needed for parsing form data
-app.use(express.json());       
-app.use(express.urlencoded({extended: true}));
-
-// Needed for Prisma to connect to database
-const { PrismaClient } = require('@prisma/client')
+// Import required modules
+const express = require('express');
+const app = express();
+const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
 
-// Main landing page
-app.get('/', async function(req, res) {
+// Set up EJS as the view engine
+app.set('view engine', 'ejs');
 
-    // Try-Catch for any errors
+// Set up the public directory for static files
+app.use(express.static(__dirname + '/public'));
+
+// Middleware to parse JSON and URL-encoded form data
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+// Main landing page displaying all posts
+app.get('/', async (req, res) => {
     try {
-        // Get all blog posts
+        // Retrieve all blog posts from the database, ordered by descending ID
         const blogs = await prisma.post.findMany({
-                orderBy: [
-                  {
-                    id: 'desc'
-                  }
-                ]
+            orderBy: [{ id: 'desc' }]
         });
 
-        // Render the homepage with all the blog posts
-        await res.render('pages/home', { blogs: blogs });
-      } catch (error) {
-        res.render('pages/home');
+        // Render the homepage with all blog posts
+        res.render('pages/home', { blogs });
+    } catch (error) {
         console.log(error);
-      } 
+        res.render('pages/home', { blogs: [] }); // Render empty list if there's an error
+    }
 });
 
 // About page
-app.get('/about', function(req, res) {
+app.get('/about', (req, res) => {
     res.render('pages/about');
 });
 
-// New post page
-app.get('/new', function(req, res) {
+// Form page for creating a new post
+app.get('/new', (req, res) => {
     res.render('pages/new');
 });
 
-// Create a new post
-app.post('/new', async function(req, res) {
-    
-    // Try-Catch for any errors
+// Handle form submission to create a new post
+app.post('/new', async (req, res) => {
     try {
-        // Get the title and content from submitted form
-        const { title, content } = req.body;
+        // Extract data from the form submission
+        const { title, content, cuisine, dinner_time } = req.body;
 
-        // Reload page if empty title or content
-        if (!title || !content) {
-            console.log("Unable to create new post, no title or content");
-            res.render('pages/new');
-        } else {
-            // Create post and store in database
-            const blog = await prisma.post.create({
-                data: { title, content },
-            });
-
-            // Redirect back to the homepage
-            res.redirect('/');
+        // If any required fields are missing, re-render the form page
+        if (!title || !content || !cuisine || !dinner_time) {
+            console.log("Required fields missing in form submission.");
+            return res.render('pages/new');
         }
-      } catch (error) {
+
+        // Create a new post in the database with the form data
+        await prisma.post.create({
+            data: { title, content, cuisine, dinner_time },
+        });
+
+        // Redirect to the homepage after successful creation
+        res.redirect('/');
+    } catch (error) {
         console.log(error);
         res.render('pages/new');
-      }
-
+    }
 });
 
-// Delete a post by id
+// Delete a post by ID
 app.post("/delete/:id", async (req, res) => {
     const { id } = req.params;
     
@@ -94,7 +83,9 @@ app.post("/delete/:id", async (req, res) => {
         console.log(error);
         res.redirect('/');
     }
-  });
+});
 
-// Tells the app which port to run on
-app.listen(8080);
+// Start the server on port 8080
+app.listen(8080, () => {
+    console.log("Server running on http://localhost:8080");
+});

@@ -7,14 +7,13 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"/>
     <link rel="stylesheet" href="/css/style.css" >
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-WJXZ0LZV6L"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-WJXZ0LZV6L');
-</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WJXZ0LZV6L"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-WJXZ0LZV6L');
+    </script>
 </head>
 <body>
     <main class="container">
@@ -27,22 +26,26 @@
             <h2>What are we having for dinner tonight</h2>
         </div>
 
+        <!-- Button to add a new post -->
         <div class="new-post-btn-container">
            <a href="/new" class="button" role="button">+ Preferences</a>
         </div>
 
+        <!-- About section with an image -->
         <div class="about-container">
             <img src="/images/chinese_dinner.jpg" alt="Picture of dinner">
         </div>
-        <!-- Show blog posts -->
+
+        <!-- Display each blog post -->
         <% blogs.forEach(post => { %>
             <article class="post-container">
                 <h3><%= post.title %></h3>
+                <p><strong>Cuisine:</strong> <%= post.cuisine %></p>
+                <p><strong>Dinner Time:</strong> <%= post.dinner_time %></p>
                 <p><%= post.content %></p>
                 <form action="/delete/<%= post.id %>" method="post" onsubmit="return confirm('Do you really want to delete this post?');">
                     <button class="outline primary" type="submit">Delete</button>
                 </form>
-                
             </article>
         <% }); %>
     </main>
