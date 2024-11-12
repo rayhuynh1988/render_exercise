@@ -39,10 +39,7 @@
             <div id="loadingMessage" style="display:none;">Loading...</div>
         </div>
 
-        <!-- Display success or error message -->
-        <% if (successMessage) { %>
-            <div class="success-message"><%= successMessage %></div>
-        <% } %>
+        <!-- Display error message only -->
         <% if (errorMessage) { %>
             <div class="error-message"><%= errorMessage %></div>
         <% } %>
