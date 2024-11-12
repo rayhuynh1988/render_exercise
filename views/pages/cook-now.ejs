@@ -9,18 +9,24 @@
 </head>
 <body>
     <main class="container">
-        <!-- Navbar which can be reused across other pages -->
-        <%- include('../partials/navbar'); %>
-
-        <div class="welcome-container">
-            <h1>Cook Now</h1>
-            <p><strong>Suggested Dinner Time:</strong> <%= avgDinnerTime %></p>
-            <p><strong>Suggested Cuisine:</strong> <%= cuisine %></p>
-        </div>
-
-        <div class="new-post-btn-container">
-            <a href="/" class="button">Back to Home</a>
-        </div>
-    </main>
+        <h2>Your Dinner Plan</h2>
+    
+        <p><strong>Average Dinner Time: </strong><%= avgDinnerTime %></p>
+        <p><strong>Suggested Cuisine: </strong><%= cuisine %></p>
+    
+        <h3>Top Restaurants for <%= cuisine %>:</h3>
+        <% if (restaurants && restaurants.length > 0) { %>
+            <ul>
+                <% restaurants.forEach(restaurant => { %>
+                    <li>
+                        <a href="<%= restaurant.link %>" target="_blank"><%= restaurant.title %></a>
+                        <p><%= restaurant.snippet %></p>
+                    </li>
+                <% }); %>
+            </ul>
+        <% } else { %>
+            <p>No restaurants found for this cuisine.</p>
+        <% } %>
+    </main>    
 </body>
 </html>
