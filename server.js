@@ -7,7 +7,6 @@ const app = express();
 const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
 const axios = require('axios');
-const puppeteer = require('puppeteer');  // Import puppeteer for web scraping
 
 // Set up EJS as the view engine
 app.set('view engine', 'ejs');
@@ -22,16 +21,13 @@ app.use(express.urlencoded({ extended: true }));
 // Main landing page displaying all posts
 app.get('/', async (req, res) => {
     try {
-        // Retrieve all blog posts from the database, ordered by descending ID
         const blogs = await prisma.post.findMany({
             orderBy: [{ id: 'desc' }]
         });
-
-        // Render the homepage with all blog posts
         res.render('pages/home', { blogs });
     } catch (error) {
         console.log(error);
-        res.render('pages/home', { blogs: [] }); // Render empty list if there's an error
+        res.render('pages/home', { blogs: [] });
     }
 });
 
@@ -48,21 +44,17 @@ app.get('/new', (req, res) => {
 // Handle form submission to create a new post
 app.post('/new', async (req, res) => {
     try {
-        // Extract data from the form submission
         const { name, cuisine, dinner_time, dinner_mood } = req.body;
 
-        // If any required fields are missing, re-render the form page
         if (!name || !cuisine || !dinner_time || !dinner_mood) {
             console.log("Required fields missing in form submission.");
             return res.render('pages/new');
         }
 
-        // Create a new post in the database with the form data
         await prisma.post.create({
             data: { name, cuisine, dinner_time, dinner_mood },
         });
 
-        // Redirect to the homepage after successful creation
         res.redirect('/');
     } catch (error) {
         console.log(error);
@@ -78,14 +70,13 @@ app.post("/delete/:id", async (req, res) => {
         await prisma.post.delete({
             where: { id: parseInt(id) },
         });
-      
-        // Redirect back to the homepage
         res.redirect('/');
     } catch (error) {
         console.log(error);
         res.redirect('/');
     }
 });
+
 // Start the server on port 8080
 app.listen(8080, () => {
   console.log("Server running on http://localhost:8080");
@@ -145,40 +136,21 @@ app.post('/cook-now', async (req, res) => {
       const apiKey = 'AIzaSyDe5lFxGaVA2a8fx7NAoaHRPq21FzXUSpA';  // Ensure the API key is loaded correctly
       const cx = '1667bf791ec734baf';          // Ensure the CSE ID is loaded correctly
       const searchQuery = `Suggested restaurants for ${finalCuisine}`;
-      const googleSearchUrl = `https://www.googleapis.com/customsearch/v1?q=${encodeURIComponent(searchQuery)}&key=${apiKey}&cx=${cx}`;
+      const googleSearchUrl = `https://www.googleapis.com/customsearch/v1?q=${encodeURIComponent(searchQuery)}&key=${apiKey}&cx=${cx}&num=5`;  // Limit to 5 results
       
       // Step 1: Perform the Google search
       const searchResults = await axios.get(googleSearchUrl);
-      const firstResultLink = searchResults.data.items[0]?.link;
+      const topResults = searchResults.data.items.slice(0, 5);  // Get top 5 results
 
-      if (!firstResultLink) {
+      if (topResults.length === 0) {
           return res.status(500).send('No restaurant found in the search results.');
       }
 
-      // Step 2: Use puppeteer to scrape the first restaurant's webpage
-      const browser = await puppeteer.launch();
-      const page = await browser.newPage();
-      await page.goto(firstResultLink, { waitUntil: 'load', timeout: 0 });
-
-      // Extract the restaurant name and images from the page
-      const restaurantData = await page.evaluate(() => {
-          const name = document.querySelector('h1') ? document.querySelector('h1').innerText : null;
-          const images = Array.from(document.querySelectorAll('img')).map(img => img.src);
-          return { name, images };
-      });
-
-      await browser.close();
-
-      if (!restaurantData.name) {
-          return res.status(500).send('Could not extract restaurant name.');
-      }
-
-      // Step 3: Render the page with the scraped data
+      // Step 2: Render the page with the top 5 results
       res.render('pages/cook-now', {
           avgDinnerTime: `${avgHours}:${avgMinutes < 10 ? '0' + avgMinutes : avgMinutes} ${modifier}`,
           cuisine: finalCuisine,
-          restaurantName: restaurantData.name,
-          restaurantImages: restaurantData.images
+          restaurants: topResults  // Pass the top 5 restaurant data
       });
   } catch (error) {
       console.log(error);
