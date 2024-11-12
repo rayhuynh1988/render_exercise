@@ -6,6 +6,7 @@ const express = require('express');
 const app = express();
 const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
+const axios = require('axios');
 
 // Set up EJS as the view engine
 app.set('view engine', 'ejs');
@@ -85,12 +86,6 @@ app.post("/delete/:id", async (req, res) => {
     }
 });
 
-// Start the server on port 8080
-app.listen(8080, () => {
-    console.log("Server running on http://localhost:8080");
-});
-
-const axios = require('axios');
 // Cook Now route
 app.post('/cook-now', async (req, res) => {
   try {
@@ -113,54 +108,82 @@ app.post('/cook-now', async (req, res) => {
 
       // Step 2: Aggregate dinner times (average)
       const dinnerTimes = postsToday.map(post => {
-          // Trim the dinner time and convert from 12-hour format to 24-hour format
           const timeString = post.dinner_time.trim();
-          const [time, modifier] = timeString.split(' '); // Separate time from AM/PM
+          const [time, modifier] = timeString.split(' ');
           const [hours, minutes] = time.split(':').map(Number);
           
           let totalMinutes = 0;
 
-          // Convert 12-hour time to 24-hour format
+          // Convert to 24-hour format
           if (modifier === 'PM' && hours !== 12) {
-              totalMinutes = (hours + 12) * 60 + minutes; // Add 12 to PM hours except for 12 PM
+              totalMinutes = (hours + 12) * 60 + minutes;
           } else if (modifier === 'AM' && hours === 12) {
-              totalMinutes = minutes; // 12 AM is midnight
+              totalMinutes = minutes; // Midnight
           } else {
-              totalMinutes = hours * 60 + minutes; // Regular conversion for AM and non-12 PM
+              totalMinutes = hours * 60 + minutes;
           }
 
           return totalMinutes;
       });
 
-      // Calculate the average dinner time in minutes
       const avgDinnerTime = Math.round(dinnerTimes.reduce((a, b) => a + b, 0) / dinnerTimes.length); // Average in minutes
-      const avgDate = new Date(0); // Start with a zero date
-      avgDate.setMinutes(avgDinnerTime); // Set the minutes of the date object
+      const avgDate = new Date(0);
+      avgDate.setMinutes(avgDinnerTime);
 
-      // Extract hours and minutes from the average time
-      const avgHours24 = avgDate.getHours(); // 24-hour format hour
+      const avgHours24 = avgDate.getHours();
       const avgMinutes = avgDate.getMinutes();
-
-      // Step 3: Convert the average time back to a 12-hour format
+      
       let avgHours = avgHours24;
       const modifier = avgHours >= 12 ? 'PM' : 'AM';
       if (avgHours > 12) {
-          avgHours -= 12; // Convert to 12-hour format
+          avgHours -= 12;
       } else if (avgHours === 0) {
-          avgHours = 12; // Handle midnight as 12 AM
+          avgHours = 12;
       }
 
-      // Step 4: Match cuisines or pick a random cuisine
+      // Step 3: Match cuisines or pick a random cuisine
       const cuisines = [...new Set(postsToday.map(post => post.cuisine))];
       const finalCuisine = cuisines.length === 1 ? cuisines[0] : cuisines[Math.floor(Math.random() * cuisines.length)];
 
-      // Step 5: Send the results to the view
+      // Step 4: Call Google Custom Search API to get restaurant suggestions
+      const apiKey = process.env.GOOGLE_API_KEY;  // Get the API key from environment variables
+      const cx = process.env.GOOGLE_CX;  // Get the Custom Search Engine ID from environment variables
+
+      if (!apiKey || !cx) {
+          console.log("Google API Key or CX missing in environment variables.");
+          return res.status(500).send("Internal Server Error: Missing API credentials.");
+      }
+
+      const searchQuery = `top restaurants for ${finalCuisine}`;
+      const googleSearchUrl = `https://www.googleapis.com/customsearch/v1?q=${encodeURIComponent(searchQuery)}&key=${apiKey}&cx=${cx}`;
+      
+      const searchResults = await axios.get(googleSearchUrl);
+
+      if (!searchResults.data.items) {
+          console.log("No search results found.");
+          return res.status(500).send("Error: No restaurant results found.");
+      }
+
+      // Step 5: Extract relevant restaurant information from the search results
+      const restaurants = searchResults.data.items.map(item => ({
+          title: item.title,
+          link: item.link,
+          snippet: item.snippet
+      }));
+
+      // Step 6: Send the results to the view
       res.render('pages/cook-now', {
           avgDinnerTime: `${avgHours}:${avgMinutes < 10 ? '0' + avgMinutes : avgMinutes} ${modifier}`,
-          cuisine: finalCuisine
+          cuisine: finalCuisine,
+          restaurants: restaurants
       });
   } catch (error) {
       console.log(error);
-      res.redirect('/');
+      res.status(500).send('Internal Server Error');
   }
+});
+
+// Start the server on port 8080
+app.listen(8080, () => {
+    console.log("Server running on http://localhost:8080");
 });
