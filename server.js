@@ -18,6 +18,10 @@ app.use(express.static(__dirname + '/public'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// Abstracted keys for configuration and API
+const API_KEY = process.env.GOOGLE_API_KEY;
+const CX = process.env.GOOGLE_CSE_ID;
+
 // Main landing page displaying all posts
 app.get('/', async (req, res) => {
     try {
@@ -85,7 +89,7 @@ app.listen(8080, () => {
 // Cook Now route
 app.post('/cook-now', async (req, res) => {
   try {
-      const today = new Date().toISOString().split('T')[0]; // Get current date
+      const today = new Date().toISOString().split('T')[0];
       const postsToday = await prisma.post.findMany({
           where: {
               createdAt: {
@@ -108,7 +112,7 @@ app.post('/cook-now', async (req, res) => {
           if (modifier === 'PM' && hours !== 12) {
               totalMinutes = (hours + 12) * 60 + minutes;
           } else if (modifier === 'AM' && hours === 12) {
-              totalMinutes = minutes; // Midnight
+              totalMinutes = minutes;
           } else {
               totalMinutes = hours * 60 + minutes;
           }
@@ -116,7 +120,7 @@ app.post('/cook-now', async (req, res) => {
           return totalMinutes;
       });
 
-      const avgDinnerTime = Math.round(dinnerTimes.reduce((a, b) => a + b, 0) / dinnerTimes.length); // Average in minutes
+      const avgDinnerTime = Math.round(dinnerTimes.reduce((a, b) => a + b, 0) / dinnerTimes.length);
       const avgDate = new Date(0);
       avgDate.setMinutes(avgDinnerTime);
 
@@ -133,24 +137,23 @@ app.post('/cook-now', async (req, res) => {
       const cuisines = [...new Set(postsToday.map(post => post.cuisine))];
       const finalCuisine = cuisines.length === 1 ? cuisines[0] : cuisines[Math.floor(Math.random() * cuisines.length)];
 
-      const apiKey = 'AIzaSyDe5lFxGaVA2a8fx7NAoaHRPq21FzXUSpA';  // Ensure the API key is loaded correctly
-      const cx = '1667bf791ec734baf';          // Ensure the CSE ID is loaded correctly
+      // Use abstracted variables for API key and CSE ID
       const searchQuery = `Suggested restaurants for ${finalCuisine}`;
-      const googleSearchUrl = `https://www.googleapis.com/customsearch/v1?q=${encodeURIComponent(searchQuery)}&key=${apiKey}&cx=${cx}&num=5`;  // Limit to 5 results
+      const googleSearchUrl = `https://www.googleapis.com/customsearch/v1?q=${encodeURIComponent(searchQuery)}&key=${API_KEY}&cx=${CX}&num=5`;
       
-      // Step 1: Perform the Google search
+      // Perform the Google search
       const searchResults = await axios.get(googleSearchUrl);
-      const topResults = searchResults.data.items.slice(0, 5);  // Get top 5 results
+      const topResults = searchResults.data.items.slice(0, 5);
 
       if (topResults.length === 0) {
           return res.status(500).send('No restaurant found in the search results.');
       }
 
-      // Step 2: Render the page with the top 5 results
+      // Render the page with the top 5 results
       res.render('pages/cook-now', {
           avgDinnerTime: `${avgHours}:${avgMinutes < 10 ? '0' + avgMinutes : avgMinutes} ${modifier}`,
           cuisine: finalCuisine,
-          restaurants: topResults  // Pass the top 5 restaurant data
+          restaurants: topResults
       });
   } catch (error) {
       console.log(error);
