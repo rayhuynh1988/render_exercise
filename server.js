@@ -89,3 +89,49 @@ app.post("/delete/:id", async (req, res) => {
 app.listen(8080, () => {
     console.log("Server running on http://localhost:8080");
 });
+
+// Cook Now route
+app.post('/cook-now', async (req, res) => {
+  try {
+      // Step 1: Get all posts with the same createdAt date
+      const today = new Date().toISOString().split('T')[0]; // Get current date (e.g. "2024-11-12")
+      
+      const postsToday = await prisma.post.findMany({
+          where: {
+              createdAt: {
+                  gte: new Date(`${today}T00:00:00Z`), // Start of today
+                  lt: new Date(`${today}T23:59:59Z`) // End of today
+              }
+          }
+      });
+
+      // If no posts exist for today, redirect to homepage
+      if (postsToday.length === 0) {
+          return res.redirect('/');
+      }
+
+      // Step 2: Aggregate dinner times (average)
+      const dinnerTimes = postsToday.map(post => {
+          const [hours, minutes] = post.dinner_time.split(':').map(Number);
+          return hours * 60 + minutes; // Convert dinner time to minutes
+      });
+
+      const avgDinnerTime = Math.round(dinnerTimes.reduce((a, b) => a + b, 0) / dinnerTimes.length); // Average in minutes
+      const avgHours = Math.floor(avgDinnerTime / 60); // Convert minutes to hours
+      const avgMinutes = avgDinnerTime % 60; // Get remaining minutes
+
+      // Step 3: Match cuisines or pick a random cuisine
+      const cuisines = [...new Set(postsToday.map(post => post.cuisine))];
+      const finalCuisine = cuisines.length === 1 ? cuisines[0] : cuisines[Math.floor(Math.random() * cuisines.length)];
+
+      // Step 4: Send the results to the view
+      res.render('pages/cook-now', {
+          avgDinnerTime: `${avgHours}:${avgMinutes < 10 ? '0' + avgMinutes : avgMinutes}`,
+          cuisine: finalCuisine
+      });
+  } catch (error) {
+      console.log(error);
+      res.redirect('/');
+  }
+});
+

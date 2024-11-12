@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cook Now</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"/>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <main class="container">
+        <!-- Navbar which can be reused across other pages -->
+        <%- include('../partials/navbar'); %>
+
+        <div class="welcome-container">
+            <h1>Cook Now</h1>
+            <p><strong>Suggested Dinner Time:</strong> <%= avgDinnerTime %></p>
+            <p><strong>Suggested Cuisine:</strong> <%= cuisine %></p>
+        </div>
+
+        <div class="new-post-btn-container">
+            <a href="/" class="button">Back to Home</a>
+        </div>
+    </main>
+</body>
+</html>
