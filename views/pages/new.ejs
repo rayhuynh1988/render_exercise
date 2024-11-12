@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"/>
-    <link rel="stylesheet" href="/css/style.css" >
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
     <main class="container">
@@ -24,13 +24,45 @@
                 <fieldset>
                   <label>
                     Title
-                    <input name="title" placeholder="Write the name of this post..."/>
+                    <input name="title" placeholder="What cuisine do you feel like for dinner tonight?"/>
                   </label>
                 </fieldset>
 
+                <fieldset>
+                    <label>
+                        Cuisine
+                        <select name="cuisine">
+                            <option value="Italian">Italian</option>
+                            <option value="Mexican">Mexican</option>
+                            <option value="Chinese">Chinese</option>
+                            <option value="Indian">Indian</option>
+                            <option value="Japanese">Japanese</option>
+                            <option value="French">French</option>
+                            <option value="Mediterranean">Mediterranean</option>
+                            <!-- Add more options as needed -->
+                        </select>
+                    </label>
+                </fieldset>
+
+                <fieldset>
+                    <label>
+                        Dinner Time
+                        <select name="dinner_time">
+                            <option value="6:00 PM">6:00 PM</option>
+                            <option value="6:30 PM">6:30 PM</option>
+                            <option value="7:00 PM">7:00 PM</option>
+                            <option value="7:30 PM">7:30 PM</option>
+                            <option value="8:00 PM">8:00 PM</option>
+                            <option value="8:30 PM">8:30 PM</option>
+                            <option value="9:00 PM">9:00 PM</option>
+                            <!-- Add more options as needed -->
+                        </select>
+                    </label>
+                </fieldset>
+
                 <label>
-                Content
-                <textarea name="content" placeholder="Write what's on your mind..." ></textarea>
+                    Content
+                    <textarea name="content" placeholder="Write what's on your mind..."></textarea>
                 </label>
               
                 <input
