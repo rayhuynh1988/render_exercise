@@ -16,8 +16,7 @@ datasource db {
 // Post model represents individual blog posts
 model Post {
   id          Int      @id @default(autoincrement())
-  title       String
-  content     String
+  name       String
   cuisine     String   // New field for the cuisine type
   dinner_time String   // New field for the dinner time
   createdAt   DateTime @default(now()) // Optional field to track post creation time
