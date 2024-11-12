@@ -85,36 +85,32 @@ app.post("/delete/:id", async (req, res) => {
         res.redirect('/');
     }
 });
+const axios = require('axios');
+const puppeteer = require('puppeteer');  // Import puppeteer for web scraping
 
 // Cook Now route
 app.post('/cook-now', async (req, res) => {
   try {
-      // Step 1: Get all posts with the same createdAt date
-      const today = new Date().toISOString().split('T')[0]; // Get current date (e.g. "2024-11-12")
-      
+      const today = new Date().toISOString().split('T')[0]; // Get current date
       const postsToday = await prisma.post.findMany({
           where: {
               createdAt: {
-                  gte: new Date(`${today}T00:00:00Z`), // Start of today
-                  lt: new Date(`${today}T23:59:59Z`) // End of today
+                  gte: new Date(`${today}T00:00:00Z`),
+                  lt: new Date(`${today}T23:59:59Z`)
               }
           }
       });
 
-      // If no posts exist for today, redirect to homepage
       if (postsToday.length === 0) {
           return res.redirect('/');
       }
 
-      // Step 2: Aggregate dinner times (average)
       const dinnerTimes = postsToday.map(post => {
           const timeString = post.dinner_time.trim();
           const [time, modifier] = timeString.split(' ');
           const [hours, minutes] = time.split(':').map(Number);
           
           let totalMinutes = 0;
-
-          // Convert to 24-hour format
           if (modifier === 'PM' && hours !== 12) {
               totalMinutes = (hours + 12) * 60 + minutes;
           } else if (modifier === 'AM' && hours === 12) {
@@ -132,7 +128,6 @@ app.post('/cook-now', async (req, res) => {
 
       const avgHours24 = avgDate.getHours();
       const avgMinutes = avgDate.getMinutes();
-      
       let avgHours = avgHours24;
       const modifier = avgHours >= 12 ? 'PM' : 'AM';
       if (avgHours > 12) {
@@ -141,49 +136,49 @@ app.post('/cook-now', async (req, res) => {
           avgHours = 12;
       }
 
-      // Step 3: Match cuisines or pick a random cuisine
       const cuisines = [...new Set(postsToday.map(post => post.cuisine))];
       const finalCuisine = cuisines.length === 1 ? cuisines[0] : cuisines[Math.floor(Math.random() * cuisines.length)];
 
-      // Step 4: Call Google Custom Search API to get restaurant suggestions
-      const apiKey = 'AIzaSyDe5lFxGaVA2a8fx7NAoaHRPq21FzXUSpA';  // Get the API key from environment variables
-      const cx = '1667bf791ec734baf';  // Get the Custom Search Engine ID from environment variables
-
-      if (!apiKey || !cx) {
-          console.log("Google API Key or CX missing in environment variables.");
-          return res.status(500).send("Internal Server Error: Missing API credentials.");
-      }
-
+      const apiKey = process.env.GOOGLE_API_KEY;  // Ensure the API key is loaded correctly
+      const cx = process.env.GOOGLE_CX;          // Ensure the CSE ID is loaded correctly
       const searchQuery = `top restaurants for ${finalCuisine}`;
       const googleSearchUrl = `https://www.googleapis.com/customsearch/v1?q=${encodeURIComponent(searchQuery)}&key=${apiKey}&cx=${cx}`;
       
+      // Step 1: Perform the Google search
       const searchResults = await axios.get(googleSearchUrl);
+      const firstResultLink = searchResults.data.items[0]?.link;
 
-      if (!searchResults.data.items) {
-          console.log("No search results found.");
-          return res.status(500).send("Error: No restaurant results found.");
+      if (!firstResultLink) {
+          return res.status(500).send('No restaurant found in the search results.');
       }
 
-      // Step 5: Extract relevant restaurant information from the search results
-      const restaurants = searchResults.data.items.map(item => ({
-          title: item.title,
-          link: item.link,
-          snippet: item.snippet
-      }));
+      // Step 2: Use puppeteer to scrape the first restaurant's webpage
+      const browser = await puppeteer.launch();
+      const page = await browser.newPage();
+      await page.goto(firstResultLink, { waitUntil: 'load', timeout: 0 });
 
-      // Step 6: Send the results to the view
+      // Extract the restaurant name and images from the page
+      const restaurantData = await page.evaluate(() => {
+          const name = document.querySelector('h1') ? document.querySelector('h1').innerText : null;
+          const images = Array.from(document.querySelectorAll('img')).map(img => img.src);
+          return { name, images };
+      });
+
+      await browser.close();
+
+      if (!restaurantData.name) {
+          return res.status(500).send('Could not extract restaurant name.');
+      }
+
+      // Step 3: Render the page with the scraped data
       res.render('pages/cook-now', {
           avgDinnerTime: `${avgHours}:${avgMinutes < 10 ? '0' + avgMinutes : avgMinutes} ${modifier}`,
           cuisine: finalCuisine,
-          restaurants: restaurants
+          restaurantName: restaurantData.name,
+          restaurantImages: restaurantData.images
       });
   } catch (error) {
       console.log(error);
-      res.status(500).send('Internal Server Error');
+      res.status(500).send("Internal Server Error.");
   }
-});
-
-// Start the server on port 8080
-app.listen(8080, () => {
-    console.log("Server running on http://localhost:8080");
 });
