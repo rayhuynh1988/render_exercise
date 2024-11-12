@@ -152,9 +152,9 @@ app.post('/cook-now', async (req, res) => {
       const finalCuisine = cuisines.length === 1 ? cuisines[0] : cuisines[Math.floor(Math.random() * cuisines.length)];
 
       // Step 4: Call Google Custom Search API to get restaurant suggestions
-      const apiKey = 'AIzaSyDe5lFxGaVA2a8fx7NAoaHRPq21FzXUSpA';  // Replace with your Google API Key
-      const cx = '1667bf791ec734baf';  // Replace with your Custom Search Engine ID
-      const searchQuery = `top restaurants for ${finalCuisine}`;
+      const apiKey = process.env.GOOGLE_API_KEY;  // Replace with your Google API Key
+      const cx = process.env.GOOGLE_CX;  // Replace with your Custom Search Engine ID
+      const searchQuery = `top trending dinner restaurants for ${finalCuisine}`;
       const googleSearchUrl = `https://www.googleapis.com/customsearch/v1?q=${encodeURIComponent(searchQuery)}&key=${apiKey}&cx=${cx}`;
       
       const searchResults = await axios.get(googleSearchUrl);
