@@ -15,11 +15,11 @@
         <!-- Information welcoming visitors to my page -->
         <div class="welcome-container">
             <h1>DinnerHow</h1>
-            <h2>Learn about my preferences for tonight</h2>
+            <h2>What are we having for dinner tonight</h2>
         </div>
 
         <div class="new-post-btn-container">
-           <a href="/new" class="button" role="button">+ New Post</a>
+           <a href="/new" class="button" role="button">+ Preferences</a>
         </div>
 
         <!-- Show blog posts -->
@@ -30,6 +30,9 @@
                 <form action="/delete/<%= post.id %>" method="post" onsubmit="return confirm('Do you really want to delete this post?');">
                     <button class="outline primary" type="submit">Delete</button>
                 </form>
+                <div class="about-container">
+                    <img src="/images/chinese_dinner.jpg" alt="Picture of dinner">
+                </div>
             </article>
         <% }); %>
     </main>
