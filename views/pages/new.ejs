@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create a Post</title>
+    <title>Dinner Preferences</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"/>
     <link rel="stylesheet" href="/css/style.css">
 </head>
@@ -12,21 +12,14 @@
         <%- include('../partials/navbar'); %>
 
         <div class="welcome-container">
-            <h1>Submit Dinner Preferences</h1>
+            <h1>Submit Your Dinner Preferences</h1>
         </div>
 
-        <div class="create-post-container">
-            <form method="get" action="/recommendations">
-                <fieldset>
-                  <label>
-                    Name
-                    <input name="name" placeholder="Who are you?" required/>
-                  </label>
-                </fieldset>
-
+        <div class="preferences-form-container">
+            <form method="post" action="/recommendations">
                 <fieldset>
                     <label>
-                        Cuisine
+                        Preferred Cuisine
                         <select name="cuisine" required>
                             <option value="Italian">Italian</option>
                             <option value="Mexican">Mexican</option>
@@ -41,40 +34,21 @@
 
                 <fieldset>
                     <label>
-                        Dinner Time
-                        <select name="dinner_time" required>
-                            <option value="6:00 PM">6:00 PM</option>
-                            <option value="6:30 PM">6:30 PM</option>
-                            <option value="7:00 PM">7:00 PM</option>
-                            <option value="7:30 PM">7:30 PM</option>
-                            <option value="8:00 PM">8:00 PM</option>
-                            <option value="8:30 PM">8:30 PM</option>
-                            <option value="9:00 PM">9:00 PM</option>
-                        </select>
-                    </label>
-                </fieldset>
-
-                <fieldset>
-                    <label>
                         Price Range
                         <select name="price" required>
-                            <option value="$">Budget ($)</option>
-                            <option value="$$">Moderate ($$)</option>
-                            <option value="$$$">Expensive ($$$)</option>
-                            <option value="$$$$">Luxury ($$$$)</option>
-                            <option value="$$$$$">Premium ($$$$$)</option>
+                            <option value="5 - 10">Budget ($)</option>
+                            <option value="80 - 150">Moderate ($$)</option>
+                            <option value="100 - 200">Expensive ($$$)</option>
+                            <option value="300 - 450">Luxury ($$$$)</option>
+                            <option value="350 - 500">Premium ($$$$$)</option>
                         </select>
                     </label>
                 </fieldset>
 
                 <fieldset>
                     <label>
-                        Food Composition
-                        <select name="food_composition" required>
-                            <option value="Healthy">Healthy</option>
-                            <option value="Tasty">Tasty</option>
-                            <option value="Healthy & Tasty">Healthy & Tasty</option>
-                        </select>
+                        Location
+                        <input name="location" placeholder="Enter your location" required/>
                     </label>
                 </fieldset>
 

@@ -11,27 +11,29 @@
     <main class="container">
         <%- include('../partials/navbar'); %>
 
-        <h1>Hello, <%= name %>!</h1>
-        <p>Here are your dinner recommendations based on your preferences:</p>
-        <p><strong>Cuisine:</strong> <%= cuisine %></p>
-        <p><strong>Price Range:</strong> <%= price %></p>
-        <p><strong>Food Composition:</strong> <%= food_composition %></p>
+        <div class="welcome-container">
+            <h1>Your Dinner Recommendations</h1>
+        </div>
 
-        <% if (recommendations && recommendations.length > 0) { %>
-            <ul>
-                <% recommendations.forEach((restaurant) => { %>
-                    <li>
-                        <strong><%= restaurant.title %></strong>
-                        <p><strong>Cuisine:</strong> <%= restaurant.cuisine %></p>
-                        <p><strong>Price:</strong> <%= restaurant.price %></p>
-                        <p><strong>Location:</strong> <%= restaurant.location %></p>
-                        <p><strong>Food Composition:</strong> <%= restaurant.composition %></p>
-                    </li>
+        <div class="recommendations-container">
+            <% if (recommendations.length > 0) { %>
+                <% recommendations.forEach(rec => { %>
+                    <article class="recommendation">
+                        <h2><%= rec["Restaurant Name"] %></h2>
+                        <p><strong>Cuisine:</strong> <%= rec["Cuisine Type"] %></p>
+                        <p><strong>Price Range:</strong> <%= rec["Price Range (SGD)"] %></p>
+                        <p><strong>Location:</strong> <%= rec["Location (Area)"] %></p>
+                        <p><strong>Rating:</strong> <%= rec["Average Rating (out of 5)"] %> / 5</p>
+                    </article>
                 <% }); %>
-            </ul>
-        <% } else { %>
-            <p>No recommendations found for your preferences. Try changing your filters!</p>
-        <% } %>
+            <% } else { %>
+                <p>No recommendations found. Please adjust your preferences and try again.</p>
+            <% } %>
+        </div>
+
+        <div class="back-btn-container">
+            <a href="/new" class="button">Update Preferences</a>
+        </div>
     </main>
 </body>
 </html>

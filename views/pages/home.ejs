@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"/>
-    <link rel="stylesheet" href="/css/style.css" >
+    <link rel="stylesheet" href="/css/style.css">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-WJXZ0LZV6L"></script>
     <script>
@@ -14,6 +14,21 @@
       gtag('js', new Date());
       gtag('config', 'G-WJXZ0LZV6L');
     </script>
+    <style>
+        body {
+            background-image: url('/images/chinese_dinner.jpg');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+        }
+        .container {
+            text-align: center;
+            padding-top: 20vh;
+        }
+        .button {
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
     <main class="container">
@@ -26,46 +41,10 @@
             <h2>What are we having for dinner tonight?</h2>
         </div>
 
-        <!-- Button to add a new post -->
-        <div class="new-post-btn-container">
-           <a href="/new" class="button" role="button">Step 1. Enter Your Dinner Preferences</a>
+        <!-- Button to enter dinner preferences -->
+        <div class="button-container">
+           <a href="/new" class="button" role="button">Enter Dinner Preferences</a>
         </div>
-
-        <!-- "Cook Now" button -->
-        <!-- "Cook Now" button -->
-        <div class="cook-now-btn-container">
-            <form action="/cook-now" method="post">
-                <button type="submit" class="button outline">Step 2. Generate Dinner Suggestions</button>
-            </form>
-        </div>
-
-        <!-- About section with an image -->
-        <div class="about-container">
-            <img src="/images/chinese_dinner.jpg" alt="Picture of dinner">
-        </div>
-
-        <!-- Display each blog post -->
-        <% if (blogs.length === 0) { %>
-            <p>No posts available.</p>
-        <% } else { %>
-            <% blogs.forEach(post => { %>
-                <article class="post-container">
-                    <h3><%= post.name %></h3>
-                    <p><strong>Cuisine:</strong> <%= post.cuisine %></p>
-                    <p><strong>Dinner Time:</strong> <%= post.dinner_time %></p>
-                    <p><strong>Dinner Mood:</strong> <%= post.dinner_mood %></p>
-                    <form action="/delete/<%= post.id %>" method="post" onsubmit="return confirm('Do you really want to delete this post?');">
-                        <button class="outline primary" type="submit">Delete</button>
-                    </form>
-                </article>
-            <% }); %>
-        <% } %>
     </main>
-
-    <script>
-        document.getElementById('cookNowForm').addEventListener('submit', function () {
-            document.getElementById('loadingMessage').style.display = 'block';
-        });
-    </script>
 </body>
 </html>

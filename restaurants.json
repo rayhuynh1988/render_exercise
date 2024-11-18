@@ -1,0 +1,1082 @@
+[
+    {
+        "No.": 1,
+        "Restaurant Name": "Odette",
+        "Cuisine Type": "French",
+        "Price Range (SGD)": "350 - 500",
+        "Location (Area)": "City Hall",
+        "Average Rating (out of 5)": 4.8,
+        "Food Composition": "Healthy"
+    },
+    {
+        "No.": 2,
+        "Restaurant Name": "Burnt Ends",
+        "Cuisine Type": "Australian Barbecue",
+        "Price Range (SGD)": "100 - 200",
+        "Location (Area)": "Chinatown",
+        "Average Rating (out of 5)": 4.7,
+        "Food Composition": "Unhealthy"
+    },
+    {
+        "No.": 3,
+        "Restaurant Name": "Les Amis",
+        "Cuisine Type": "French",
+        "Price Range (SGD)": "300 - 450",
+        "Location (Area)": "Orchard",
+        "Average Rating (out of 5)": 4.8,
+        "Food Composition": "Healthy"
+    },
+    {
+        "No.": 4,
+        "Restaurant Name": "Candlenut",
+        "Cuisine Type": "Peranakan",
+        "Price Range (SGD)": "80 - 150",
+        "Location (Area)": "Dempsey Hill",
+        "Average Rating (out of 5)": 4.6,
+        "Food Composition": "Healthy"
+    },
+    {
+        "No.": 5,
+        "Restaurant Name": "Hill Street Tai Hwa Pork Noodle",
+        "Cuisine Type": "Street Food",
+        "Price Range (SGD)": "5 - 10",
+        "Location (Area)": "Kallang",
+        "Average Rating (out of 5)": 4.5,
+        "Food Composition": "Unhealthy"
+    },
+    {
+        "No.": 6,
+        "Restaurant Name": "Iggy's",
+        "Cuisine Type": "Modern European",
+        "Price Range (SGD)": "250 - 400",
+        "Location (Area)": "Orchard",
+        "Average Rating (out of 5)": 4.7,
+        "Food Composition": "Healthy"
+    },
+    {
+        "No.": 7,
+        "Restaurant Name": "Saint Pierre",
+        "Cuisine Type": "French",
+        "Price Range (SGD)": "250 - 400",
+        "Location (Area)": "Marina Bay",
+        "Average Rating (out of 5)": 4.7,
+        "Food Composition": "Healthy"
+    },
+    {
+        "No.": 8,
+        "Restaurant Name": "Jaan",
+        "Cuisine Type": "Modern French",
+        "Price Range (SGD)": "250 - 400",
+        "Location (Area)": "City Hall",
+        "Average Rating (out of 5)": 4.7,
+        "Food Composition": "Healthy"
+    },
+    {
+        "No.": 9,
+        "Restaurant Name": "Shinji by Kanesaka",
+        "Cuisine Type": "Japanese",
+        "Price Range (SGD)": "250 - 400",
+        "Location (Area)": "Bras Basah",
+        "Average Rating (out of 5)": 4.6,
+        "Food Composition": "Healthy"
+    },
+    {
+        "No.": 10,
+        "Restaurant Name": "Waku Ghin",
+        "Cuisine Type": "Japanese-European",
+        "Price Range (SGD)": "400 - 600",
+        "Location (Area)": "Marina Bay Sands",
+        "Average Rating (out of 5)": 4.7,
+        "Food Composition": "Healthy"
+    },
+    {
+        "No.": 11,
+        "Restaurant Name": "Corner House",
+        "Cuisine Type": "Gastro-Botanica",
+        "Price Range (SGD)": "150 - 300",
+        "Location (Area)": "Botanic Gardens",
+        "Average Rating (out of 5)": 4.6,
+        "Food Composition": "Healthy"
+    },
+    {
+        "No.": 12,
+        "Restaurant Name": "Labyrinth",
+        "Cuisine Type": "Modern Singaporean",
+        "Price Range (SGD)": "150 - 250",
+        "Location (Area)": "Esplanade",
+        "Average Rating (out of 5)": 4.6,
+        "Food Composition": "Healthy"
+    },
+    {
+        "No.": 13,
+        "Restaurant Name": "Meta",
+        "Cuisine Type": "Contemporary Asian",
+        "Price Range (SGD)": "150 - 250",
+        "Location (Area)": "Keong Saik",
+        "Average Rating (out of 5)": 4.6,
+        "Food Composition": "Healthy"
+    },
+    {
+        "No.": 14,
+        "Restaurant Name": "Summer Pavilion",
+        "Cuisine Type": "Cantonese",
+        "Price Range (SGD)": "100 - 200",
+        "Location (Area)": "Marina Bay",
+        "Average Rating (out of 5)": 4.6,
+        "Food Composition": "Healthy"
+    },
+    {
+        "No.": 15,
+        "Restaurant Name": "Shisen Hanten",
+        "Cuisine Type": "Szechuan",
+        "Price Range (SGD)": "100 - 200",
+        "Location (Area)": "Orchard",
+        "Average Rating (out of 5)": 4.5,
+        "Food Composition": "Unhealthy"
+    },
+    {
+        "No.": 16,
+        "Restaurant Name": "Sushi Ichi",
+        "Cuisine Type": "Japanese",
+        "Price Range (SGD)": "200 - 350",
+        "Location (Area)": "Orchard",
+        "Average Rating (out of 5)": 4.6,
+        "Food Composition": "Healthy"
+    },
+    {
+        "No.": 17,
+        "Restaurant Name": "Alma by Juan Amador",
+        "Cuisine Type": "European-Asian",
+        "Price Range (SGD)": "150 - 250",
+        "Location (Area)": "Orchard",
+        "Average Rating (out of 5)": 4.6,
+        "Food Composition": "Healthy"
+    },
+    {
+        "No.": 18,
+        "Restaurant Name": "Rhubarb Le Restaurant",
+        "Cuisine Type": "French",
+        "Price Range (SGD)": "150 - 250",
+        "Location (Area)": "Duxton Hill",
+        "Average Rating (out of 5)": 4.6,
+        "Food Composition": "Healthy"
+    },
+    {
+        "No.": 19,
+        "Restaurant Name": "Cheek Bistro",
+        "Cuisine Type": "Modern Australian",
+        "Price Range (SGD)": "100 - 200",
+        "Location (Area)": "Boon Tat Street",
+        "Average Rating (out of 5)": 4.5,
+        "Food Composition": "Healthy"
+    },
+    {
+        "No.": 20,
+        "Restaurant Name": "Garibaldi",
+        "Cuisine Type": "Italian",
+        "Price Range (SGD)": "100 - 200",
+        "Location (Area)": "Purvis Street",
+        "Average Rating (out of 5)": 4.5,
+        "Food Composition": "Healthy"
+    },
+    {
+        "No.": 21,
+        "Restaurant Name": "Putien (Kitchener Road)",
+        "Cuisine Type": "Fujian",
+        "Price Range (SGD)": "50 - 100",
+        "Location (Area)": "Kitchener Road",
+        "Average Rating (out of 5)": 4.4,
+        "Food Composition": "Healthy"
+    },
+    {
+        "No.": 22,
+        "Restaurant Name": "Song of India",
+        "Cuisine Type": "Indian",
+        "Price Range (SGD)": "100 - 200",
+        "Location (Area)": "Newton",
+        "Average Rating (out of 5)": 4.4,
+        "Food Composition": "Healthy"
+    },
+    {
+        "No.": 23,
+        "Restaurant Name": "Whitegrass",
+        "Cuisine Type": "Modern Australian",
+        "Price Range (SGD)": "150 - 250",
+        "Location (Area)": "Chijmes",
+        "Average Rating (out of 5)": 4.5,
+        "Food Composition": "Healthy"
+    },
+    {
+        "No.": 24,
+        "Restaurant Name": "Braci",
+        "Cuisine Type": "Italian",
+        "Price Range (SGD)": "150 - 250",
+        "Location (Area)": "Boat Quay",
+        "Average Rating (out of 5)": 4.5,
+        "Food Composition": "Healthy"
+    },
+    {
+        "No.": 25,
+        "Restaurant Name": "Cut by Wolfgang Puck",
+        "Cuisine Type": "Steakhouse",
+        "Price Range (SGD)": "200 - 350",
+        "Location (Area)": "Marina Bay Sands",
+        "Average Rating (out of 5)": 4.6,
+        "Food Composition": "Unhealthy"
+    },
+    {
+        "No.": 26,
+        "Restaurant Name": "Gunther's",
+        "Cuisine Type": "French",
+        "Price Range (SGD)": "150 - 250",
+        "Location (Area)": "Purvis Street",
+        "Average Rating (out of 5)": 4.5,
+        "Food Composition": "Healthy"
+    },
+    {
+        "No.": 27,
+        "Restaurant Name": "Hashida Sushi",
+        "Cuisine Type": "Japanese",
+        "Price Range (SGD)": "250 - 400",
+        "Location (Area)": "Mohamed Sultan Road",
+        "Average Rating (out of 5)": 4.6,
+        "Food Composition": "Healthy"
+    },
+    {
+        "No.": 28,
+        "Restaurant Name": "Lei Garden",
+        "Cuisine Type": "Cantonese",
+        "Price Range (SGD)": "100 - 200",
+        "Location (Area)": "Chijmes",
+        "Average Rating (out of 5)": 4.4,
+        "Food Composition": "Healthy"
+    },
+    {
+        "No.": 29,
+        "Restaurant Name": "Shinji by Kanesaka (Carlton)",
+        "Cuisine Type": "Japanese",
+        "Price Range (SGD)": "250 - 400",
+        "Location (Area)": "Bras Basah",
+        "Average Rating (out of 5)": 4.6,
+        "Food Composition": "Healthy"
+    },
+    {
+        "No.": 30,
+        "Restaurant Name": "Summerhouse",
+        "Cuisine Type": "French-Asian",
+        "Price Range (SGD)": "100 - 200",
+        "Location (Area)": "Seletar",
+        "Average Rating (out of 5)": 4.5,
+        "Food Composition": "Healthy"
+    },
+    {
+        "No.": 31,
+        "Restaurant Name": "Teppei",
+        "Cuisine Type": "Japanese",
+        "Price Range (SGD)": "80 - 150",
+        "Location (Area)": "Tanjong Pagar",
+        "Average Rating (out of 5)": 4.5,
+        "Food Composition": "Healthy"
+    },
+    {
+        "No.": 32,
+        "Restaurant Name": "Tippling Club",
+        "Cuisine Type": "Modern European",
+        "Price Range (SGD)": "150 - 250",
+        "Location (Area)": "Tanjong Pagar",
+        "Average Rating (out of 5)": 4.5,
+        "Food Composition": "Healthy"
+    },
+    {
+        "No.": 33,
+        "Restaurant Name": "Violet Oon Satay Bar & Grill",
+        "Cuisine Type": "Peranakan",
+        "Price Range (SGD)": "50 - 100",
+        "Location (Area)": "Clarke Quay",
+        "Average Rating (out of 5)": 4.4,
+        "Food Composition": "Healthy"
+    },
+    {
+        "No.": 34,
+        "Restaurant Name": "Z\u00e9n",
+        "Cuisine Type": "Scandinavian",
+        "Price Range (SGD)": "400 - 600",
+        "Location (Area)": "Bukit Pasoh",
+        "Average Rating (out of 5)": 4.7,
+        "Food Composition": "Healthy"
+    },
+    {
+        "No.": 35,
+        "Restaurant Name": "Akira Back",
+        "Cuisine Type": "Japanese-Korean",
+        "Price Range (SGD)": "100 - 200",
+        "Location (Area)": "South Beach",
+        "Average Rating (out of 5)": 4.5,
+        "Food Composition": "Healthy"
+    },
+    {
+        "No.": 36,
+        "Restaurant Name": "Artichoke",
+        "Cuisine Type": "Middle Eastern",
+        "Price Range (SGD)": "50 - 100",
+        "Location (Area)": "Bugis",
+        "Average Rating (out of 5)": 4.4,
+        "Food Composition": "Healthy"
+    },
+    {
+        "No.": 37,
+        "Restaurant Name": "Bistecca Tuscan Steakhouse",
+        "Cuisine Type": "Italian Steakhouse",
+        "Price Range (SGD)": "150 - 250",
+        "Location (Area)": "Mohamed Sultan Road",
+        "Average Rating (out of 5)": 4.5,
+        "Food Composition": "Unhealthy"
+    },
+    {
+        "No.": 38,
+        "Restaurant Name": "Blue Ginger",
+        "Cuisine Type": "Peranakan",
+        "Price Range (SGD)": "50 - 100",
+        "Location (Area)": "Tanjong Pagar",
+        "Average Rating (out of 5)": 4.4,
+        "Food Composition": "Healthy"
+    },
+    {
+        "No.": 39,
+        "Restaurant Name": "Burnt Ends Bakery",
+        "Cuisine Type": "Bakery",
+        "Price Range (SGD)": "10 - 20",
+        "Location (Area)": "Dempsey Hill",
+        "Average Rating (out of 5)": 4.5,
+        "Food Composition": "Unhealthy"
+    },
+    {
+        "No.": 40,
+        "Restaurant Name": "Caffe Fernet",
+        "Cuisine Type": "Italian",
+        "Price Range (SGD)": "50 - 100",
+        "Location (Area)": "Collyer Quay",
+        "Average Rating (out of 5)": 4.5,
+        "Food Composition": "Healthy"
+    },
+    {
+        "No.": 41,
+        "Restaurant Name": "Chatterbox",
+        "Cuisine Type": "Local",
+        "Price Range (SGD)": "30 - 50",
+        "Location (Area)": "Orchard",
+        "Average Rating (out of 5)": 4.3,
+        "Food Composition": "Unhealthy"
+    },
+    {
+        "No.": 42,
+        "Restaurant Name": "Colony",
+        "Cuisine Type": "International Buffet",
+        "Price Range (SGD)": "80 - 150",
+        "Location (Area)": "Marina Bay",
+        "Average Rating (out of 5)": 4.5,
+        "Food Composition": "Unhealthy"
+    },
+    {
+        "No.": 43,
+        "Restaurant Name": "Cuturi Gallery",
+        "Cuisine Type": "Italian",
+        "Price Range (SGD)": "50 - 100",
+        "Location (Area)": "Orchard",
+        "Average Rating (out of 5)": 4.4,
+        "Food Composition": "Healthy"
+    },
+    {
+        "No.": 44,
+        "Restaurant Name": "Esora",
+        "Cuisine Type": "Japanese",
+        "Price Range (SGD)": "250 - 400",
+        "Location (Area)": "Mohamed Sultan Road",
+        "Average Rating (out of 5)": 4.6,
+        "Food Composition": "Healthy"
+    },
+    {
+        "No.": 45,
+        "Restaurant Name": "Fat Cow",
+        "Cuisine Type": "Japanese Steakhouse",
+        "Price Range (SGD)": "150 - 250",
+        "Location (Area)": "Orchard",
+        "Average Rating (out of 5)": 4.5,
+        "Food Composition": "Unhealthy"
+    },
+    {
+        "No.": 46,
+        "Restaurant Name": "Fat Prince",
+        "Cuisine Type": "Middle Eastern",
+        "Price Range (SGD)": "50 - 100",
+        "Location (Area)": "Tanjong Pagar",
+        "Average Rating (out of 5)": 4.4,
+        "Food Composition": "Healthy"
+    },
+    {
+        "No.": 47,
+        "Restaurant Name": "FOC Sentosa",
+        "Cuisine Type": "Spanish",
+        "Price Range (SGD)": "100 - 200",
+        "Location (Area)": "Sentosa",
+        "Average Rating (out of 5)": 4.5,
+        "Food Composition": "Healthy"
+    },
+    {
+        "No.": 48,
+        "Restaurant Name": "Garang Grill",
+        "Cuisine Type": "Local Grill",
+        "Price Range (SGD)": "50 - 100",
+        "Location (Area)": "Bukit Timah",
+        "Average Rating (out of 5)": 4.4,
+        "Food Composition": "Unhealthy"
+    },
+    {
+        "No.": 49,
+        "Restaurant Name": "Gattopardo Ristorante di Mare",
+        "Cuisine Type": "Italian Seafood",
+        "Price Range (SGD)": "100 - 200",
+        "Location (Area)": "Tanjong Pagar",
+        "Average Rating (out of 5)": 4.5,
+        "Food Composition": "Healthy"
+    },
+    {
+        "No.": 50,
+        "Restaurant Name": "Gyu-Kaku",
+        "Cuisine Type": "Japanese BBQ",
+        "Price Range (SGD)": "50 - 100",
+        "Location (Area)": "Various Locations",
+        "Average Rating (out of 5)": 4.3,
+        "Food Composition": "Unhealthy"
+    },
+    {
+        "No.": 51,
+        "Restaurant Name": "Halia",
+        "Cuisine Type": "European-Asian",
+        "Price Range (SGD)": "50 - 100",
+        "Location (Area)": "Botanic Gardens",
+        "Average Rating (out of 5)": 4.4,
+        "Food Composition": "Healthy"
+    },
+    {
+        "No.": 52,
+        "Restaurant Name": "Imperial Treasure Super Peking Duck",
+        "Cuisine Type": "Chinese",
+        "Price Range (SGD)": "100 - 200",
+        "Location (Area)": "Orchard",
+        "Average Rating (out of 5)": 4.5,
+        "Food Composition": "Unhealthy"
+    },
+    {
+        "No.": 53,
+        "Restaurant Name": "Jaan by Kirk Westaway",
+        "Cuisine Type": "Modern British",
+        "Price Range (SGD)": "250 - 400",
+        "Location (Area)": "City Hall",
+        "Average Rating (out of 5)": 4.7,
+        "Food Composition": "Healthy"
+    },
+    {
+        "No.": 54,
+        "Restaurant Name": "Kinki Restaurant + Bar",
+        "Cuisine Type": "Japanese",
+        "Price Range (SGD)": "50 - 100",
+        "Location (Area)": "Marina Bay",
+        "Average Rating (out of 5)": 4.4,
+        "Food Composition": "Healthy"
+    },
+    {
+        "No.": 55,
+        "Restaurant Name": "Koma",
+        "Cuisine Type": "Japanese",
+        "Price Range (SGD)": "150 - 250",
+        "Location (Area)": "Marina Bay Sands",
+        "Average Rating (out of 5)": 4.5,
+        "Food Composition": "Healthy"
+    },
+    {
+        "No.": 56,
+        "Restaurant Name": "Labyrinth",
+        "Cuisine Type": "Modern Singaporean",
+        "Price Range (SGD)": "150 - 250",
+        "Location (Area)": "Esplanade",
+        "Average Rating (out of 5)": 4.6,
+        "Food Composition": "Healthy"
+    },
+    {
+        "No.": 57,
+        "Restaurant Name": "L'Atelier de Jo\u00ebl Robuchon",
+        "Cuisine Type": "French",
+        "Price Range (SGD)": "400 - 600",
+        "Location (Area)": "Sentosa",
+        "Average Rating (out of 5)": 4.7,
+        "Food Composition": "Healthy"
+    },
+    {
+        "No.": 58,
+        "Restaurant Name": "Level33",
+        "Cuisine Type": "European",
+        "Price Range (SGD)": "100 - 200",
+        "Location (Area)": "Marina Bay",
+        "Average Rating (out of 5)": 4.5,
+        "Food Composition": "Healthy"
+    },
+    {
+        "No.": 59,
+        "Restaurant Name": "Long Beach Seafood",
+        "Cuisine Type": "Seafood",
+        "Price Range (SGD)": "50 - 100",
+        "Location (Area)": "East Coast",
+        "Average Rating (out of 5)": 4.4,
+        "Food Composition": "Healthy"
+    },
+    {
+        "No.": 60,
+        "Restaurant Name": "Luke's Oyster Bar & Chop House",
+        "Cuisine Type": "American",
+        "Price Range (SGD)": "100 - 200",
+        "Location (Area)": "Chinatown",
+        "Average Rating (out of 5)": 4.5,
+        "Food Composition": "Healthy"
+    },
+    {
+        "No.": 61,
+        "Restaurant Name": "Mag's Wine Kitchen",
+        "Cuisine Type": "French",
+        "Price Range (SGD)": "100 - 200",
+        "Location (Area)": "Keong Saik",
+        "Average Rating (out of 5)": 4.4,
+        "Food Composition": "Healthy"
+    },
+    {
+        "No.": 62,
+        "Restaurant Name": "Man Man Japanese Unagi Restaurant",
+        "Cuisine Type": "Japanese",
+        "Price Range (SGD)": "50 - 100",
+        "Location (Area)": "Tanjong Pagar",
+        "Average Rating (out of 5)": 4.4,
+        "Food Composition": "Healthy"
+    },
+    {
+        "No.": 63,
+        "Restaurant Name": "Mott 32",
+        "Cuisine Type": "Chinese",
+        "Price Range (SGD)": "150 - 250",
+        "Location (Area)": "Marina Bay Sands",
+        "Average Rating (out of 5)": 4.5,
+        "Food Composition": "Unhealthy"
+    },
+    {
+        "No.": 64,
+        "Restaurant Name": "National Kitchen by Violet Oon",
+        "Cuisine Type": "Peranakan",
+        "Price Range (SGD)": "50 - 100",
+        "Location (Area)": "City Hall",
+        "Average Rating (out of 5)": 4.5,
+        "Food Composition": "Healthy"
+    },
+    {
+        "No.": 65,
+        "Restaurant Name": "Nouri",
+        "Cuisine Type": "Modern European-Asian",
+        "Price Range (SGD)": "150 - 250",
+        "Location (Area)": "Amoy Street",
+        "Average Rating (out of 5)": 4.6,
+        "Food Composition": "Healthy"
+    },
+    {
+        "No.": 66,
+        "Restaurant Name": "Osteria Mozza",
+        "Cuisine Type": "Italian",
+        "Price Range (SGD)": "150 - 250",
+        "Location (Area)": "Marina Bay Sands",
+        "Average Rating (out of 5)": 4.5,
+        "Food Composition": "Unhealthy"
+    },
+    {
+        "No.": 67,
+        "Restaurant Name": "Palm Beach Seafood",
+        "Cuisine Type": "Seafood",
+        "Price Range (SGD)": "50 - 100",
+        "Location (Area)": "Fullerton",
+        "Average Rating (out of 5)": 4.4,
+        "Food Composition": "Healthy"
+    },
+    {
+        "No.": 68,
+        "Restaurant Name": "Preludio",
+        "Cuisine Type": "Modern European",
+        "Price Range (SGD)": "150 - 250",
+        "Location (Area)": "Raffles Place",
+        "Average Rating (out of 5)": 4.5,
+        "Food Composition": "Healthy"
+    },
+    {
+        "No.": 69,
+        "Restaurant Name": "PS.Cafe",
+        "Cuisine Type": "Western",
+        "Price Range (SGD)": "50 - 100",
+        "Location (Area)": "Various Locations",
+        "Average Rating (out of 5)": 4.3,
+        "Food Composition": "Unhealthy"
+    },
+    {
+        "No.": 70,
+        "Restaurant Name": "Rang Mahal",
+        "Cuisine Type": "Indian",
+        "Price Range (SGD)": "100 - 200",
+        "Location (Area)": "Orchard",
+        "Average Rating (out of 5)": 4.4,
+        "Food Composition": "Healthy"
+    },
+    {
+        "No.": 71,
+        "Restaurant Name": "Salted & Hung",
+        "Cuisine Type": "Modern Australian",
+        "Price Range (SGD)": "100 - 200",
+        "Location (Area)": "Purvis Street",
+        "Average Rating (out of 5)": 4.5,
+        "Food Composition": "Healthy"
+    },
+    {
+        "No.": 72,
+        "Restaurant Name": "Sushi Kimura",
+        "Cuisine Type": "Japanese",
+        "Price Range (SGD)": "250 - 400",
+        "Location (Area)": "Orchard",
+        "Average Rating (out of 5)": 4.6,
+        "Food Composition": "Healthy"
+    },
+    {
+        "No.": 73,
+        "Restaurant Name": "Table at 7",
+        "Cuisine Type": "European-Asian",
+        "Price Range (SGD)": "100 - 200",
+        "Location (Area)": "Mohamed Sultan Road",
+        "Average Rating (out of 5)": 4.4,
+        "Food Composition": "Healthy"
+    },
+    {
+        "No.": 74,
+        "Restaurant Name": "The Dempsey Cookhouse & Bar",
+        "Cuisine Type": "Modern European",
+        "Price Range (SGD)": "100 - 200",
+        "Location (Area)": "Dempsey Hill",
+        "Average Rating (out of 5)": 4.5,
+        "Food Composition": "Healthy"
+    },
+    {
+        "No.": 75,
+        "Restaurant Name": "The Song of India",
+        "Cuisine Type": "Indian",
+        "Price Range (SGD)": "100 - 200",
+        "Location (Area)": "Newton",
+        "Average Rating (out of 5)": 4.4,
+        "Food Composition": "Healthy"
+    },
+    {
+        "No.": 76,
+        "Restaurant Name": "Vianney Massot Restaurant",
+        "Cuisine Type": "French",
+        "Price Range (SGD)": "250 - 400",
+        "Location (Area)": "Outram",
+        "Average Rating (out of 5)": 4.6,
+        "Food Composition": "Healthy"
+    },
+    {
+        "No.": 77,
+        "Restaurant Name": "Wild Rocket",
+        "Cuisine Type": "Modern Singaporean",
+        "Price Range (SGD)": "50 - 100",
+        "Location (Area)": "Mount Emily",
+        "Average Rating (out of 5)": 4.4,
+        "Food Composition": "Healthy"
+    },
+    {
+        "No.": 78,
+        "Restaurant Name": "Yan Ting",
+        "Cuisine Type": "Cantonese",
+        "Price Range (SGD)": "100 - 200",
+        "Location (Area)": "Orchard",
+        "Average Rating (out of 5)": 4.5,
+        "Food Composition": "Unhealthy"
+    },
+    {
+        "No.": 79,
+        "Restaurant Name": "Wild Blaze",
+        "Cuisine Type": "Steakhouse",
+        "Price Range (SGD)": "100 - 200",
+        "Location (Area)": "Tanjong Pagar",
+        "Average Rating (out of 5)": 4.5,
+        "Food Composition": "Unhealthy"
+    },
+    {
+        "No.": 80,
+        "Restaurant Name": "Fourgather",
+        "Cuisine Type": "Thai",
+        "Price Range (SGD)": "50 - 100",
+        "Location (Area)": "Telok Ayer",
+        "Average Rating (out of 5)": 4.4,
+        "Food Composition": "Healthy"
+    },
+    {
+        "No.": 81,
+        "Restaurant Name": "L'Antica Pizzeria Da Michele",
+        "Cuisine Type": "Italian",
+        "Price Range (SGD)": "50 - 100",
+        "Location (Area)": "Club Street",
+        "Average Rating (out of 5)": 4.5,
+        "Food Composition": "Unhealthy"
+    },
+    {
+        "No.": 82,
+        "Restaurant Name": "The Coconut Club",
+        "Cuisine Type": "Malay",
+        "Price Range (SGD)": "30 - 50",
+        "Location (Area)": "Beach Road",
+        "Average Rating (out of 5)": 4.4,
+        "Food Composition": "Unhealthy"
+    },
+    {
+        "No.": 83,
+        "Restaurant Name": "The Prince",
+        "Cuisine Type": "Middle Eastern",
+        "Price Range (SGD)": "50 - 100",
+        "Location (Area)": "Tanjong Pagar",
+        "Average Rating (out of 5)": 4.4,
+        "Food Composition": "Healthy"
+    },
+    {
+        "No.": 84,
+        "Restaurant Name": "Greenwood Fish Market",
+        "Cuisine Type": "Seafood",
+        "Price Range (SGD)": "50 - 100",
+        "Location (Area)": "Bukit Timah",
+        "Average Rating (out of 5)": 4.4,
+        "Food Composition": "Healthy"
+    },
+    {
+        "No.": 85,
+        "Restaurant Name": "Le Clos",
+        "Cuisine Type": "French",
+        "Price Range (SGD)": "100 - 200",
+        "Location (Area)": "New Bahru",
+        "Average Rating (out of 5)": 4.5,
+        "Food Composition": "Healthy"
+    },
+    {
+        "No.": 86,
+        "Restaurant Name": "DAILY BEER",
+        "Cuisine Type": "Bar",
+        "Price Range (SGD)": "30 - 50",
+        "Location (Area)": "Tanjong Pagar",
+        "Average Rating (out of 5)": 4.3,
+        "Food Composition": "Unhealthy"
+    },
+    {
+        "No.": 87,
+        "Restaurant Name": "Neon Pigeon",
+        "Cuisine Type": "Japanese",
+        "Price Range (SGD)": "50 - 100",
+        "Location (Area)": "Tanjong Pagar",
+        "Average Rating (out of 5)": 4.4,
+        "Food Composition": "Healthy"
+    },
+    {
+        "No.": 88,
+        "Restaurant Name": "FICO",
+        "Cuisine Type": "Italian",
+        "Price Range (SGD)": "50 - 100",
+        "Location (Area)": "East Coast",
+        "Average Rating (out of 5)": 4.4,
+        "Food Composition": "Unhealthy"
+    },
+    {
+        "No.": 89,
+        "Restaurant Name": "Bar Cicheti",
+        "Cuisine Type": "Italian",
+        "Price Range (SGD)": "50 - 100",
+        "Location (Area)": "Keong Saik",
+        "Average Rating (out of 5)": 4.4,
+        "Food Composition": "Unhealthy"
+    },
+    {
+        "No.": 90,
+        "Restaurant Name": "Nixta",
+        "Cuisine Type": "Mexican",
+        "Price Range (SGD)": "50 - 100",
+        "Location (Area)": "Tanjong Pagar",
+        "Average Rating (out of 5)": 4.4,
+        "Food Composition": "Unhealthy"
+    },
+    {
+        "No.": 91,
+        "Restaurant Name": "Marcy's",
+        "Cuisine Type": "Seafood",
+        "Price Range (SGD)": "50 - 100",
+        "Location (Area)": "Duxton Hill",
+        "Average Rating (out of 5)": 4.4,
+        "Food Composition": "Healthy"
+    },
+    {
+        "No.": 92,
+        "Restaurant Name": "Carlitos",
+        "Cuisine Type": "Spanish",
+        "Price Range (SGD)": "50 - 100",
+        "Location (Area)": "Tanjong Pagar",
+        "Average Rating (out of 5)": 4.4,
+        "Food Composition": "Unhealthy"
+    },
+    {
+        "No.": 93,
+        "Restaurant Name": "Revolver",
+        "Cuisine Type": "Indian",
+        "Price Range (SGD)": "100 - 200",
+        "Location (Area)": "Tanjong Pagar",
+        "Average Rating (out of 5)": 4.5,
+        "Food Composition": "Healthy"
+    },
+    {
+        "No.": 94,
+        "Restaurant Name": "AIR",
+        "Cuisine Type": "Farm-to-Table",
+        "Price Range (SGD)": "100 - 200",
+        "Location (Area)": "Tanjong Pagar",
+        "Average Rating (out of 5)": 4.5,
+        "Food Composition": "Healthy"
+    },
+    {
+        "No.": 95,
+        "Restaurant Name": "Tamba",
+        "Cuisine Type": "West-African",
+        "Price Range (SGD)": "100 - 200",
+        "Location (Area)": "Tanjong Pagar",
+        "Average Rating (out of 5)": 4.5,
+        "Food Composition": "Healthy"
+    },
+    {
+        "No.": 96,
+        "Restaurant Name": "JB Ah Meng",
+        "Cuisine Type": "Chinese",
+        "Price Range (SGD)": "30 - 50",
+        "Location (Area)": "Geylang",
+        "Average Rating (out of 5)": 4.4,
+        "Food Composition": "Unhealthy"
+    },
+    {
+        "No.": 97,
+        "Restaurant Name": "Saint Pierre",
+        "Cuisine Type": "French",
+        "Price Range (SGD)": "250 - 400",
+        "Location (Area)": "Marina Bay",
+        "Average Rating (out of 5)": 4.7,
+        "Food Composition": "Healthy"
+    },
+    {
+        "No.": 98,
+        "Restaurant Name": "Iggy's",
+        "Cuisine Type": "Modern European",
+        "Price Range (SGD)": "250 - 400",
+        "Location (Area)": "Orchard",
+        "Average Rating (out of 5)": 4.7,
+        "Food Composition": "Healthy"
+    },
+    {
+        "No.": 99,
+        "Restaurant Name": "Odette",
+        "Cuisine Type": "French",
+        "Price Range (SGD)": "350 - 500",
+        "Location (Area)": "City Hall",
+        "Average Rating (out of 5)": 4.8,
+        "Food Composition": "Healthy"
+    },
+    {
+        "No.": 100,
+        "Restaurant Name": "Burnt Ends",
+        "Cuisine Type": "Australian Barbecue",
+        "Price Range (SGD)": "100 - 200",
+        "Location (Area)": "Chinatown",
+        "Average Rating (out of 5)": 4.7,
+        "Food Composition": "Unhealthy"
+    },
+    {
+        "No.": 101,
+        "Restaurant Name": "Les Amis",
+        "Cuisine Type": "French",
+        "Price Range (SGD)": "300 - 450",
+        "Location (Area)": "Orchard",
+        "Average Rating (out of 5)": 4.8,
+        "Food Composition": "Healthy"
+    },
+    {
+        "No.": 102,
+        "Restaurant Name": "Candlenut",
+        "Cuisine Type": "Peranakan",
+        "Price Range (SGD)": "80 - 150",
+        "Location (Area)": "Dempsey Hill",
+        "Average Rating (out of 5)": 4.6,
+        "Food Composition": "Healthy"
+    },
+    {
+        "No.": 103,
+        "Restaurant Name": "Hill Street Tai Hwa Pork Noodle",
+        "Cuisine Type": "Street Food",
+        "Price Range (SGD)": "5 - 10",
+        "Location (Area)": "Kallang",
+        "Average Rating (out of 5)": 4.5,
+        "Food Composition": "Unhealthy"
+    },
+    {
+        "No.": 104,
+        "Restaurant Name": "Jaan",
+        "Cuisine Type": "Modern French",
+        "Price Range (SGD)": "250 - 400",
+        "Location (Area)": "City Hall",
+        "Average Rating (out of 5)": 4.7,
+        "Food Composition": "Healthy"
+    },
+    {
+        "No.": 105,
+        "Restaurant Name": "Shinji by Kanesaka",
+        "Cuisine Type": "Japanese",
+        "Price Range (SGD)": "250 - 400",
+        "Location (Area)": "Bras Basah",
+        "Average Rating (out of 5)": 4.6,
+        "Food Composition": "Healthy"
+    },
+    {
+        "No.": 106,
+        "Restaurant Name": "Waku Ghin",
+        "Cuisine Type": "Japanese-European",
+        "Price Range (SGD)": "400 - 600",
+        "Location (Area)": "Marina Bay Sands",
+        "Average Rating (out of 5)": 4.7,
+        "Food Composition": "Healthy"
+    },
+    {
+        "No.": 107,
+        "Restaurant Name": "Corner House",
+        "Cuisine Type": "Gastro-Botanica",
+        "Price Range (SGD)": "150 - 300",
+        "Location (Area)": "Botanic Gardens",
+        "Average Rating (out of 5)": 4.6,
+        "Food Composition": "Healthy"
+    },
+    {
+        "No.": 108,
+        "Restaurant Name": "Labyrinth",
+        "Cuisine Type": "Modern Singaporean",
+        "Price Range (SGD)": "150 - 250",
+        "Location (Area)": "Esplanade",
+        "Average Rating (out of 5)": 4.6,
+        "Food Composition": "Healthy"
+    },
+    {
+        "No.": 109,
+        "Restaurant Name": "Meta",
+        "Cuisine Type": "Contemporary Asian",
+        "Price Range (SGD)": "150 - 250",
+        "Location (Area)": "Keong Saik",
+        "Average Rating (out of 5)": 4.6,
+        "Food Composition": "Healthy"
+    },
+    {
+        "No.": 110,
+        "Restaurant Name": "Summer Pavilion",
+        "Cuisine Type": "Cantonese",
+        "Price Range (SGD)": "100 - 200",
+        "Location (Area)": "Marina Bay",
+        "Average Rating (out of 5)": 4.6,
+        "Food Composition": "Healthy"
+    },
+    {
+        "No.": 111,
+        "Restaurant Name": "Shisen Hanten",
+        "Cuisine Type": "Szechuan",
+        "Price Range (SGD)": "100 - 200",
+        "Location (Area)": "Orchard",
+        "Average Rating (out of 5)": 4.5,
+        "Food Composition": "Unhealthy"
+    },
+    {
+        "No.": 112,
+        "Restaurant Name": "Sushi Ichi",
+        "Cuisine Type": "Japanese",
+        "Price Range (SGD)": "200 - 350",
+        "Location (Area)": "Orchard",
+        "Average Rating (out of 5)": 4.6,
+        "Food Composition": "Healthy"
+    },
+    {
+        "No.": 113,
+        "Restaurant Name": "Alma by Juan Amador",
+        "Cuisine Type": "European-Asian",
+        "Price Range (SGD)": "150 - 250",
+        "Location (Area)": "Orchard",
+        "Average Rating (out of 5)": 4.6,
+        "Food Composition": "Healthy"
+    },
+    {
+        "No.": 114,
+        "Restaurant Name": "Rhubarb Le Restaurant",
+        "Cuisine Type": "French",
+        "Price Range (SGD)": "150 - 250",
+        "Location (Area)": "Duxton Hill",
+        "Average Rating (out of 5)": 4.6,
+        "Food Composition": "Healthy"
+    },
+    {
+        "No.": 115,
+        "Restaurant Name": "Cheek Bistro",
+        "Cuisine Type": "Modern Australian",
+        "Price Range (SGD)": "100 - 200",
+        "Location (Area)": "Boon Tat Street",
+        "Average Rating (out of 5)": 4.5,
+        "Food Composition": "Healthy"
+    },
+    {
+        "No.": 116,
+        "Restaurant Name": "Garibaldi",
+        "Cuisine Type": "Italian",
+        "Price Range (SGD)": "100 - 200",
+        "Location (Area)": "Purvis Street",
+        "Average Rating (out of 5)": 4.5,
+        "Food Composition": "Healthy"
+    },
+    {
+        "No.": 117,
+        "Restaurant Name": "Putien (Kitchener Road)",
+        "Cuisine Type": "Fujian",
+        "Price Range (SGD)": "50 - 100",
+        "Location (Area)": "Kitchener Road",
+        "Average Rating (out of 5)": 4.4,
+        "Food Composition": "Healthy"
+    },
+    {
+        "No.": 118,
+        "Restaurant Name": "Song of India",
+        "Cuisine Type": "Indian",
+        "Price Range (SGD)": "100 - 200",
+        "Location (Area)": "Newton",
+        "Average Rating (out of 5)": 4.4,
+        "Food Composition": "Healthy"
+    },
+    {
+        "No.": 119,
+        "Restaurant Name": "Whitegrass",
+        "Cuisine Type": "Modern Australian",
+        "Price Range (SGD)": "150 - 250",
+        "Location (Area)": "Chijmes",
+        "Average Rating (out of 5)": 4.5,
+        "Food Composition": "Healthy"
+    },
+    {
+        "No.": 120,
+        "Restaurant Name": "Braci",
+        "Cuisine Type": "Italian",
+        "Price Range (SGD)": "150 - 250",
+        "Location (Area)": "Boat Quay",
+        "Average Rating (out of 5)": 4.5,
+        "Food Composition": "Healthy"
+    }
+]
