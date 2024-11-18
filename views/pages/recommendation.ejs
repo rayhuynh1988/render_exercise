@@ -8,27 +8,30 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    <%- include('../partials/navbar'); %>
+    <main class="container">
+        <%- include('../partials/navbar'); %>
 
-<main class="container">
-    <h2>Recommendations for <%= cuisine %> Cuisine</h2>
-    <p><strong>Preferred Dinner Time: </strong><%= dinnerTime %></p>
-    <p><strong>Price Range: </strong><%= price %></p>
-    <p><strong>Food Composition: </strong><%= composition %></p>
+        <h1>Hello, <%= name %>!</h1>
+        <p>Here are your dinner recommendations based on your preferences:</p>
+        <p><strong>Cuisine:</strong> <%= cuisine %></p>
+        <p><strong>Price Range:</strong> <%= price %></p>
+        <p><strong>Food Composition:</strong> <%= food_composition %></p>
 
-    <% if (recommendations && recommendations.length > 0) { %>
-        <ul>
-            <% recommendations.forEach(item => { %>
-                <li>
-                    <strong><a href="<%= item.link %>" target="_blank"><%= item.title %></a></strong>
-                    <p><%= item.snippet %></p>
-                    <p><strong>Location: </strong><%= item.location %></p>
-                </li>
-            <% }); %>
-        </ul>
-    <% } else { %>
-        <p>No recommendations available for your preferences.</p>
-    <% } %>
-</main>
+        <% if (recommendations && recommendations.length > 0) { %>
+            <ul>
+                <% recommendations.forEach((restaurant) => { %>
+                    <li>
+                        <strong><%= restaurant.title %></strong>
+                        <p><strong>Cuisine:</strong> <%= restaurant.cuisine %></p>
+                        <p><strong>Price:</strong> <%= restaurant.price %></p>
+                        <p><strong>Location:</strong> <%= restaurant.location %></p>
+                        <p><strong>Food Composition:</strong> <%= restaurant.composition %></p>
+                    </li>
+                <% }); %>
+            </ul>
+        <% } else { %>
+            <p>No recommendations found for your preferences. Try changing your filters!</p>
+        <% } %>
+    </main>
 </body>
 </html>

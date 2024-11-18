@@ -6,26 +6,17 @@
     <title>Create a Post</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"/>
     <link rel="stylesheet" href="/css/style.css">
-    <!-- Google Analytics (optional) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WJXZ0LZV6L"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-WJXZ0LZV6L');
-    </script>
 </head>
 <body>
     <main class="container">
         <%- include('../partials/navbar'); %>
 
-        <!-- Create a New Post Form -->
         <div class="welcome-container">
             <h1>Submit Dinner Preferences</h1>
         </div>
 
         <div class="create-post-container">
-            <form method="post" action="/new">
+            <form method="get" action="/recommendations">
                 <fieldset>
                   <label>
                     Name
@@ -52,7 +43,6 @@
                     <label>
                         Dinner Time
                         <select name="dinner_time" required>
-                            <option value="No need for dinner">No need for dinner</option>
                             <option value="6:00 PM">6:00 PM</option>
                             <option value="6:30 PM">6:30 PM</option>
                             <option value="7:00 PM">7:00 PM</option>
@@ -66,20 +56,30 @@
 
                 <fieldset>
                     <label>
-                        Dinner Mood
-                        <select name="dinner_mood" required>
-                            <option value="Anything for dinner">Anything for dinner</option>
-                            <option value="I would prefer to disregard other opinions">I would prefer to to disregard other opinions</option>
+                        Price Range
+                        <select name="price" required>
+                            <option value="$">Budget ($)</option>
+                            <option value="$$">Moderate ($$)</option>
+                            <option value="$$$">Expensive ($$$)</option>
+                            <option value="$$$$">Luxury ($$$$)</option>
+                            <option value="$$$$$">Premium ($$$$$)</option>
                         </select>
                     </label>
                 </fieldset>
-  
-                <input type="submit" value="🚀 Submit Dinner Preferences" />
-            </form>
-        </div>
 
-        <div class="cancel-create-post">
-          <a href="/">Cancel! Take me back home!</a>
+                <fieldset>
+                    <label>
+                        Food Composition
+                        <select name="food_composition" required>
+                            <option value="Healthy">Healthy</option>
+                            <option value="Tasty">Tasty</option>
+                            <option value="Healthy & Tasty">Healthy & Tasty</option>
+                        </select>
+                    </label>
+                </fieldset>
+
+                <input type="submit" value="🚀 Find Recommendations" />
+            </form>
         </div>
     </main>
 </body>

@@ -205,4 +205,42 @@ app.post('/cook-now', async (req, res) => {
       console.log(error);
       res.status(500).send("Internal Server Error.");
   }
+  const express = require('express');
+const app = express();
+
+app.set('view engine', 'ejs');
+app.use(express.urlencoded({ extended: true }));
+
+// Sample restaurant data (mocked top 100 restaurants in Singapore)
+const restaurants = [
+    { title: "Pasta Paradise", cuisine: "Italian", price: "$$", composition: "Healthy", location: "Orchard Road" },
+    { title: "Sushi Delight", cuisine: "Japanese", price: "$$$", composition: "Tasty", location: "Clarke Quay" },
+    { title: "Curry Junction", cuisine: "Indian", price: "$", composition: "Healthy & Tasty", location: "Little India" },
+    { title: "Taco Fiesta", cuisine: "Mexican", price: "$", composition: "Tasty", location: "Chinatown" },
+    { title: "Mediterranean Bliss", cuisine: "Mediterranean", price: "$$$$", composition: "Healthy", location: "Marina Bay" },
+    { title: "Bistro Francais", cuisine: "French", price: "$$$$", composition: "Healthy & Tasty", location: "Duxton Hill" },
+    // Add up to 100 more entries...
+];
+
+// Handle recommendations request
+app.get('/recommendations', (req, res) => {
+    const { name, cuisine, price, food_composition } = req.query;
+
+    // Filter restaurants based on user preferences
+    const filteredRestaurants = restaurants.filter(
+        (r) =>
+            r.cuisine === cuisine &&
+            r.price === price &&
+            r.composition.includes(food_composition)
+    );
+
+    res.render('recommendations', {
+        name,
+        cuisine,
+        price,
+        food_composition,
+        recommendations: filteredRestaurants,
+    });
+});
+
 });
