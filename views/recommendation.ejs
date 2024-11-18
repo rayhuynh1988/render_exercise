@@ -9,15 +9,39 @@
 </head>
 <body>
     <main class="container">
-        <%- include('../partials/navbar'); %>
+        <%- include('partials/navbar'); %>
 
         <div class="welcome-container">
             <h1>Your Dinner Recommendations</h1>
         </div>
 
         <div class="recommendations-container">
-            <% if (recommendations.length > 0) { %>
-                <% recommendations.forEach(rec => { %>
+            <% const hardcodedRecommendations = [
+                {
+                    "Restaurant Name": "Odette",
+                    "Cuisine Type": "French",
+                    "Price Range (SGD)": "350 - 500",
+                    "Location (Area)": "City Hall",
+                    "Average Rating (out of 5)": 4.8
+                },
+                {
+                    "Restaurant Name": "Burnt Ends",
+                    "Cuisine Type": "Australian Barbecue",
+                    "Price Range (SGD)": "100 - 200",
+                    "Location (Area)": "Chinatown",
+                    "Average Rating (out of 5)": 4.7
+                },
+                {
+                    "Restaurant Name": "Les Amis",
+                    "Cuisine Type": "French",
+                    "Price Range (SGD)": "300 - 450",
+                    "Location (Area)": "Orchard",
+                    "Average Rating (out of 5)": 4.8
+                }
+            ]; %>
+
+            <% if (hardcodedRecommendations.length > 0) { %>
+                <% hardcodedRecommendations.forEach(rec => { %>
                     <article class="recommendation">
                         <h2><%= rec["Restaurant Name"] %></h2>
                         <p><strong>Cuisine:</strong> <%= rec["Cuisine Type"] %></p>
@@ -27,7 +51,7 @@
                     </article>
                 <% }); %>
             <% } else { %>
-                <p>No recommendations found. Please adjust your preferences and try again.</p>
+                <p>No recommendations available at this time. Please try again later.</p>
             <% } %>
         </div>
 
