@@ -85,6 +85,52 @@ app.post("/delete/:id", async (req, res) => {
 app.listen(8080, () => {
   console.log("Server running on http://localhost:8080");
 });
+app.get('/recommendations', (req, res) => {
+  const { cuisine, dinnerTime, price, composition } = req.query;
+
+// Mock function to get recommendations based on user preferences
+  const recommendations = getRecommendations(cuisine, price, composition); 
+
+  res.render('recommendations', { 
+      cuisine, 
+      dinnerTime, 
+      price, 
+      composition, 
+      recommendations 
+  });
+});
+
+// Mock function: Generate recommendations
+function getRecommendations(cuisine, price, composition) {
+  const topRestaurants = [
+      // Example data for 200 restaurants
+      { 
+          title: "Restaurant A", 
+          link: "#", 
+          snippet: "Famous for its authentic Italian dishes.", 
+          cuisine: "italian", 
+          price: "$$$", 
+          composition: "healthy", 
+          location: "Orchard Road" 
+      },
+      { 
+          title: "Restaurant B", 
+          link: "#", 
+          snippet: "Delicious and healthy Chinese food.", 
+          cuisine: "chinese", 
+          price: "$$", 
+          composition: "healthy-tasty", 
+          location: "Marina Bay Sands" 
+      },
+      // More restaurants here...
+  ];
+
+  // Filter top restaurants based on user preferences
+  return topRestaurants.filter(
+      r => r.cuisine === cuisine && r.price === price && r.composition.includes(composition)
+  );
+}
+
 
 // Cook Now route
 app.post('/cook-now', async (req, res) => {

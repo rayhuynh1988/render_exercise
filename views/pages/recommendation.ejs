@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recommendations</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"/>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <%- include('../partials/navbar'); %>
+
+<main class="container">
+    <h2>Recommendations for <%= cuisine %> Cuisine</h2>
+    <p><strong>Preferred Dinner Time: </strong><%= dinnerTime %></p>
+    <p><strong>Price Range: </strong><%= price %></p>
+    <p><strong>Food Composition: </strong><%= composition %></p>
+
+    <% if (recommendations && recommendations.length > 0) { %>
+        <ul>
+            <% recommendations.forEach(item => { %>
+                <li>
+                    <strong><a href="<%= item.link %>" target="_blank"><%= item.title %></a></strong>
+                    <p><%= item.snippet %></p>
+                    <p><strong>Location: </strong><%= item.location %></p>
+                </li>
+            <% }); %>
+        </ul>
+    <% } else { %>
+        <p>No recommendations available for your preferences.</p>
+    <% } %>
+</main>
+</body>
+</html>

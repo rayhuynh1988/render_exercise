@@ -13,22 +13,40 @@
 <main class="container">
     <h2>Your Dinner Plan</h2>
 
-    <p><strong>Suggested Dinner Time: </strong><%= avgDinnerTime %></p>
-    <p><strong>Suggested Cuisine: </strong><%= cuisine %></p>
+    <!-- Form for input -->
+    <form action="/recommendations" method="GET">
+        <label for="cuisine">Choose a Cuisine:</label>
+        <select id="cuisine" name="cuisine" required>
+            <option value="italian">Italian</option>
+            <option value="chinese">Chinese</option>
+            <option value="indian">Indian</option>
+            <option value="mexican">Mexican</option>
+            <option value="japanese">Japanese</option>
+            <option value="thai">Thai</option>
+        </select>
 
-    <h3>Top Restaurants for <%= cuisine %>:</h3>
-    <% if (restaurants && restaurants.length > 0) { %>
-        <ul>
-            <% restaurants.forEach(restaurant => { %>
-                <li>
-                    <a href="<%= restaurant.link %>" target="_blank"><%= restaurant.title %></a>
-                    <p><%= restaurant.snippet %></p>
-                </li>
-            <% }); %>
-        </ul>
-    <% } else { %>
-        <p>No restaurants found for this cuisine.</p>
-    <% } %>
+        <label for="dinnerTime">Preferred Dinner Time:</label>
+        <input type="time" id="dinnerTime" name="dinnerTime" required>
+
+        <label for="price">Price Range:</label>
+        <select id="price" name="price" required>
+            <option value="$">Budget ($)</option>
+            <option value="$$">Moderate ($$)</option>
+            <option value="$$$">Expensive ($$$)</option>
+            <option value="$$$$">Luxury ($$$$)</option>
+            <option value="$$$$$">Premium ($$$$$)</option>
+        </select>
+
+        <label for="composition">Food Composition:</label>
+        <select id="composition" name="composition" required>
+            <option value="healthy">Healthy</option>
+            <option value="tasty">Tasty</option>
+            <option value="healthy-tasty">Healthy & Tasty</option>
+        </select>
+
+        <button type="submit">Submit</button>
+    </form>
 </main>
+
 </body>
 </html>
