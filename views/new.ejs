@@ -17,18 +17,19 @@
 
         <div class="preferences-form-container">
             <form method="post" action="/recommendations">
+                <!-- Alphabetically sorted cuisine options -->
                 <fieldset>
                     <label>
                         Preferred Cuisine
                         <select name="cuisine" required>
-                            <option value="Italian">Italian</option>
-                            <option value="Mexican">Mexican</option>
                             <option value="Chinese">Chinese</option>
-                            <option value="Indian">Indian</option>
-                            <option value="Japanese">Japanese</option>
                             <option value="French">French</option>
-                            <option value="Mediterranean">Mediterranean</option>
+                            <option value="Indian">Indian</option>
+                            <option value="Italian">Italian</option>
+                            <option value="Japanese">Japanese</option>
                             <option value="Korean">Korean</option>
+                            <option value="Mediterranean">Mediterranean</option>
+                            <option value="Mexican">Mexican</option>
                         </select>
                     </label>
                 </fieldset>
@@ -46,10 +47,51 @@
                     </label>
                 </fieldset>
 
+                <!-- Alphabetically sorted location options -->
                 <fieldset>
                     <label>
                         Location
-                        <input name="location" placeholder="Enter your location" required/>
+                        <select name="location" required>
+                            <option value="Amoy Street">Amoy Street</option>
+                            <option value="Beach Road">Beach Road</option>
+                            <option value="Boat Quay">Boat Quay</option>
+                            <option value="Botanic Gardens">Botanic Gardens</option>
+                            <option value="Bras Basah">Bras Basah</option>
+                            <option value="Bukit Pasoh">Bukit Pasoh</option>
+                            <option value="Bukit Timah">Bukit Timah</option>
+                            <option value="Bugis">Bugis</option>
+                            <option value="Chijmes">Chijmes</option>
+                            <option value="Chinatown">Chinatown</option>
+                            <option value="City Hall">City Hall</option>
+                            <option value="Clarke Quay">Clarke Quay</option>
+                            <option value="Club Street">Club Street</option>
+                            <option value="Collyer Quay">Collyer Quay</option>
+                            <option value="Dempsey Hill">Dempsey Hill</option>
+                            <option value="Duxton Hill">Duxton Hill</option>
+                            <option value="East Coast">East Coast</option>
+                            <option value="Esplanade">Esplanade</option>
+                            <option value="Fullerton">Fullerton</option>
+                            <option value="Geylang">Geylang</option>
+                            <option value="Keong Saik">Keong Saik</option>
+                            <option value="Kallang">Kallang</option>
+                            <option value="Kitchener Road">Kitchener Road</option>
+                            <option value="Marina Bay">Marina Bay</option>
+                            <option value="Marina Bay Sands">Marina Bay Sands</option>
+                            <option value="Mohamed Sultan Road">Mohamed Sultan Road</option>
+                            <option value="Mount Emily">Mount Emily</option>
+                            <option value="New Bahru">New Bahru</option>
+                            <option value="Newton">Newton</option>
+                            <option value="Orchard">Orchard</option>
+                            <option value="Outram">Outram</option>
+                            <option value="Purvis Street">Purvis Street</option>
+                            <option value="Raffles Place">Raffles Place</option>
+                            <option value="Seletar">Seletar</option>
+                            <option value="Sentosa">Sentosa</option>
+                            <option value="South Beach">South Beach</option>
+                            <option value="Tanjong Pagar">Tanjong Pagar</option>
+                            <option value="Telok Ayer">Telok Ayer</option>
+                            <option value="Various Locations">Various Locations</option>
+                        </select>
                     </label>
                 </fieldset>
 
