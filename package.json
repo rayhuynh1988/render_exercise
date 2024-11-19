@@ -4,6 +4,11 @@
   "description": "Sample Blog webapp for TechUp",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js", 
+    "dev": "nodemon index.js", 
+    "prisma:migrate": "npx prisma migrate dev --name init", 
+    "prisma:generate": "npx prisma generate", 
+    "prisma:seed": "npx prisma db seed", 
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -13,9 +18,13 @@
     "@prisma/client": "^5.22.0",
     "dotenv": "^16.4.5",
     "ejs": "^3.1.9",
-    "express": "^4.19.1"
+    "express": "^4.19.1",
+    "fs": "^0.0.1-security"
   },
   "devDependencies": {
     "prisma": "^5.22.0"
-  }
+  },
+  "prisma": {
+  "seed": "node prisma/seed.js"
+}
 }
