@@ -6,6 +6,26 @@
     <title>Home</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"/>
     <link rel="stylesheet" href="/css/style.css">
+    <style>
+        body {
+            background: url('/images/chinese_dinner.jpeg') no-repeat center center fixed;
+            background-size: cover;
+        }
+        .post-container {
+            background: rgba(255, 255, 255, 0.9); /* Transparent background for readability */
+            padding: 1rem;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+        .button-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .icon-trash {
+            font-size: 1.2rem;
+        }
+    </style>
 </head>
 <body>
     <main class="container">
@@ -48,13 +68,15 @@
                     <p><strong>Dietary Option:</strong> <%= restaurant.diet %></p>
                     <p><strong>Happy Visits:</strong> <span class="happy-visit-count">0</span></p>
                     <p><strong>Unhappy Visits:</strong> <span class="unhappy-visit-count">0</span></p>
-                    <button class="button happy-btn" style="background-color: green; color: white;">Happy Visit</button>
-                    <button class="button unhappy-btn" style="background-color: red; color: white;">Unhappy Visit</button>
-                    <form action="/delete/<%= restaurant.id %>" method="post" onsubmit="return confirm('Do you really want to delete this restaurant?');">
-                        <button class="outline primary" type="submit">
-                            <i class="icon-trash"></i>
-                        </button>
-                    </form>
+                    <div class="button-container">
+                        <button class="button happy-btn" style="background-color: green; color: white;">Happy Visit</button>
+                        <button class="button unhappy-btn" style="background-color: red; color: white;">Unhappy Visit</button>
+                        <form action="/delete/<%= restaurant.id %>" method="post" onsubmit="return confirm('Do you really want to delete this restaurant?');">
+                            <button class="outline primary" type="submit">
+                                <i class="icon-trash">🗑️</i>
+                            </button>
+                        </form>
+                    </div>
                 </article>
             <% }); %>
         </div>
