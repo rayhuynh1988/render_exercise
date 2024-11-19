@@ -89,7 +89,7 @@
         <!-- Filter Section -->
         <div class="filter-container">
             <div class="filter-title">What are you craving?</div>
-            <input type="text" id="filter-search" placeholder="Search by name, cuisine, location, diet, price ($), or rating">
+            <input type="text" id="filter-search" placeholder="Search by cuisine, location, diet, price, or rating">
         </div>
 
         <!-- Title After Filter -->
@@ -101,12 +101,13 @@
         <div id="restaurant-list">
             <% blogs.forEach(restaurant => { %>
                 <article class="post-container" 
-                         data-name="<%= restaurant.name.toLowerCase() %>"
                          data-cuisine="<%= restaurant.cuisine.toLowerCase() %>" 
                          data-location="<%= restaurant.location.toLowerCase() %>" 
                          data-diet="<%= restaurant.diet.toLowerCase() %>" 
                          data-rating="<%= restaurant.rating %>" 
                          data-price="<%= restaurant.price %>"
+                         data-happy-visits="0"
+                         data-unhappy-visits="0"
                          id="restaurant-<%= restaurant.id %>">
                     <h3><%= restaurant.name %></h3>
                     <p><strong>Cuisine:</strong> <%= restaurant.cuisine %></p>
@@ -114,23 +115,31 @@
                     <p><strong>Location:</strong> <%= restaurant.location %></p>
                     <p><strong>Rating:</strong> <%= restaurant.rating %> / 5</p>
                     <p><strong>Dietary Option:</strong> <%= restaurant.diet %></p>
+                    <p><strong>Happy Visits:</strong> <span class="happy-visit-count">0</span></p>
+                    <p><strong>Unhappy Visits:</strong> <span class="unhappy-visit-count">0</span></p>
+                    <div class="button-container">
+                        <button class="happy-btn">Happy Visit</button>
+                        <button class="unhappy-btn">Unhappy Visit</button>
+                        <form action="/delete/<%= restaurant.id %>" method="post" onsubmit="return confirm('Do you really want to remove this suggestion?');">
+                            <button class="remove-btn" type="submit">Remove Suggestion</button>
+                        </form>
+                    </div>
                 </article>
             <% }); %>
         </div>
     </main>
 
-    <!-- JavaScript for Filtering -->
+    <!-- JavaScript for Filtering and Ranking -->
     <script>
         const filterSearch = document.getElementById('filter-search');
-        const restaurants = Array.from(document.querySelectorAll('.post-container'));
+        const restaurantList = document.getElementById('restaurant-list');
+        const restaurants = Array.from(restaurantList.querySelectorAll('.post-container'));
 
         function filterRestaurants() {
             const searchValue = filterSearch.value.toLowerCase();
-            const isPriceSearch = searchValue.startsWith('$');
-            const inputValueAsNumber = parseFloat(searchValue.replace('$', '').trim());
+            const inputValueAsNumber = parseFloat(searchValue);
 
             restaurants.forEach(restaurant => {
-                const matchesName = restaurant.dataset.name.includes(searchValue);
                 const matchesCuisine = restaurant.dataset.cuisine.includes(searchValue);
                 const matchesLocation = restaurant.dataset.location.includes(searchValue);
                 const matchesDiet = restaurant.dataset.diet.includes(searchValue);
@@ -138,10 +147,10 @@
                 const price = parseFloat(restaurant.dataset.price || "0");
                 const rating = parseFloat(restaurant.dataset.rating || "0");
 
-                const matchesPrice = isPriceSearch && !isNaN(inputValueAsNumber) && inputValueAsNumber >= price;
-                const matchesRating = !isPriceSearch && !isNaN(inputValueAsNumber) && inputValueAsNumber >= rating;
+                const matchesPrice = !isNaN(inputValueAsNumber) && inputValueAsNumber >= price;
+                const matchesRating = !isNaN(inputValueAsNumber) && inputValueAsNumber >= rating;
 
-                if (matchesName || matchesCuisine || matchesLocation || matchesDiet || matchesPrice || matchesRating) {
+                if (matchesCuisine || matchesLocation || matchesDiet || matchesPrice || matchesRating) {
                     restaurant.style.display = '';
                 } else {
                     restaurant.style.display = 'none';
