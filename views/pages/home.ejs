@@ -14,8 +14,8 @@
 
         <!-- Welcome Section -->
         <div class="welcome-container">
-            <h1>Welcome to the Restaurant Guide</h1>
-            <h2>Explore top-rated restaurants!</h2>
+            <h1>Dinner How?</h1>
+            <h2>Discover, Dine, and Decide: Our Journey Through Culinary Adventures!</h2>
         </div>
 
         <!-- Filter Section -->
@@ -37,7 +37,8 @@
                          data-cuisine="<%= restaurant.cuisine.toLowerCase() %>" 
                          data-location="<%= restaurant.location.toLowerCase() %>" 
                          data-rating="<%= restaurant.rating %>" 
-                         data-visits="0" 
+                         data-happy-visits="0"
+                         data-unhappy-visits="0"
                          id="restaurant-<%= restaurant.id %>">
                     <h3><%= restaurant.name %></h3>
                     <p><strong>Cuisine:</strong> <%= restaurant.cuisine %></p>
@@ -45,10 +46,14 @@
                     <p><strong>Location:</strong> <%= restaurant.location %></p>
                     <p><strong>Rating:</strong> <%= restaurant.rating %> / 5</p>
                     <p><strong>Dietary Option:</strong> <%= restaurant.diet %></p>
-                    <p><strong>Visits:</strong> <span class="visit-count">0</span></p>
-                    <button class="button visit-btn">Visited</button>
+                    <p><strong>Happy Visits:</strong> <span class="happy-visit-count">0</span></p>
+                    <p><strong>Unhappy Visits:</strong> <span class="unhappy-visit-count">0</span></p>
+                    <button class="button happy-btn" style="background-color: green; color: white;">Happy Visit</button>
+                    <button class="button unhappy-btn" style="background-color: red; color: white;">Unhappy Visit</button>
                     <form action="/delete/<%= restaurant.id %>" method="post" onsubmit="return confirm('Do you really want to delete this restaurant?');">
-                        <button class="outline primary" type="submit">Delete</button>
+                        <button class="outline primary" type="submit">
+                            <i class="icon-trash"></i>
+                        </button>
                     </form>
                 </article>
             <% }); %>
@@ -83,15 +88,20 @@
 
         function sortRestaurants() {
             restaurants.sort((a, b) => {
-                const visitsA = parseInt(a.dataset.visits);
-                const visitsB = parseInt(b.dataset.visits);
+                const unhappyA = parseInt(a.dataset.unhappyVisits);
+                const unhappyB = parseInt(b.dataset.unhappyVisits);
+                const happyA = parseInt(a.dataset.happyVisits);
+                const happyB = parseInt(b.dataset.happyVisits);
                 const ratingA = parseFloat(a.dataset.rating);
                 const ratingB = parseFloat(b.dataset.rating);
 
-                if (visitsB === visitsA) {
-                    return ratingB - ratingA; // Secondary sort by rating
+                if (unhappyA !== unhappyB) {
+                    return unhappyA - unhappyB; // Rank by lowest unhappy visits
                 }
-                return visitsB - visitsA; // Primary sort by visits
+                if (happyB !== happyA) {
+                    return happyB - happyA; // Rank by highest happy visits
+                }
+                return ratingB - ratingA; // Rank by rating as a tiebreaker
             });
 
             restaurants.forEach(restaurant => {
@@ -99,17 +109,31 @@
             });
         }
 
-        document.querySelectorAll('.visit-btn').forEach(button => {
+        document.querySelectorAll('.happy-btn').forEach(button => {
             button.addEventListener('click', function () {
                 const restaurant = button.closest('.post-container');
-                const visitCountElem = restaurant.querySelector('.visit-count');
-                let visitCount = parseInt(restaurant.dataset.visits) || 0;
+                const happyVisitCountElem = restaurant.querySelector('.happy-visit-count');
+                let happyVisitCount = parseInt(restaurant.dataset.happyVisits) || 0;
 
-                visitCount += 1; // Increment visits
-                restaurant.dataset.visits = visitCount;
-                visitCountElem.textContent = visitCount;
+                happyVisitCount += 1; // Increment happy visits
+                restaurant.dataset.happyVisits = happyVisitCount;
+                happyVisitCountElem.textContent = happyVisitCount;
 
-                sortRestaurants(); // Re-sort restaurants after updating visits
+                sortRestaurants(); // Re-sort restaurants after updating happy visits
+            });
+        });
+
+        document.querySelectorAll('.unhappy-btn').forEach(button => {
+            button.addEventListener('click', function () {
+                const restaurant = button.closest('.post-container');
+                const unhappyVisitCountElem = restaurant.querySelector('.unhappy-visit-count');
+                let unhappyVisitCount = parseInt(restaurant.dataset.unhappyVisits) || 0;
+
+                unhappyVisitCount += 1; // Increment unhappy visits
+                restaurant.dataset.unhappyVisits = unhappyVisitCount;
+                unhappyVisitCountElem.textContent = unhappyVisitCount;
+
+                sortRestaurants(); // Re-sort restaurants after updating unhappy visits
             });
         });
 
