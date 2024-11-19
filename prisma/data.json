@@ -958,5 +958,391 @@
             "location": "Boat Quay",
             "rating": 4.5,
             "diet": "Healthy"
+        },
+        {
+            "name": "Garibaldi",
+            "cuisine": "Italian",
+            "price": "48++",
+            "location": "Purvis Street",
+            "rating": 4.5,
+            "diet": "Vegetarian options available"
+        },
+        {
+            "name": "Corner House",
+            "cuisine": "Innovative French-Asian",
+            "price": "118++",
+            "location": "Botanic Gardens",
+            "rating": 4.6,
+            "diet": "Vegetarian and pescatarian options available"
+        },
+        {
+            "name": "Iggy's",
+            "cuisine": "European Contemporary",
+            "price": "105++",
+            "location": "Orchard",
+            "rating": 4.7,
+            "diet": "Vegetarian options available"
+        },
+        {
+            "name": "Nhung Kitchen",
+            "cuisine": "Vietnamese",
+            "price": "Under 9",
+            "location": "Balestier",
+            "rating": 4.7,
+            "diet": "Vegetarian options available"
+        },
+        {
+            "name": "Katsu-an",
+            "cuisine": "Japanese",
+            "price": "5.90",
+            "location": "Suntec City",
+            "rating": 4.4,
+            "diet": "Non-halal"
+        },
+        {
+            "name": "Tori Sanwa",
+            "cuisine": "Japanese",
+            "price": "14.90++",
+            "location": "Suntec City",
+            "rating": 4.4,
+            "diet": "Non-halal"
+        },
+        {
+            "name": "Bincho",
+            "cuisine": "Japanese",
+            "price": "48++",
+            "location": "Moh Guan Terrace",
+            "rating": 4.5,
+            "diet": "Non-halal"
+        },
+        {
+            "name": "Fool",
+            "cuisine": "European Contemporary",
+            "price": "99",
+            "location": "Bukit Pasoh",
+            "rating": 4.5,
+            "diet": "Vegetarian options available"
+        },
+        {
+            "name": "Overeasy",
+            "cuisine": "American",
+            "price": "29-35",
+            "location": "Fullerton Road",
+            "rating": 4.3,
+            "diet": "Vegetarian options available"
+        },
+        {
+            "name": "Estate",
+            "cuisine": "International Buffet",
+            "price": "62++",
+            "location": "Hilton Singapore Orchard",
+            "rating": 4.5,
+            "diet": "Vegetarian options available"
+        },
+        {
+            "name": "Ginger",
+            "cuisine": "Local",
+            "price": "49",
+            "location": "ParkRoyal on Beach Road",
+            "rating": 4.4,
+            "diet": "Halal-certified"
+        },
+        {
+            "name": "Kintamani Indonesian Restaurant",
+            "cuisine": "Indonesian",
+            "price": "35.80",
+            "location": "Furama Riverfront",
+            "rating": 4.3,
+            "diet": "Halal-certified"
+        },
+        {
+            "name": "Kiseki Japanese Buffet Restaurant",
+            "cuisine": "Japanese",
+            "price": "29.90++",
+            "location": "Orchard Central",
+            "rating": 4.2,
+            "diet": "Non-halal"
+        },
+        {
+            "name": "The Salted Plum",
+            "cuisine": "Taiwanese",
+            "price": "10+",
+            "location": "Circular Road",
+            "rating": 4.4,
+            "diet": "Non-halal"
+        },
+        {
+            "name": "Kim Dae Mun Korean Food",
+            "cuisine": "Korean",
+            "price": "Around 10",
+            "location": "Concorde Shopping Mall",
+            "rating": 4.5,
+            "diet": "Non-halal"
+        },
+        {
+            "name": "The Coconut Club",
+            "cuisine": "Malay",
+            "price": "12.80",
+            "location": "Ann Siang Hill",
+            "rating": 4.6,
+            "diet": "Halal-certified"
+        },
+        {
+            "name": "Lagnaa Barefoot Dining",
+            "cuisine": "Indian",
+            "price": "20-30",
+            "location": "Little India",
+            "rating": 4.5,
+            "diet": "Vegetarian options available"
+        },
+        {
+            "name": "Pasta Brava",
+            "cuisine": "Italian",
+            "price": "25-35",
+            "location": "Craig Road",
+            "rating": 4.4,
+            "diet": "Vegetarian options available"
+        },
+        {
+            "name": "Hawker Chan",
+            "cuisine": "Chinese",
+            "price": "2-5",
+            "location": "Chinatown",
+            "rating": 4.3,
+            "diet": "Non-halal"
+        },
+        {
+            "name": "Tian Tian Hainanese Chicken Rice",
+            "cuisine": "Chinese",
+            "price": "5-6",
+            "location": "Maxwell Food Centre",
+            "rating": 4.4,
+            "diet": "Non-halal"
+        },
+        {
+            "name": "Liao Fan Hong Kong Soya Sauce Chicken Rice & Noodle",
+            "cuisine": "Chinese",
+            "price": "2-5",
+            "location": "Chinatown",
+            "rating": 4.3,
+            "diet": "Non-halal"
+        },
+        {
+            "name": "Song Fa Bak Kut Teh",
+            "cuisine": "Chinese",
+            "price": "10-15",
+            "location": "Clarke Quay",
+            "rating": 4.4,
+            "diet": "Non-halal"
+        },
+        {
+            "name": "Din Tai Fung",
+            "cuisine": "Chinese",
+            "price": "20-30",
+            "location": "Various Locations",
+            "rating": 4.5,
+            "diet": "Vegetarian options available"
+        },
+        {
+            "name": "Tim Ho Wan",
+            "cuisine": "Chinese",
+            "price": "20-30",
+            "location": "Various Locations",
+            "rating": 4.4,
+            "diet": "Non-halal"
+        },
+        {
+            "name": "The Masses",
+            "cuisine": "Modern European",
+            "price": "20-40",
+            "location": "Beach Road",
+            "rating": 4.5,
+            "diet": "Vegetarian options available"
+        },
+        {
+            "name": "Nakhon Kitchen",
+            "cuisine": "Thai",
+            "price": "10-20",
+            "location": "Various Locations",
+            "rating": 4.4,
+            "diet": "Halal-certified"
+        },
+        {
+            "name": "Chatterbox",
+            "cuisine": "Local",
+            "price": "25-35",
+            "location": "Orchard",
+            "rating": 4.3,
+            "diet": "Halal-certified"
+        },
+        {
+            "name": "Prego",
+            "cuisine": "Italian",
+            "price": "40-60",
+            "location": "City Hall",
+            "rating": 4.4,
+            "diet": "Vegetarian options available"
+        },
+        {
+            "name": "Supply & Demand",
+            "cuisine": "Italian-Asian Fusion",
+            "price": "30-50",
+            "location": "Esplanade",
+            "rating": 4.3,
+            "diet": "Vegetarian options available"
+        },
+        {
+            "name": "The Halia",
+            "cuisine": "European-Asian Fusion",
+            "price": "40-60",
+            "location": "Botanic Gardens",
+            "rating": 4.4,
+            "diet": "Vegetarian options available"
+        },
+        {
+            "name": "Wild Honey",
+            "cuisine": "International",
+            "price": "30-50",
+            "location": "Orchard",
+            "rating": 4.4,
+            "diet": "Vegetarian options available"
+        },
+        {
+            "name": "Artichoke",
+            "cuisine": "Middle Eastern",
+            "price": "40-60",
+            "location": "Bugis",
+            "rating": 4.5,
+            "diet": "Vegetarian options available"
+        },
+        {
+            "name": "Blu Kouzina",
+            "cuisine": "Greek",
+            "price": "40-60",
+            "location": "Dempsey Hill",
+            "rating": 4.5,
+            "diet": "Vegetarian options available"
+        },
+        {
+            "name": "Fat Prince",
+            "cuisine": "Middle Eastern",
+            "price": "40-60",
+            "location": "Tanjong Pagar",
+            "rating": 4.4,
+            "diet": "Vegetarian options available"
+        },
+        {
+            "name": "Kinki Restaurant + Bar",
+            "cuisine": "Japanese",
+            "price": "50-70",
+            "location": "Marina Bay",
+            "rating": 4.3,
+            "diet": "Non-halal"
+        },
+        {
+            "name": "Lucha Loco",
+            "cuisine": "Mexican",
+            "price": "40-60",
+            "location": "Duxton Hill",
+            "rating": 4.4,
+            "diet": "Vegetarian options available"
+        },
+        {
+            "name": "No Signboard Seafood",
+            "cuisine": "Seafood",
+            "price": "50-80",
+            "location": "Geylang",
+            "rating": 4.3,
+            "diet": "Non-halal"
+        },
+        {
+            "name": "Penny University",
+            "cuisine": "Cafe",
+            "price": "20-30",
+            "location": "East Coast",
+            "rating": 4.4,
+            "diet": "Vegetarian options available"
+        },
+        {
+            "name": "Privé",
+            "cuisine": "International",
+            "price": "30-50",
+            "location": "Keppel Bay",
+            "rating": 4.3,
+            "diet": "Vegetarian options available"
+        },
+        {
+            "name": "PS.Cafe at Harding",
+            "cuisine": "Western",
+            "price": "40-60",
+            "location": "Dempsey Hill",
+            "rating": 4.4,
+            "diet": "Vegetarian options available"
+        },
+        {
+            "name": "Super Loco",
+            "cuisine": "Mexican",
+            "price": "40-60",
+            "location": "Robertson Quay",
+            "rating": 4.3,
+            "diet": "Vegetarian options available"
+        },
+        {
+            "name": "The Black Swan",
+            "cuisine": "European",
+            "price": "50-70",
+            "location": "Raffles Place",
+            "rating": 4.4,
+            "diet": "Vegetarian options available"
+        },
+        {
+            "name": "The Coastal Settlement",
+            "cuisine": "Western-Asian Fusion",
+            "price": "30-50",
+            "location": "Changi",
+            "rating": 4.3,
+            "diet": "Vegetarian options available"
+        },
+        {
+            "name": "The White Rabbit",
+            "cuisine": "European",
+            "price": "50-70",
+            "location": "Dempsey Hill",
+            "rating": 4.4,
+            "diet": "Vegetarian options available"
+        },
+        {
+            "name": "Tiong Bahru Bakery",
+            "cuisine": "Bakery",
+            "price": "10-20",
+            "location": "Tiong Bahru",
+            "rating": 4.5,
+            "diet": "Vegetarian options available"
+        },
+        {
+            "name": "Vatos Urban Tacos",
+            "cuisine": "Korean-Mexican Fusion",
+            "price": "30-50",
+            "location": "South Beach",
+            "rating": 4.3,
+            "diet": "Non-halal"
+        },
+        {
+            "name": "Wildseed Cafe",
+            "cuisine": "Cafe",
+            "price": "20-30",
+            "location": "Seletar",
+            "rating": 4.4,
+            "diet": "Vegetarian options available"
+        },
+        {
+            "name": "Yardbird Southern Table & Bar",
+            "cuisine": "American",
+            "price": "50-70",
+            "location": "Marina Bay Sands",
+            "rating": 4.3,
+            "diet": "Non-halal"
         }
+         
+        
     ]

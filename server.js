@@ -22,14 +22,13 @@ const prisma = new PrismaClient();
 // Main landing page
 app.get('/', async (req, res) => {
     try {
-        // Get all restaurants ordered by rating
+        // Fetch distinct restaurants, sorted by rating
         const restaurants = await prisma.restaurant.findMany({
-            orderBy: [
-                {
-                    rating: 'desc', // Adjust as needed (e.g., 'id' or other fields)
-                },
-            ],
+            distinct: ['id'], // Ensures only unique entries are fetched
+            orderBy: { rating: 'desc' },
         });
+
+        console.log('Fetched Restaurants:', restaurants); // Debugging info
 
         // Render the homepage with all the restaurant data
         res.render('pages/home', { blogs: restaurants });
@@ -66,6 +65,8 @@ app.post('/new', async (req, res) => {
             data: { name, cuisine, price, location, rating: parseFloat(rating), diet },
         });
 
+        console.log('New restaurant added:', { name, cuisine, price, location, rating, diet }); // Debugging info
+
         // Redirect back to the homepage
         res.redirect('/');
     } catch (error) {
@@ -95,6 +96,8 @@ app.post('/add-restaurant', async (req, res) => {
             },
         });
 
+        console.log('Restaurant successfully added:', { name, cuisine, price, location, rating, diet }); // Debugging info
+
         res.redirect('/'); // Redirect back to the homepage
     } catch (error) {
         console.error('Error adding restaurant:', error);
@@ -111,6 +114,8 @@ app.post('/delete/:id', async (req, res) => {
         await prisma.restaurant.delete({
             where: { id: parseInt(id) },
         });
+
+        console.log(`Restaurant with ID ${id} deleted successfully`); // Debugging info
 
         // Redirect back to the homepage
         res.redirect('/');
