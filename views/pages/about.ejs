@@ -3,29 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>About | DinnerHow</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"/>
-    <link rel="stylesheet" href="/css/style.css" >
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        /* Additional Styling */
+        body {
+            background: linear-gradient(to right, #f8f9fa, #e9ecef);
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            font-size: 2.5rem;
+            margin-top: 1rem;
+        }
+
+        p {
+            font-size: 1.2rem;
+            color: #555;
+            text-align: justify;
+        }
+
+        a {
+            display: inline-block;
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+            margin-top: 1rem;
+        }
+
+        a:hover {
+            color: #0056b3;
+        }
+
+        .welcome-container {
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .about-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .about-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+    </style>
 </head>
 <body>
     <main class="container">
-        <!-- Navbar which can be reused across other pages -->
+        <!-- Navbar -->
         <%- include('../partials/navbar'); %>
 
-        <!-- Information about the about page -->
+        <!-- Welcome Section -->
         <div class="welcome-container">
             <h1>About</h1>
-            <p>The Cure for "Dinner How?" Syndrome</p>
+            <p><em>The Cure for "Dinner How?" Syndrome</em></p>
         </div>
 
+        <!-- About Section -->
         <div class="about-container">
             <img src="/images/salami.jpg" alt="Picture of a pizza slice">
             <p>
-Welcome to DinnerHow.com your ultimate escape from the daily "What should we eat?" conundrum! Designed for busy Singaporean couples, this playful yet practical website solves the most pressing question of modern life: “What’s for dinner tonight?” We get it. After a long day of meetings, deadlines, and traffic jams, the last thing your brain wants is to debate over Korean BBQ or chicken rice for the umpteenth time. That's where DinnerHow.com swoops in. Think of it as your culinary fairy godmother – effortlessly suggesting Dinner ideas tailored to your cravings, diet composition and location. Say goodbye to the cognitive overload and hello to delicious, stress-free evenings. Your taste buds (and tired brain) will thank you!</p>
+                Welcome to <strong>DinnerHow.com</strong>, your ultimate escape from the daily "<strong>What should we eat?</strong>" conundrum! Designed for busy Singaporean couples, this playful yet practical website solves the most pressing question of modern life: <strong>“What’s for dinner tonight?”</strong> 
+            </p>
+            <p>
+                We get it. After a long day of meetings, deadlines, and traffic jams, the last thing your brain wants is to debate over <strong>Korean BBQ</strong> or <strong>chicken rice</strong> for the umpteenth time. That's where <strong>DinnerHow.com</strong> swoops in. Think of it as your culinary fairy godmother – effortlessly suggesting dinner ideas tailored to your cravings, diet composition, and location. 
+            </p>
+            <p>
+                Say goodbye to the cognitive overload and hello to delicious, stress-free evenings. Your taste buds (and tired brain) will thank you!
+            </p>
             <br>
-            <a href="/">Home</a>
+            <a href="/">Back to Home</a>
         </div>
-
     </main>
 </body>
 </html>
