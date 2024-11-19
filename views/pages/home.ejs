@@ -13,13 +13,13 @@
         }
 
         h1, h2 {
-            color: black; /* Plain black font */
-            text-shadow: none; /* Removed fuzzy effects */
+            color: black;
+            text-shadow: none;
         }
 
         .post-container {
-            background: rgba(255, 255, 255, 0.9); /* Transparent white for readability */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             padding: 1rem;
             border-radius: 10px;
             margin-bottom: 1rem;
@@ -39,7 +39,7 @@
         }
 
         .button-container button {
-            flex: 1; /* Ensure equal button width */
+            flex: 1;
             padding: 0.5rem;
             border-radius: 5px;
         }
@@ -50,7 +50,7 @@
         }
 
         .happy-btn:hover {
-            background-color: #228b22; /* Darker green */
+            background-color: #228b22;
         }
 
         .unhappy-btn {
@@ -59,11 +59,11 @@
         }
 
         .unhappy-btn:hover {
-            background-color: #8b0000; /* Darker red */
+            background-color: #8b0000;
         }
 
         .remove-btn {
-            background-color: #ffc107; /* Yellow */
+            background-color: #ffc107;
             color: black;
             border: none;
         }
@@ -89,7 +89,7 @@
         <!-- Filter Section -->
         <div class="filter-container">
             <div class="filter-title">What are you craving?</div>
-            <input type="text" id="filter-search" placeholder="Search by cuisine, location, or dietary option">
+            <input type="text" id="filter-search" placeholder="Search by cuisine, location, diet, price, or rating">
         </div>
 
         <!-- Title After Filter -->
@@ -105,6 +105,7 @@
                          data-location="<%= restaurant.location.toLowerCase() %>" 
                          data-diet="<%= restaurant.diet.toLowerCase() %>" 
                          data-rating="<%= restaurant.rating %>" 
+                         data-price="<%= restaurant.price %>"
                          data-happy-visits="0"
                          data-unhappy-visits="0"
                          id="restaurant-<%= restaurant.id %>">
@@ -136,13 +137,20 @@
 
         function filterRestaurants() {
             const searchValue = filterSearch.value.toLowerCase();
+            const inputValueAsNumber = parseFloat(searchValue);
 
             restaurants.forEach(restaurant => {
                 const matchesCuisine = restaurant.dataset.cuisine.includes(searchValue);
                 const matchesLocation = restaurant.dataset.location.includes(searchValue);
                 const matchesDiet = restaurant.dataset.diet.includes(searchValue);
 
-                if (matchesCuisine || matchesLocation || matchesDiet) {
+                const price = parseFloat(restaurant.dataset.price || "0");
+                const rating = parseFloat(restaurant.dataset.rating || "0");
+
+                const matchesPrice = !isNaN(inputValueAsNumber) && inputValueAsNumber >= price;
+                const matchesRating = !isNaN(inputValueAsNumber) && inputValueAsNumber >= rating;
+
+                if (matchesCuisine || matchesLocation || matchesDiet || matchesPrice || matchesRating) {
                     restaurant.style.display = '';
                 } else {
                     restaurant.style.display = 'none';
