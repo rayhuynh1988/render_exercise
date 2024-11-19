@@ -12,16 +12,9 @@
             background: linear-gradient(to right, #f8f9fa, #e9ecef);
         }
 
-        .hero-section {
-            text-align: center;
-            padding: 2rem 0;
-            background: url('/images/chinese_dinner.jpeg') no-repeat center center;
-            background-size: cover;
-            color: white;
-        }
-
-        .hero-section h1, .hero-section h2 {
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        h1, h2 {
+            color: black; /* Plain black font */
+            text-shadow: none; /* Removed fuzzy effects */
         }
 
         .post-container {
@@ -34,17 +27,38 @@
 
         .button-container {
             display: flex;
-            align-items: center;
+            justify-content: space-between;
             gap: 10px;
         }
 
+        .button-container button {
+            flex: 1; /* Ensure equal button width */
+            padding: 0.5rem;
+            border-radius: 5px;
+        }
+
+        .happy-btn {
+            background-color: green;
+            color: white;
+        }
+
+        .happy-btn:hover {
+            background-color: #228b22; /* Darker green */
+        }
+
+        .unhappy-btn {
+            background-color: red;
+            color: white;
+        }
+
+        .unhappy-btn:hover {
+            background-color: #8b0000; /* Darker red */
+        }
+
         .remove-btn {
-            background-color: #ffc107; /* Yellow for remove suggestion */
+            background-color: #ffc107; /* Yellow */
             color: black;
             border: none;
-            padding: 0.5rem 1rem;
-            cursor: pointer;
-            border-radius: 5px;
         }
 
         .remove-btn:hover {
@@ -57,10 +71,15 @@
         <!-- Navbar -->
         <%- include('../partials/navbar'); %>
 
-        <!-- Hero Section -->
-        <div class="hero-section">
+        <!-- Welcome Section -->
+        <div class="welcome-container">
             <h1>Dinner How?</h1>
             <h2>Discover, Dine, and Decide: Our Journey Through Culinary Adventures!</h2>
+        </div>
+        <div class="about-container">
+            <img src="/images/chinese_dinner.jpg" alt="Picture of a van with a scenic landscape in the background">
+            <br>
+            <a href="/">Read my blog!</a>
         </div>
 
         <!-- Filter Section -->
@@ -94,8 +113,8 @@
                     <p><strong>Happy Visits:</strong> <span class="happy-visit-count">0</span></p>
                     <p><strong>Unhappy Visits:</strong> <span class="unhappy-visit-count">0</span></p>
                     <div class="button-container">
-                        <button class="button happy-btn" style="background-color: green; color: white;">Happy Visit</button>
-                        <button class="button unhappy-btn" style="background-color: red; color: white;">Unhappy Visit</button>
+                        <button class="happy-btn">Happy Visit</button>
+                        <button class="unhappy-btn">Unhappy Visit</button>
                         <form action="/delete/<%= restaurant.id %>" method="post" onsubmit="return confirm('Do you really want to remove this suggestion?');">
                             <button class="remove-btn" type="submit">Remove Suggestion</button>
                         </form>
