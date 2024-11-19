@@ -7,23 +7,48 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"/>
     <link rel="stylesheet" href="/css/style.css">
     <style>
+        /* General Styling */
         body {
-            background: url('/images/chinese_dinner.jpeg') no-repeat center center fixed;
-            background-size: cover;
+            background: linear-gradient(to right, #f8f9fa, #e9ecef);
         }
+
+        .hero-section {
+            text-align: center;
+            padding: 2rem 0;
+            background: url('/images/chinese_dinner.jpeg') no-repeat center center;
+            background-size: cover;
+            color: white;
+        }
+
+        .hero-section h1, .hero-section h2 {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
         .post-container {
-            background: rgba(255, 255, 255, 0.9); /* Transparent background for readability */
+            background: rgba(255, 255, 255, 0.9); /* Transparent white for readability */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
             padding: 1rem;
             border-radius: 10px;
             margin-bottom: 1rem;
         }
+
         .button-container {
             display: flex;
             align-items: center;
             gap: 10px;
         }
-        .icon-trash {
-            font-size: 1.2rem;
+
+        .remove-btn {
+            background-color: #ffc107; /* Yellow for remove suggestion */
+            color: black;
+            border: none;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .remove-btn:hover {
+            background-color: #e0a800;
         }
     </style>
 </head>
@@ -32,8 +57,8 @@
         <!-- Navbar -->
         <%- include('../partials/navbar'); %>
 
-        <!-- Welcome Section -->
-        <div class="welcome-container">
+        <!-- Hero Section -->
+        <div class="hero-section">
             <h1>Dinner How?</h1>
             <h2>Discover, Dine, and Decide: Our Journey Through Culinary Adventures!</h2>
         </div>
@@ -71,10 +96,8 @@
                     <div class="button-container">
                         <button class="button happy-btn" style="background-color: green; color: white;">Happy Visit</button>
                         <button class="button unhappy-btn" style="background-color: red; color: white;">Unhappy Visit</button>
-                        <form action="/delete/<%= restaurant.id %>" method="post" onsubmit="return confirm('Do you really want to delete this restaurant?');">
-                            <button class="outline primary" type="submit">
-                                <i class="icon-trash">🗑️</i>
-                            </button>
+                        <form action="/delete/<%= restaurant.id %>" method="post" onsubmit="return confirm('Do you really want to remove this suggestion?');">
+                            <button class="remove-btn" type="submit">Remove Suggestion</button>
                         </form>
                     </div>
                 </article>
