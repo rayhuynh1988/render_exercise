@@ -33,15 +33,20 @@
         <!-- Restaurant Data -->
         <div id="restaurant-list">
             <% blogs.forEach(restaurant => { %>
-                <article class="post-container" data-cuisine="<%= restaurant.cuisine.toLowerCase() %>" 
-                                                  data-location="<%= restaurant.location.toLowerCase() %>" 
-                                                  data-rating="<%= restaurant.rating %>">
+                <article class="post-container" 
+                         data-cuisine="<%= restaurant.cuisine.toLowerCase() %>" 
+                         data-location="<%= restaurant.location.toLowerCase() %>" 
+                         data-rating="<%= restaurant.rating %>" 
+                         data-visits="0" 
+                         id="restaurant-<%= restaurant.id %>">
                     <h3><%= restaurant.name %></h3>
                     <p><strong>Cuisine:</strong> <%= restaurant.cuisine %></p>
                     <p><strong>Price Range:</strong> <%= restaurant.price %></p>
                     <p><strong>Location:</strong> <%= restaurant.location %></p>
                     <p><strong>Rating:</strong> <%= restaurant.rating %> / 5</p>
                     <p><strong>Dietary Option:</strong> <%= restaurant.diet %></p>
+                    <p><strong>Visits:</strong> <span class="visit-count">0</span></p>
+                    <button class="button visit-btn">Visited</button>
                     <form action="/delete/<%= restaurant.id %>" method="post" onsubmit="return confirm('Do you really want to delete this restaurant?');">
                         <button class="outline primary" type="submit">Delete</button>
                     </form>
@@ -50,7 +55,7 @@
         </div>
     </main>
 
-    <!-- JavaScript for Filtering -->
+    <!-- JavaScript for Filtering and Ranking -->
     <script>
         const cuisineFilter = document.getElementById('filter-cuisine');
         const locationFilter = document.getElementById('filter-location');
@@ -75,6 +80,38 @@
                 }
             });
         }
+
+        function sortRestaurants() {
+            restaurants.sort((a, b) => {
+                const visitsA = parseInt(a.dataset.visits);
+                const visitsB = parseInt(b.dataset.visits);
+                const ratingA = parseFloat(a.dataset.rating);
+                const ratingB = parseFloat(b.dataset.rating);
+
+                if (visitsB === visitsA) {
+                    return ratingB - ratingA; // Secondary sort by rating
+                }
+                return visitsB - visitsA; // Primary sort by visits
+            });
+
+            restaurants.forEach(restaurant => {
+                restaurantList.appendChild(restaurant); // Reorder the DOM elements
+            });
+        }
+
+        document.querySelectorAll('.visit-btn').forEach(button => {
+            button.addEventListener('click', function () {
+                const restaurant = button.closest('.post-container');
+                const visitCountElem = restaurant.querySelector('.visit-count');
+                let visitCount = parseInt(restaurant.dataset.visits) || 0;
+
+                visitCount += 1; // Increment visits
+                restaurant.dataset.visits = visitCount;
+                visitCountElem.textContent = visitCount;
+
+                sortRestaurants(); // Re-sort restaurants after updating visits
+            });
+        });
 
         cuisineFilter.addEventListener('input', filterRestaurants);
         locationFilter.addEventListener('input', filterRestaurants);
