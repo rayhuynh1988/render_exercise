@@ -1,37 +1,108 @@
+/* Welcome Section Styling */
 .welcome-container {
     text-align: center;
-
     margin-top: 50px;
     margin-bottom: 50px;
 }
 
-.new-post-btn-container{
+/* New Post Button Styling */
+.new-post-btn-container {
     text-align: center;
-
     margin-top: 50px;
     margin-bottom: 50px;
 }
 
+/* Individual Post Container Styling */
 .post-container {
     max-width: 800px;
-
-    margin-top: 20px;
-    margin-bottom: 20px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 20px auto; /* Combined shorthand for top, bottom, left, and right margins */
+    padding: 20px; /* Added padding for spacing inside the container */
+    background-color: rgba(255, 255, 255, 0.9); /* White with slight transparency */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    border-radius: 10px; /* Rounded corners */
 }
 
+/* About Section Styling */
 .about-container {
     text-align: center;
-
     margin-top: 50px;
     margin-bottom: 50px;
 }
 
-.about-container > img{
+.about-container > img {
     margin-bottom: 40px;
+    max-width: 100%; /* Ensures image is responsive */
+    height: auto;
+    border-radius: 10px; /* Adds rounded corners */
 }
 
+/* Cancel Button Styling */
 .cancel-create-post {
     text-align: center;
+    margin-top: 20px; /* Spacing above the cancel button */
+}
+
+/* Button Container Styling */
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px; /* Spacing between buttons */
+}
+
+.button-container button, .button-container form .remove-btn {
+    flex: 1; /* Equal width for all buttons */
+    padding: 0.5rem; /* Consistent padding for uniform height */
+    border-radius: 5px; /* Rounded corners for modern styling */
+    font-size: 1rem; /* Uniform font size */
+    text-align: center;
+}
+
+/* Button Styles */
+.happy-btn {
+    background-color: green;
+    color: white;
+    border: none;
+    transition: background-color 0.3s ease; /* Smooth hover transition */
+}
+
+.happy-btn:hover {
+    background-color: #228b22; /* Darker green on hover */
+}
+
+.unhappy-btn {
+    background-color: red;
+    color: white;
+    border: none;
+    transition: background-color 0.3s ease; /* Smooth hover transition */
+}
+
+.unhappy-btn:hover {
+    background-color: #8b0000; /* Darker red on hover */
+}
+
+.remove-btn {
+    background-color: #ffc107; /* Yellow */
+    color: black;
+    border: none;
+    transition: background-color 0.3s ease; /* Smooth hover transition */
+}
+
+.remove-btn:hover {
+    background-color: #e0a800; /* Darker yellow on hover */
+}
+
+/* General Media Query for Responsiveness */
+@media (max-width: 768px) {
+    .post-container {
+        padding: 15px;
+    }
+
+    .button-container {
+        flex-direction: column; /* Stack buttons vertically on smaller screens */
+    }
+
+    .button-container button, .button-container form .remove-btn {
+        flex: none;
+        width: 100%; /* Full width for each button */
+    }
 }
