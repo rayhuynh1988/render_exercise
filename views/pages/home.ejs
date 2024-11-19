@@ -74,20 +74,27 @@
         <!-- Welcome Section -->
         <div class="welcome-container">
             <h1>Dinner How?</h1>
-            <h2>Discover, Dine, and Decide: Our Journey Through Culinary Adventures!</h2>
+            <h2>Discover, Dine, and Rate!</h2>
         </div>
         <div class="about-container">
-            <img src="/images/chinese_dinner.jpg" alt="Picture of a delicious dinner">
-            <br>
+            <img src="/images/chinese_dinner.jpg" alt="Picture of a delicious dinner" style="width: 200px; height: auto;">
+        </div>
+
+
+        <!-- Title After Image -->
+        <div class="about-container">
+            <h2>What are you craving?</h2>
         </div>
 
         <!-- Filter Section -->
         <div class="filter-container">
-            <label for="filter-cuisine">Cuisine:</label>
-            <input type="text" id="filter-cuisine" placeholder="e.g. French, Chinese, Japanese...">
-            
-            <label for="filter-location">Location:</label>
-            <input type="text" id="filter-location" placeholder="e.g., Chinatown, Telok Ayer, Marina Bay Sands...">
+            <label for="filter-search">Dinner Search:</label>
+            <input type="text" id="filter-search" placeholder="Search by cuisine, location, or dietary option">
+        </div>
+
+        <!-- Title After Filter -->
+        <div class="about-container">
+            <h2>Dinner Suggestions</h2>
         </div>
 
         <!-- Restaurant Data -->
@@ -96,6 +103,7 @@
                 <article class="post-container" 
                          data-cuisine="<%= restaurant.cuisine.toLowerCase() %>" 
                          data-location="<%= restaurant.location.toLowerCase() %>" 
+                         data-diet="<%= restaurant.diet.toLowerCase() %>" 
                          data-rating="<%= restaurant.rating %>" 
                          data-happy-visits="0"
                          data-unhappy-visits="0"
@@ -122,23 +130,19 @@
 
     <!-- JavaScript for Filtering and Ranking -->
     <script>
-        const cuisineFilter = document.getElementById('filter-cuisine');
-        const locationFilter = document.getElementById('filter-location');
-        const ratingFilter = document.getElementById('filter-rating');
+        const filterSearch = document.getElementById('filter-search');
         const restaurantList = document.getElementById('restaurant-list');
         const restaurants = Array.from(restaurantList.querySelectorAll('.post-container'));
 
         function filterRestaurants() {
-            const cuisineValue = cuisineFilter.value.toLowerCase();
-            const locationValue = locationFilter.value.toLowerCase();
-            const ratingValue = parseFloat(ratingFilter.value) || 0;
+            const searchValue = filterSearch.value.toLowerCase();
 
             restaurants.forEach(restaurant => {
-                const matchesCuisine = restaurant.dataset.cuisine.includes(cuisineValue);
-                const matchesLocation = restaurant.dataset.location.includes(locationValue);
-                const matchesRating = parseFloat(restaurant.dataset.rating) >= ratingValue;
+                const matchesCuisine = restaurant.dataset.cuisine.includes(searchValue);
+                const matchesLocation = restaurant.dataset.location.includes(searchValue);
+                const matchesDiet = restaurant.dataset.diet.includes(searchValue);
 
-                if (matchesCuisine && matchesLocation && matchesRating) {
+                if (matchesCuisine || matchesLocation || matchesDiet) {
                     restaurant.style.display = '';
                 } else {
                     restaurant.style.display = 'none';
@@ -146,60 +150,7 @@
             });
         }
 
-        function sortRestaurants() {
-            restaurants.sort((a, b) => {
-                const unhappyA = parseInt(a.dataset.unhappyVisits);
-                const unhappyB = parseInt(b.dataset.unhappyVisits);
-                const happyA = parseInt(a.dataset.happyVisits);
-                const happyB = parseInt(b.dataset.happyVisits);
-                const ratingA = parseFloat(a.dataset.rating);
-                const ratingB = parseFloat(b.dataset.rating);
-
-                if (unhappyA !== unhappyB) {
-                    return unhappyA - unhappyB; // Rank by lowest unhappy visits
-                }
-                if (happyB !== happyA) {
-                    return happyB - happyA; // Rank by highest happy visits
-                }
-                return ratingB - ratingA; // Rank by rating as a tiebreaker
-            });
-
-            restaurants.forEach(restaurant => {
-                restaurantList.appendChild(restaurant); // Reorder the DOM elements
-            });
-        }
-
-        document.querySelectorAll('.happy-btn').forEach(button => {
-            button.addEventListener('click', function () {
-                const restaurant = button.closest('.post-container');
-                const happyVisitCountElem = restaurant.querySelector('.happy-visit-count');
-                let happyVisitCount = parseInt(restaurant.dataset.happyVisits) || 0;
-
-                happyVisitCount += 1; // Increment happy visits
-                restaurant.dataset.happyVisits = happyVisitCount;
-                happyVisitCountElem.textContent = happyVisitCount;
-
-                sortRestaurants(); // Re-sort restaurants after updating happy visits
-            });
-        });
-
-        document.querySelectorAll('.unhappy-btn').forEach(button => {
-            button.addEventListener('click', function () {
-                const restaurant = button.closest('.post-container');
-                const unhappyVisitCountElem = restaurant.querySelector('.unhappy-visit-count');
-                let unhappyVisitCount = parseInt(restaurant.dataset.unhappyVisits) || 0;
-
-                unhappyVisitCount += 1; // Increment unhappy visits
-                restaurant.dataset.unhappyVisits = unhappyVisitCount;
-                unhappyVisitCountElem.textContent = unhappyVisitCount;
-
-                sortRestaurants(); // Re-sort restaurants after updating unhappy visits
-            });
-        });
-
-        cuisineFilter.addEventListener('input', filterRestaurants);
-        locationFilter.addEventListener('input', filterRestaurants);
-        ratingFilter.addEventListener('input', filterRestaurants);
+        filterSearch.addEventListener('input', filterRestaurants);
     </script>
 </body>
 </html>
