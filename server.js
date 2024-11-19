@@ -105,5 +105,33 @@ app.listen(PORT, () => {
 app.use((req, res) => {
   res.status(404).render('pages/404');
 });
+// Serve the Add Restaurant page
+app.get('/add-restaurant', (req, res) => {
+  res.render('pages/add-restaurant');
+});
+// Handle Add Restaurant Form Submission
+app.post('/add-restaurant', async (req, res) => {
+  const { name, cuisine, price, location, rating, diet } = req.body;
+
+  try {
+      await prisma.restaurant.create({
+          data: {
+              name,
+              cuisine,
+              price,
+              location,
+              rating: parseFloat(rating), // Ensure rating is stored as a number
+              diet,
+          },
+      });
+
+      res.redirect('/'); // Redirect back to the homepage
+  } catch (error) {
+      console.error('Error adding restaurant:', error);
+      res.status(500).send('Internal Server Error');
+  }
+});
+
+
 
 });
