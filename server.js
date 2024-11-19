@@ -27,7 +27,7 @@ app.get('/', async (req, res) => {
             orderBy: [
                 {
                     rating: 'desc', // Adjust as needed (e.g., 'id' or other fields)
-                }
+                },
             ],
         });
 
@@ -74,6 +74,34 @@ app.post('/new', async (req, res) => {
     }
 });
 
+// Serve the Add Restaurant page
+app.get('/add-restaurant', (req, res) => {
+    res.render('pages/add-restaurant');
+});
+
+// Handle Add Restaurant Form Submission
+app.post('/add-restaurant', async (req, res) => {
+    const { name, cuisine, price, location, rating, diet } = req.body;
+
+    try {
+        await prisma.restaurant.create({
+            data: {
+                name,
+                cuisine,
+                price,
+                location,
+                rating: parseFloat(rating), // Ensure rating is stored as a number
+                diet,
+            },
+        });
+
+        res.redirect('/'); // Redirect back to the homepage
+    } catch (error) {
+        console.error('Error adding restaurant:', error);
+        res.status(500).send('Internal Server Error');
+    }
+});
+
 // Delete a restaurant by id
 app.post('/delete/:id', async (req, res) => {
     const { id } = req.params;
@@ -101,37 +129,4 @@ app.use((req, res) => {
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
-    // Catch-all for undefined routes
-app.use((req, res) => {
-  res.status(404).render('pages/404');
-});
-// Serve the Add Restaurant page
-app.get('/add-restaurant', (req, res) => {
-  res.render('pages/add-restaurant');
-});
-// Handle Add Restaurant Form Submission
-app.post('/add-restaurant', async (req, res) => {
-  const { name, cuisine, price, location, rating, diet } = req.body;
-
-  try {
-      await prisma.restaurant.create({
-          data: {
-              name,
-              cuisine,
-              price,
-              location,
-              rating: parseFloat(rating), // Ensure rating is stored as a number
-              diet,
-          },
-      });
-
-      res.redirect('/'); // Redirect back to the homepage
-  } catch (error) {
-      console.error('Error adding restaurant:', error);
-      res.status(500).send('Internal Server Error');
-  }
-});
-
-
-
 });
