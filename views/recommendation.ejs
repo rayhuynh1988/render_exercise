@@ -15,79 +15,117 @@
             <h1>Your Dinner Recommendations</h1>
         </div>
 
+        <!-- Preferences Form -->
+        <div class="preferences-form">
+            <label for="cuisine">Cuisine:</label>
+            <input type="text" id="cuisine" placeholder="e.g., French">
+
+            <label for="price">Maximum Price (SGD):</label>
+            <input type="number" id="price" placeholder="e.g., 200">
+
+            <label for="location">Location:</label>
+            <input type="text" id="location" placeholder="e.g., Chinatown">
+
+            <button id="filter-btn" class="button">Filter Recommendations</button>
+        </div>
+
+        <!-- Recommendations Container -->
         <div class="recommendations-container">
-            <% const hardcodedRecommendations = [
-                {
-                    "Restaurant Name": "Odette",
-                    "Cuisine Type": "French",
-                    "Price Range (SGD)": "350 - 500",
-                    "Location (Area)": "City Hall",
-                    "Average Rating (out of 5)": 4.8
-                },
-                {
-                    "Restaurant Name": "Burnt Ends",
-                    "Cuisine Type": "Australian Barbecue",
-                    "Price Range (SGD)": "100 - 200",
-                    "Location (Area)": "Chinatown",
-                    "Average Rating (out of 5)": 4.7
-                },
-                {
-                    "Restaurant Name": "Les Amis",
-                    "Cuisine Type": "French",
-                    "Price Range (SGD)": "300 - 450",
-                    "Location (Area)": "Orchard",
-                    "Average Rating (out of 5)": 4.8
-                },
-                {
-                    "Restaurant Name": "Candlenut",
-                    "Cuisine Type": "Peranakan",
-                    "Price Range (SGD)": "80 - 150",
-                    "Location (Area)": "Dempsey Hill",
-                    "Average Rating (out of 5)": 4.6
-                },
-                {
-                    "Restaurant Name": "Hill Street Tai Hwa Pork Noodle",
-                    "Cuisine Type": "Street Food",
-                    "Price Range (SGD)": "5 - 10",
-                    "Location (Area)": "Kallang",
-                    "Average Rating (out of 5)": 4.5
-                }
-            ];
-
-            // Filter based on user preferences passed from the server
-            const userPreferences = {
-                cuisine: locals.cuisine || "",
-                price: locals.price || "",
-                location: locals.location || ""
-            };
-
-            const filteredRecommendations = hardcodedRecommendations.filter(rec => {
-                return (
-                    (!userPreferences.cuisine || rec["Cuisine Type"] === userPreferences.cuisine) &&
-                    (!userPreferences.price || rec["Price Range (SGD)"] === userPreferences.price) &&
-                    (!userPreferences.location || rec["Location (Area)"].toLowerCase().includes(userPreferences.location.toLowerCase()))
-                );
-            }).slice(0, 3); // Limit to top 3 recommendations
-            %>
-
-            <% if (filteredRecommendations.length > 0) { %>
-                <% filteredRecommendations.forEach(rec => { %>
-                    <article class="recommendation">
-                        <h2><%= rec["Restaurant Name"] %></h2>
-                        <p><strong>Cuisine:</strong> <%= rec["Cuisine Type"] %></p>
-                        <p><strong>Price Range:</strong> <%= rec["Price Range (SGD)"] %></p>
-                        <p><strong>Location:</strong> <%= rec["Location (Area)"] %></p>
-                        <p><strong>Rating:</strong> <%= rec["Average Rating (out of 5)"] %> / 5</p>
-                    </article>
-                <% }); %>
-            <% } else { %>
-                <p>No recommendations available for your preferences. Please try again.</p>
-            <% } %>
+            <!-- Recommendations will be dynamically populated here -->
         </div>
 
         <div class="back-btn-container">
             <a href="/new" class="button">Update Preferences</a>
         </div>
     </main>
+
+    <script>
+        // Hardcoded recommendations
+        const recommendations = [
+            {
+                "Restaurant Name": "Odette",
+                "Cuisine Type": "French",
+                "Price Range (SGD)": "350 - 500",
+                "Location (Area)": "City Hall",
+                "Average Rating (out of 5)": 4.8
+            },
+            {
+                "Restaurant Name": "Burnt Ends",
+                "Cuisine Type": "Australian Barbecue",
+                "Price Range (SGD)": "100 - 200",
+                "Location (Area)": "Chinatown",
+                "Average Rating (out of 5)": 4.7
+            },
+            {
+                "Restaurant Name": "Les Amis",
+                "Cuisine Type": "French",
+                "Price Range (SGD)": "300 - 450",
+                "Location (Area)": "Orchard",
+                "Average Rating (out of 5)": 4.8
+            },
+            {
+                "Restaurant Name": "Candlenut",
+                "Cuisine Type": "Peranakan",
+                "Price Range (SGD)": "80 - 150",
+                "Location (Area)": "Dempsey Hill",
+                "Average Rating (out of 5)": 4.6
+            },
+            {
+                "Restaurant Name": "Hill Street Tai Hwa Pork Noodle",
+                "Cuisine Type": "Street Food",
+                "Price Range (SGD)": "5 - 10",
+                "Location (Area)": "Kallang",
+                "Average Rating (out of 5)": 4.5
+            }
+        ];
+
+        // Utility function for price range matching
+        const isWithinRange = (range, maxPrice) => {
+            const [min, max] = range.split(' - ').map(Number);
+            return maxPrice >= min && (!max || maxPrice <= max);
+        };
+
+        // Function to render recommendations
+        function renderRecommendations(data) {
+            const container = document.querySelector(".recommendations-container");
+            container.innerHTML = ""; // Clear current recommendations
+
+            if (data.length > 0) {
+                data.forEach(rec => {
+                    container.innerHTML += `
+                        <article class="recommendation">
+                            <h2>${rec["Restaurant Name"]}</h2>
+                            <p><strong>Cuisine:</strong> ${rec["Cuisine Type"]}</p>
+                            <p><strong>Price Range:</strong> ${rec["Price Range (SGD)"]}</p>
+                            <p><strong>Location:</strong> ${rec["Location (Area)"]}</p>
+                            <p><strong>Rating:</strong> ${rec["Average Rating (out of 5)"]} / 5</p>
+                        </article>
+                    `;
+                });
+            } else {
+                container.innerHTML = "<p>No recommendations available for your preferences. Please try again.</p>";
+            }
+        }
+
+        // Filter and render recommendations on button click
+        document.querySelector("#filter-btn").addEventListener("click", () => {
+            const cuisine = document.querySelector("#cuisine").value.trim();
+            const price = Number(document.querySelector("#price").value);
+            const location = document.querySelector("#location").value.trim().toLowerCase();
+
+            const filtered = recommendations.filter(rec => {
+                return (
+                    (!cuisine || rec["Cuisine Type"].toLowerCase().includes(cuisine.toLowerCase())) &&
+                    (!price || isWithinRange(rec["Price Range (SGD)"], price)) &&
+                    (!location || rec["Location (Area)"].toLowerCase().includes(location))
+                );
+            });
+
+            renderRecommendations(filtered);
+        });
+
+        // Render all recommendations initially
+        renderRecommendations(recommendations);
+    </script>
 </body>
 </html>
