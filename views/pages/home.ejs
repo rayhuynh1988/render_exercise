@@ -9,33 +9,76 @@
 </head>
 <body>
     <main class="container">
-        <!-- Navbar which can be reused across other pages -->
+        <!-- Navbar -->
         <%- include('../partials/navbar'); %>
 
-        <!-- Information welcoming visitors to my page -->
+        <!-- Welcome Section -->
         <div class="welcome-container">
             <h1>Welcome to the Restaurant Guide</h1>
             <h2>Explore top-rated restaurants!</h2>
         </div>
 
-        <div class="new-post-btn-container">
-           <a href="/new" class="button" role="button">+ Add New Restaurant</a>
+        <!-- Filter Section -->
+        <div class="filter-container">
+            <label for="filter-cuisine">Cuisine:</label>
+            <input type="text" id="filter-cuisine" placeholder="e.g., French">
+            
+            <label for="filter-location">Location:</label>
+            <input type="text" id="filter-location" placeholder="e.g., Chinatown">
+            
+            <label for="filter-rating">Minimum Rating:</label>
+            <input type="number" id="filter-rating" min="1" max="5" step="0.1" placeholder="e.g., 4.5">
         </div>
 
-        <!-- Show restaurant data -->
-        <% blogs.forEach(restaurant => { %>
-            <article class="post-container">
-                <h3><%= restaurant.name %></h3>
-                <p><strong>Cuisine:</strong> <%= restaurant.cuisine %></p>
-                <p><strong>Price Range:</strong> <%= restaurant.price %></p>
-                <p><strong>Location:</strong> <%= restaurant.location %></p>
-                <p><strong>Rating:</strong> <%= restaurant.rating %> / 5</p>
-                <p><strong>Dietary Option:</strong> <%= restaurant.diet %></p>
-                <form action="/delete/<%= restaurant.id %>" method="post" onsubmit="return confirm('Do you really want to delete this restaurant?');">
-                    <button class="outline primary" type="submit">Delete</button>
-                </form>
-            </article>
-        <% }); %>
+        <!-- Restaurant Data -->
+        <div id="restaurant-list">
+            <% blogs.forEach(restaurant => { %>
+                <article class="post-container" data-cuisine="<%= restaurant.cuisine.toLowerCase() %>" 
+                                                  data-location="<%= restaurant.location.toLowerCase() %>" 
+                                                  data-rating="<%= restaurant.rating %>">
+                    <h3><%= restaurant.name %></h3>
+                    <p><strong>Cuisine:</strong> <%= restaurant.cuisine %></p>
+                    <p><strong>Price Range:</strong> <%= restaurant.price %></p>
+                    <p><strong>Location:</strong> <%= restaurant.location %></p>
+                    <p><strong>Rating:</strong> <%= restaurant.rating %> / 5</p>
+                    <p><strong>Dietary Option:</strong> <%= restaurant.diet %></p>
+                    <form action="/delete/<%= restaurant.id %>" method="post" onsubmit="return confirm('Do you really want to delete this restaurant?');">
+                        <button class="outline primary" type="submit">Delete</button>
+                    </form>
+                </article>
+            <% }); %>
+        </div>
     </main>
+
+    <!-- JavaScript for Filtering -->
+    <script>
+        const cuisineFilter = document.getElementById('filter-cuisine');
+        const locationFilter = document.getElementById('filter-location');
+        const ratingFilter = document.getElementById('filter-rating');
+        const restaurantList = document.getElementById('restaurant-list');
+        const restaurants = Array.from(restaurantList.querySelectorAll('.post-container'));
+
+        function filterRestaurants() {
+            const cuisineValue = cuisineFilter.value.toLowerCase();
+            const locationValue = locationFilter.value.toLowerCase();
+            const ratingValue = parseFloat(ratingFilter.value) || 0;
+
+            restaurants.forEach(restaurant => {
+                const matchesCuisine = restaurant.dataset.cuisine.includes(cuisineValue);
+                const matchesLocation = restaurant.dataset.location.includes(locationValue);
+                const matchesRating = parseFloat(restaurant.dataset.rating) >= ratingValue;
+
+                if (matchesCuisine && matchesLocation && matchesRating) {
+                    restaurant.style.display = '';
+                } else {
+                    restaurant.style.display = 'none';
+                }
+            });
+        }
+
+        cuisineFilter.addEventListener('input', filterRestaurants);
+        locationFilter.addEventListener('input', filterRestaurants);
+        ratingFilter.addEventListener('input', filterRestaurants);
+    </script>
 </body>
 </html>
