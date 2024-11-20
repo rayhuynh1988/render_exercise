@@ -1,1348 +1,1514 @@
 [
-        {
-            "name": "Odette",
-            "cuisine": "French",
-            "price": "350 - 500",
-            "location": "City Hall",
-            "rating": 4.8,
-            "diet": "Healthy"
-        },
-        {
-            "name": "Burnt Ends",
-            "cuisine": "Australian Barbecue",
-            "price": "100 - 200",
-            "location": "Chinatown",
-            "rating": 4.7,
-            "diet": "Unhealthy"
-        },
-        {
-            "name": "Les Amis",
-            "cuisine": "French",
-            "price": "300 - 450",
-            "location": "Orchard",
-            "rating": 4.8,
-            "diet": "Healthy"
-        },
-        {
-            "name": "Candlenut",
-            "cuisine": "Peranakan",
-            "price": "80 - 150",
-            "location": "Dempsey Hill",
-            "rating": 4.6,
-            "diet": "Healthy"
-        },
-        {
-            "name": "Hill Street Tai Hwa Pork Noodle",
-            "cuisine": "Street Food",
-            "price": "5 - 10",
-            "location": "Kallang",
-            "rating": 4.5,
-            "diet": "Unhealthy"
-        },
-        {
-            "name": "Iggy's",
-            "cuisine": "Modern European",
-            "price": "250 - 400",
-            "location": "Orchard",
-            "rating": 4.7,
-            "diet": "Healthy"
-        },
-        {
-            "name": "Saint Pierre",
-            "cuisine": "French",
-            "price": "250 - 400",
-            "location": "Marina Bay",
-            "rating": 4.7,
-            "diet": "Healthy"
-        },
-        {
-            "name": "Jaan",
-            "cuisine": "Modern French",
-            "price": "250 - 400",
-            "location": "City Hall",
-            "rating": 4.7,
-            "diet": "Healthy"
-        },
-        {
-            "name": "Shinji by Kanesaka",
-            "cuisine": "Japanese",
-            "price": "250 - 400",
-            "location": "Bras Basah",
-            "rating": 4.6,
-            "diet": "Healthy"
-        },
-        {
-            "name": "Waku Ghin",
-            "cuisine": "Japanese-European",
-            "price": "400 - 600",
-            "location": "Marina Bay Sands",
-            "rating": 4.7,
-            "diet": "Healthy"
-        },
-        {
-            "name": "Corner House",
-            "cuisine": "Gastro-Botanica",
-            "price": "150 - 300",
-            "location": "Botanic Gardens",
-            "rating": 4.6,
-            "diet": "Healthy"
-        },
-        {
-            "name": "Labyrinth",
-            "cuisine": "Modern Singaporean",
-            "price": "150 - 250",
-            "location": "Esplanade",
-            "rating": 4.6,
-            "diet": "Healthy"
-        },
-        {
-            "name": "Meta",
-            "cuisine": "Contemporary Asian",
-            "price": "150 - 250",
-            "location": "Keong Saik",
-            "rating": 4.6,
-            "diet": "Healthy"
-        },
-        {
-            "name": "Summer Pavilion",
-            "cuisine": "Cantonese",
-            "price": "100 - 200",
-            "location": "Marina Bay",
-            "rating": 4.6,
-            "diet": "Healthy"
-        },
-        {
-            "name": "Shisen Hanten",
-            "cuisine": "Szechuan",
-            "price": "100 - 200",
-            "location": "Orchard",
-            "rating": 4.5,
-            "diet": "Unhealthy"
-        },
-        {
-            "name": "Sushi Ichi",
-            "cuisine": "Japanese",
-            "price": "200 - 350",
-            "location": "Orchard",
-            "rating": 4.6,
-            "diet": "Healthy"
-        },
-        {
-            "name": "Alma by Juan Amador",
-            "cuisine": "European-Asian",
-            "price": "150 - 250",
-            "location": "Orchard",
-            "rating": 4.6,
-            "diet": "Healthy"
-        },
-        {
-            "name": "Rhubarb Le name",
-            "cuisine": "French",
-            "price": "150 - 250",
-            "location": "Duxton Hill",
-            "rating": 4.6,
-            "diet": "Healthy"
-        },
-        {
-            "name": "Cheek Bistro",
-            "cuisine": "Modern Australian",
-            "price": "100 - 200",
-            "location": "Boon Tat Street",
-            "rating": 4.5,
-            "diet": "Healthy"
-        },
-        {
-            "name": "Garibaldi",
-            "cuisine": "Italian",
-            "price": "100 - 200",
-            "location": "Purvis Street",
-            "rating": 4.5,
-            "diet": "Healthy"
-        },
-        {
-            "name": "Putien (Kitchener Road)",
-            "cuisine": "Fujian",
-            "price": "50 - 100",
-            "location": "Kitchener Road",
-            "rating": 4.4,
-            "diet": "Healthy"
-        },
-        {
-            "name": "Song of India",
-            "cuisine": "Indian",
-            "price": "100 - 200",
-            "location": "Newton",
-            "rating": 4.4,
-            "diet": "Healthy"
-        },
-        {
-            "name": "Whitegrass",
-            "cuisine": "Modern Australian",
-            "price": "150 - 250",
-            "location": "Chijmes",
-            "rating": 4.5,
-            "diet": "Healthy"
-        },
-        {
-            "name": "Braci",
-            "cuisine": "Italian",
-            "price": "150 - 250",
-            "location": "Boat Quay",
-            "rating": 4.5,
-            "diet": "Healthy"
-        },
-        {
-            "name": "Cut by Wolfgang Puck",
-            "cuisine": "Steakhouse",
-            "price": "200 - 350",
-            "location": "Marina Bay Sands",
-            "rating": 4.6,
-            "diet": "Unhealthy"
-        },
-        {
-            "name": "Gunther's",
-            "cuisine": "French",
-            "price": "150 - 250",
-            "location": "Purvis Street",
-            "rating": 4.5,
-            "diet": "Healthy"
-        },
-        {
-            "name": "Hashida Sushi",
-            "cuisine": "Japanese",
-            "price": "250 - 400",
-            "location": "Mohamed Sultan Road",
-            "rating": 4.6,
-            "diet": "Healthy"
-        },
-        {
-            "name": "Lei Garden",
-            "cuisine": "Cantonese",
-            "price": "100 - 200",
-            "location": "Chijmes",
-            "rating": 4.4,
-            "diet": "Healthy"
-        },
-        {
-            "name": "Shinji by Kanesaka (Carlton)",
-            "cuisine": "Japanese",
-            "price": "250 - 400",
-            "location": "Bras Basah",
-            "rating": 4.6,
-            "diet": "Healthy"
-        },
-        {
-            "name": "Summerhouse",
-            "cuisine": "French-Asian",
-            "price": "100 - 200",
-            "location": "Seletar",
-            "rating": 4.5,
-            "diet": "Healthy"
-        },
-        {
-            "name": "Teppei",
-            "cuisine": "Japanese",
-            "price": "80 - 150",
-            "location": "Tanjong Pagar",
-            "rating": 4.5,
-            "diet": "Healthy"
-        },
-        {
-            "name": "Tippling Club",
-            "cuisine": "Modern European",
-            "price": "150 - 250",
-            "location": "Tanjong Pagar",
-            "rating": 4.5,
-            "diet": "Healthy"
-        },
-        {
-            "name": "Violet Oon Satay Bar & Grill",
-            "cuisine": "Peranakan",
-            "price": "50 - 100",
-            "location": "Clarke Quay",
-            "rating": 4.4,
-            "diet": "Healthy"
-        },
-        {
-            "name": "Z\u00e9n",
-            "cuisine": "Scandinavian",
-            "price": "400 - 600",
-            "location": "Bukit Pasoh",
-            "rating": 4.7,
-            "diet": "Healthy"
-        },
-        {
-            "name": "Akira Back",
-            "cuisine": "Japanese-Korean",
-            "price": "100 - 200",
-            "location": "South Beach",
-            "rating": 4.5,
-            "diet": "Healthy"
-        },
-        {
-            "name": "Artichoke",
-            "cuisine": "Middle Eastern",
-            "price": "50 - 100",
-            "location": "Bugis",
-            "rating": 4.4,
-            "diet": "Healthy"
-        },
-        {
-            "name": "Bistecca Tuscan Steakhouse",
-            "cuisine": "Italian Steakhouse",
-            "price": "150 - 250",
-            "location": "Mohamed Sultan Road",
-            "rating": 4.5,
-            "diet": "Unhealthy"
-        },
-        {
-            "name": "Blue Ginger",
-            "cuisine": "Peranakan",
-            "price": "50 - 100",
-            "location": "Tanjong Pagar",
-            "rating": 4.4,
-            "diet": "Healthy"
-        },
-        {
-            "name": "Burnt Ends Bakery",
-            "cuisine": "Bakery",
-            "price": "10 - 20",
-            "location": "Dempsey Hill",
-            "rating": 4.5,
-            "diet": "Unhealthy"
-        },
-        {
-            "name": "Caffe Fernet",
-            "cuisine": "Italian",
-            "price": "50 - 100",
-            "location": "Collyer Quay",
-            "rating": 4.5,
-            "diet": "Healthy"
-        },
-        {
-            "name": "Chatterbox",
-            "cuisine": "Local",
-            "price": "30 - 50",
-            "location": "Orchard",
-            "rating": 4.3,
-            "diet": "Unhealthy"
-        },
-        {
-            "name": "Colony",
-            "cuisine": "International Buffet",
-            "price": "80 - 150",
-            "location": "Marina Bay",
-            "rating": 4.5,
-            "diet": "Unhealthy"
-        },
-        {
-            "name": "Cuturi Gallery",
-            "cuisine": "Italian",
-            "price": "50 - 100",
-            "location": "Orchard",
-            "rating": 4.4,
-            "diet": "Healthy"
-        },
-        {
-            "name": "Esora",
-            "cuisine": "Japanese",
-            "price": "250 - 400",
-            "location": "Mohamed Sultan Road",
-            "rating": 4.6,
-            "diet": "Healthy"
-        },
-        {
-            "name": "Fat Cow",
-            "cuisine": "Japanese Steakhouse",
-            "price": "150 - 250",
-            "location": "Orchard",
-            "rating": 4.5,
-            "diet": "Unhealthy"
-        },
-        {
-            "name": "Fat Prince",
-            "cuisine": "Middle Eastern",
-            "price": "50 - 100",
-            "location": "Tanjong Pagar",
-            "rating": 4.4,
-            "diet": "Healthy"
-        },
-        {
-            "name": "FOC Sentosa",
-            "cuisine": "Spanish",
-            "price": "100 - 200",
-            "location": "Sentosa",
-            "rating": 4.5,
-            "diet": "Healthy"
-        },
-        {
-            "name": "Garang Grill",
-            "cuisine": "Local Grill",
-            "price": "50 - 100",
-            "location": "Bukit Timah",
-            "rating": 4.4,
-            "diet": "Unhealthy"
-        },
-        {
-            "name": "Gattopardo Ristorante di Mare",
-            "cuisine": "Italian Seafood",
-            "price": "100 - 200",
-            "location": "Tanjong Pagar",
-            "rating": 4.5,
-            "diet": "Healthy"
-        },
-        {
-            "name": "Gyu-Kaku",
-            "cuisine": "Japanese BBQ",
-            "price": "50 - 100",
-            "location": "Various locations",
-            "rating": 4.3,
-            "diet": "Unhealthy"
-        },
-        {
-            "name": "Halia",
-            "cuisine": "European-Asian",
-            "price": "50 - 100",
-            "location": "Botanic Gardens",
-            "rating": 4.4,
-            "diet": "Healthy"
-        },
-        {
-            "name": "Imperial Treasure Super Peking Duck",
-            "cuisine": "Chinese",
-            "price": "100 - 200",
-            "location": "Orchard",
-            "rating": 4.5,
-            "diet": "Unhealthy"
-        },
-        {
-            "name": "Jaan by Kirk Westaway",
-            "cuisine": "Modern British",
-            "price": "250 - 400",
-            "location": "City Hall",
-            "rating": 4.7,
-            "diet": "Healthy"
-        },
-        {
-            "name": "Kinki name + Bar",
-            "cuisine": "Japanese",
-            "price": "50 - 100",
-            "location": "Marina Bay",
-            "rating": 4.4,
-            "diet": "Healthy"
-        },
-        {
-            "name": "Koma",
-            "cuisine": "Japanese",
-            "price": "150 - 250",
-            "location": "Marina Bay Sands",
-            "rating": 4.5,
-            "diet": "Healthy"
-        },
-        {
-            "name": "Labyrinth",
-            "cuisine": "Modern Singaporean",
-            "price": "150 - 250",
-            "location": "Esplanade",
-            "rating": 4.6,
-            "diet": "Healthy"
-        },
-        {
-            "name": "L'Atelier de Jo\u00ebl Robuchon",
-            "cuisine": "French",
-            "price": "400 - 600",
-            "location": "Sentosa",
-            "rating": 4.7,
-            "diet": "Healthy"
-        },
-        {
-            "name": "Level33",
-            "cuisine": "European",
-            "price": "100 - 200",
-            "location": "Marina Bay",
-            "rating": 4.5,
-            "diet": "Healthy"
-        },
-        {
-            "name": "Long Beach Seafood",
-            "cuisine": "Seafood",
-            "price": "50 - 100",
-            "location": "East Coast",
-            "rating": 4.4,
-            "diet": "Healthy"
-        },
-        {
-            "name": "Luke's Oyster Bar & Chop House",
-            "cuisine": "American",
-            "price": "100 - 200",
-            "location": "Chinatown",
-            "rating": 4.5,
-            "diet": "Healthy"
-        },
-        {
-            "name": "Mag's Wine Kitchen",
-            "cuisine": "French",
-            "price": "100 - 200",
-            "location": "Keong Saik",
-            "rating": 4.4,
-            "diet": "Healthy"
-        },
-        {
-            "name": "Man Man Japanese Unagi name",
-            "cuisine": "Japanese",
-            "price": "50 - 100",
-            "location": "Tanjong Pagar",
-            "rating": 4.4,
-            "diet": "Healthy"
-        },
-        {
-            "name": "Mott 32",
-            "cuisine": "Chinese",
-            "price": "150 - 250",
-            "location": "Marina Bay Sands",
-            "rating": 4.5,
-            "diet": "Unhealthy"
-        },
-        {
-            "name": "National Kitchen by Violet Oon",
-            "cuisine": "Peranakan",
-            "price": "50 - 100",
-            "location": "City Hall",
-            "rating": 4.5,
-            "diet": "Healthy"
-        },
-        {
-            "name": "Nouri",
-            "cuisine": "Modern European-Asian",
-            "price": "150 - 250",
-            "location": "Amoy Street",
-            "rating": 4.6,
-            "diet": "Healthy"
-        },
-        {
-            "name": "Osteria Mozza",
-            "cuisine": "Italian",
-            "price": "150 - 250",
-            "location": "Marina Bay Sands",
-            "rating": 4.5,
-            "diet": "Unhealthy"
-        },
-        {
-            "name": "Palm Beach Seafood",
-            "cuisine": "Seafood",
-            "price": "50 - 100",
-            "location": "Fullerton",
-            "rating": 4.4,
-            "diet": "Healthy"
-        },
-        {
-            "name": "Preludio",
-            "cuisine": "Modern European",
-            "price": "150 - 250",
-            "location": "Raffles Place",
-            "rating": 4.5,
-            "diet": "Healthy"
-        },
-        {
-            "name": "PS.Cafe",
-            "cuisine": "Western",
-            "price": "50 - 100",
-            "location": "Various locations",
-            "rating": 4.3,
-            "diet": "Unhealthy"
-        },
-        {
-            "name": "Rang Mahal",
-            "cuisine": "Indian",
-            "price": "100 - 200",
-            "location": "Orchard",
-            "rating": 4.4,
-            "diet": "Healthy"
-        },
-        {
-            "name": "Salted & Hung",
-            "cuisine": "Modern Australian",
-            "price": "100 - 200",
-            "location": "Purvis Street",
-            "rating": 4.5,
-            "diet": "Healthy"
-        },
-        {
-            "name": "Sushi Kimura",
-            "cuisine": "Japanese",
-            "price": "250 - 400",
-            "location": "Orchard",
-            "rating": 4.6,
-            "diet": "Healthy"
-        },
-        {
-            "name": "Table at 7",
-            "cuisine": "European-Asian",
-            "price": "100 - 200",
-            "location": "Mohamed Sultan Road",
-            "rating": 4.4,
-            "diet": "Healthy"
-        },
-        {
-            "name": "The Dempsey Cookhouse & Bar",
-            "cuisine": "Modern European",
-            "price": "100 - 200",
-            "location": "Dempsey Hill",
-            "rating": 4.5,
-            "diet": "Healthy"
-        },
-        {
-            "name": "The Song of India",
-            "cuisine": "Indian",
-            "price": "100 - 200",
-            "location": "Newton",
-            "rating": 4.4,
-            "diet": "Healthy"
-        },
-        {
-            "name": "Vianney Massot name",
-            "cuisine": "French",
-            "price": "250 - 400",
-            "location": "Outram",
-            "rating": 4.6,
-            "diet": "Healthy"
-        },
-        {
-            "name": "Wild Rocket",
-            "cuisine": "Modern Singaporean",
-            "price": "50 - 100",
-            "location": "Mount Emily",
-            "rating": 4.4,
-            "diet": "Healthy"
-        },
-        {
-            "name": "Yan Ting",
-            "cuisine": "Cantonese",
-            "price": "100 - 200",
-            "location": "Orchard",
-            "rating": 4.5,
-            "diet": "Unhealthy"
-        },
-        {
-            "name": "Wild Blaze",
-            "cuisine": "Steakhouse",
-            "price": "100 - 200",
-            "location": "Tanjong Pagar",
-            "rating": 4.5,
-            "diet": "Unhealthy"
-        },
-        {
-            "name": "Fourgather",
-            "cuisine": "Thai",
-            "price": "50 - 100",
-            "location": "Telok Ayer",
-            "rating": 4.4,
-            "diet": "Healthy"
-        },
-        {
-            "name": "L'Antica Pizzeria Da Michele",
-            "cuisine": "Italian",
-            "price": "50 - 100",
-            "location": "Club Street",
-            "rating": 4.5,
-            "diet": "Unhealthy"
-        },
-        {
-            "name": "The Coconut Club",
-            "cuisine": "Malay",
-            "price": "30 - 50",
-            "location": "Beach Road",
-            "rating": 4.4,
-            "diet": "Unhealthy"
-        },
-        {
-            "name": "The Prince",
-            "cuisine": "Middle Eastern",
-            "price": "50 - 100",
-            "location": "Tanjong Pagar",
-            "rating": 4.4,
-            "diet": "Healthy"
-        },
-        {
-            "name": "Greenwood Fish Market",
-            "cuisine": "Seafood",
-            "price": "50 - 100",
-            "location": "Bukit Timah",
-            "rating": 4.4,
-            "diet": "Healthy"
-        },
-        {
-            "name": "Le Clos",
-            "cuisine": "French",
-            "price": "100 - 200",
-            "location": "New Bahru",
-            "rating": 4.5,
-            "diet": "Healthy"
-        },
-        {
-            "name": "DAILY BEER",
-            "cuisine": "Bar",
-            "price": "30 - 50",
-            "location": "Tanjong Pagar",
-            "rating": 4.3,
-            "diet": "Unhealthy"
-        },
-        {
-            "name": "Neon Pigeon",
-            "cuisine": "Japanese",
-            "price": "50 - 100",
-            "location": "Tanjong Pagar",
-            "rating": 4.4,
-            "diet": "Healthy"
-        },
-        {
-            "name": "FICO",
-            "cuisine": "Italian",
-            "price": "50 - 100",
-            "location": "East Coast",
-            "rating": 4.4,
-            "diet": "Unhealthy"
-        },
-        {
-            "name": "Bar Cicheti",
-            "cuisine": "Italian",
-            "price": "50 - 100",
-            "location": "Keong Saik",
-            "rating": 4.4,
-            "diet": "Unhealthy"
-        },
-        {
-            "name": "Nixta",
-            "cuisine": "Mexican",
-            "price": "50 - 100",
-            "location": "Tanjong Pagar",
-            "rating": 4.4,
-            "diet": "Unhealthy"
-        },
-        {
-            "name": "Marcy's",
-            "cuisine": "Seafood",
-            "price": "50 - 100",
-            "location": "Duxton Hill",
-            "rating": 4.4,
-            "diet": "Healthy"
-        },
-        {
-            "name": "Carlitos",
-            "cuisine": "Spanish",
-            "price": "50 - 100",
-            "location": "Tanjong Pagar",
-            "rating": 4.4,
-            "diet": "Unhealthy"
-        },
-        {
-            "name": "Revolver",
-            "cuisine": "Indian",
-            "price": "100 - 200",
-            "location": "Tanjong Pagar",
-            "rating": 4.5,
-            "diet": "Healthy"
-        },
-        {
-            "name": "AIR",
-            "cuisine": "Farm-to-Table",
-            "price": "100 - 200",
-            "location": "Tanjong Pagar",
-            "rating": 4.5,
-            "diet": "Healthy"
-        },
-        {
-            "name": "Tamba",
-            "cuisine": "West-African",
-            "price": "100 - 200",
-            "location": "Tanjong Pagar",
-            "rating": 4.5,
-            "diet": "Healthy"
-        },
-        {
-            "name": "JB Ah Meng",
-            "cuisine": "Chinese",
-            "price": "30 - 50",
-            "location": "Geylang",
-            "rating": 4.4,
-            "diet": "Unhealthy"
-        },
-        {
-            "name": "Saint Pierre",
-            "cuisine": "French",
-            "price": "250 - 400",
-            "location": "Marina Bay",
-            "rating": 4.7,
-            "diet": "Healthy"
-        },
-        {
-            "name": "Iggy's",
-            "cuisine": "Modern European",
-            "price": "250 - 400",
-            "location": "Orchard",
-            "rating": 4.7,
-            "diet": "Healthy"
-        },
-        {
-            "name": "Odette",
-            "cuisine": "French",
-            "price": "350 - 500",
-            "location": "City Hall",
-            "rating": 4.8,
-            "diet": "Healthy"
-        },
-        {
-            "name": "Burnt Ends",
-            "cuisine": "Australian Barbecue",
-            "price": "100 - 200",
-            "location": "Chinatown",
-            "rating": 4.7,
-            "diet": "Unhealthy"
-        },
-        {
-            "name": "Les Amis",
-            "cuisine": "French",
-            "price": "300 - 450",
-            "location": "Orchard",
-            "rating": 4.8,
-            "diet": "Healthy"
-        },
-        {
-            "name": "Candlenut",
-            "cuisine": "Peranakan",
-            "price": "80 - 150",
-            "location": "Dempsey Hill",
-            "rating": 4.6,
-            "diet": "Healthy"
-        },
-        {
-            "name": "Hill Street Tai Hwa Pork Noodle",
-            "cuisine": "Street Food",
-            "price": "5 - 10",
-            "location": "Kallang",
-            "rating": 4.5,
-            "diet": "Unhealthy"
-        },
-        {
-            "name": "Jaan",
-            "cuisine": "Modern French",
-            "price": "250 - 400",
-            "location": "City Hall",
-            "rating": 4.7,
-            "diet": "Healthy"
-        },
-        {
-            "name": "Shinji by Kanesaka",
-            "cuisine": "Japanese",
-            "price": "250 - 400",
-            "location": "Bras Basah",
-            "rating": 4.6,
-            "diet": "Healthy"
-        },
-        {
-            "name": "Waku Ghin",
-            "cuisine": "Japanese-European",
-            "price": "400 - 600",
-            "location": "Marina Bay Sands",
-            "rating": 4.7,
-            "diet": "Healthy"
-        },
-        {
-            "name": "Corner House",
-            "cuisine": "Gastro-Botanica",
-            "price": "150 - 300",
-            "location": "Botanic Gardens",
-            "rating": 4.6,
-            "diet": "Healthy"
-        },
-        {
-            "name": "Labyrinth",
-            "cuisine": "Modern Singaporean",
-            "price": "150 - 250",
-            "location": "Esplanade",
-            "rating": 4.6,
-            "diet": "Healthy"
-        },
-        {
-            "name": "Meta",
-            "cuisine": "Contemporary Asian",
-            "price": "150 - 250",
-            "location": "Keong Saik",
-            "rating": 4.6,
-            "diet": "Healthy"
-        },
-        {
-            "name": "Summer Pavilion",
-            "cuisine": "Cantonese",
-            "price": "100 - 200",
-            "location": "Marina Bay",
-            "rating": 4.6,
-            "diet": "Healthy"
-        },
-        {
-            "name": "Shisen Hanten",
-            "cuisine": "Szechuan",
-            "price": "100 - 200",
-            "location": "Orchard",
-            "rating": 4.5,
-            "diet": "Unhealthy"
-        },
-        {
-            "name": "Sushi Ichi",
-            "cuisine": "Japanese",
-            "price": "200 - 350",
-            "location": "Orchard",
-            "rating": 4.6,
-            "diet": "Healthy"
-        },
-        {
-            "name": "Alma by Juan Amador",
-            "cuisine": "European-Asian",
-            "price": "150 - 250",
-            "location": "Orchard",
-            "rating": 4.6,
-            "diet": "Healthy"
-        },
-        {
-            "name": "Rhubarb Le name",
-            "cuisine": "French",
-            "price": "150 - 250",
-            "location": "Duxton Hill",
-            "rating": 4.6,
-            "diet": "Healthy"
-        },
-        {
-            "name": "Cheek Bistro",
-            "cuisine": "Modern Australian",
-            "price": "100 - 200",
-            "location": "Boon Tat Street",
-            "rating": 4.5,
-            "diet": "Healthy"
-        },
-        {
-            "name": "Garibaldi",
-            "cuisine": "Italian",
-            "price": "100 - 200",
-            "location": "Purvis Street",
-            "rating": 4.5,
-            "diet": "Healthy"
-        },
-        {
-            "name": "Putien (Kitchener Road)",
-            "cuisine": "Fujian",
-            "price": "50 - 100",
-            "location": "Kitchener Road",
-            "rating": 4.4,
-            "diet": "Healthy"
-        },
-        {
-            "name": "Song of India",
-            "cuisine": "Indian",
-            "price": "100 - 200",
-            "location": "Newton",
-            "rating": 4.4,
-            "diet": "Healthy"
-        },
-        {
-            "name": "Whitegrass",
-            "cuisine": "Modern Australian",
-            "price": "150 - 250",
-            "location": "Chijmes",
-            "rating": 4.5,
-            "diet": "Healthy"
-        },
-        {
-            "name": "Braci",
-            "cuisine": "Italian",
-            "price": "150 - 250",
-            "location": "Boat Quay",
-            "rating": 4.5,
-            "diet": "Healthy"
-        },
-        {
-            "name": "Garibaldi",
-            "cuisine": "Italian",
-            "price": "48++",
-            "location": "Purvis Street",
-            "rating": 4.5,
-            "diet": "Vegetarian options available"
-        },
-        {
-            "name": "Corner House",
-            "cuisine": "Innovative French-Asian",
-            "price": "118++",
-            "location": "Botanic Gardens",
-            "rating": 4.6,
-            "diet": "Vegetarian and pescatarian options available"
-        },
-        {
-            "name": "Iggy's",
-            "cuisine": "European Contemporary",
-            "price": "105++",
-            "location": "Orchard",
-            "rating": 4.7,
-            "diet": "Vegetarian options available"
-        },
-        {
-            "name": "Nhung Kitchen",
-            "cuisine": "Vietnamese",
-            "price": "Under 9",
-            "location": "Balestier",
-            "rating": 4.7,
-            "diet": "Vegetarian options available"
-        },
-        {
-            "name": "Katsu-an",
-            "cuisine": "Japanese",
-            "price": "5.90",
-            "location": "Suntec City",
-            "rating": 4.4,
-            "diet": "Non-halal"
-        },
-        {
-            "name": "Tori Sanwa",
-            "cuisine": "Japanese",
-            "price": "14.90++",
-            "location": "Suntec City",
-            "rating": 4.4,
-            "diet": "Non-halal"
-        },
-        {
-            "name": "Bincho",
-            "cuisine": "Japanese",
-            "price": "48++",
-            "location": "Moh Guan Terrace",
-            "rating": 4.5,
-            "diet": "Non-halal"
-        },
-        {
-            "name": "Fool",
-            "cuisine": "European Contemporary",
-            "price": "99",
-            "location": "Bukit Pasoh",
-            "rating": 4.5,
-            "diet": "Vegetarian options available"
-        },
-        {
-            "name": "Overeasy",
-            "cuisine": "American",
-            "price": "29-35",
-            "location": "Fullerton Road",
-            "rating": 4.3,
-            "diet": "Vegetarian options available"
-        },
-        {
-            "name": "Estate",
-            "cuisine": "International Buffet",
-            "price": "62++",
-            "location": "Hilton Singapore Orchard",
-            "rating": 4.5,
-            "diet": "Vegetarian options available"
-        },
-        {
-            "name": "Ginger",
-            "cuisine": "Local",
-            "price": "49",
-            "location": "ParkRoyal on Beach Road",
-            "rating": 4.4,
-            "diet": "Halal-certified"
-        },
-        {
-            "name": "Kintamani Indonesian Restaurant",
-            "cuisine": "Indonesian",
-            "price": "35.80",
-            "location": "Furama Riverfront",
-            "rating": 4.3,
-            "diet": "Halal-certified"
-        },
-        {
-            "name": "Kiseki Japanese Buffet Restaurant",
-            "cuisine": "Japanese",
-            "price": "29.90++",
-            "location": "Orchard Central",
-            "rating": 4.2,
-            "diet": "Non-halal"
-        },
-        {
-            "name": "The Salted Plum",
-            "cuisine": "Taiwanese",
-            "price": "10+",
-            "location": "Circular Road",
-            "rating": 4.4,
-            "diet": "Non-halal"
-        },
-        {
-            "name": "Kim Dae Mun Korean Food",
-            "cuisine": "Korean",
-            "price": "Around 10",
-            "location": "Concorde Shopping Mall",
-            "rating": 4.5,
-            "diet": "Non-halal"
-        },
-        {
-            "name": "The Coconut Club",
-            "cuisine": "Malay",
-            "price": "12.80",
-            "location": "Ann Siang Hill",
-            "rating": 4.6,
-            "diet": "Halal-certified"
-        },
-        {
-            "name": "Lagnaa Barefoot Dining",
-            "cuisine": "Indian",
-            "price": "20-30",
-            "location": "Little India",
-            "rating": 4.5,
-            "diet": "Vegetarian options available"
-        },
-        {
-            "name": "Pasta Brava",
-            "cuisine": "Italian",
-            "price": "25-35",
-            "location": "Craig Road",
-            "rating": 4.4,
-            "diet": "Vegetarian options available"
-        },
-        {
-            "name": "Hawker Chan",
-            "cuisine": "Chinese",
-            "price": "2-5",
-            "location": "Chinatown",
-            "rating": 4.3,
-            "diet": "Non-halal"
-        },
-        {
-            "name": "Tian Tian Hainanese Chicken Rice",
-            "cuisine": "Chinese",
-            "price": "5-6",
-            "location": "Maxwell Food Centre",
-            "rating": 4.4,
-            "diet": "Non-halal"
-        },
-        {
-            "name": "Liao Fan Hong Kong Soya Sauce Chicken Rice & Noodle",
-            "cuisine": "Chinese",
-            "price": "2-5",
-            "location": "Chinatown",
-            "rating": 4.3,
-            "diet": "Non-halal"
-        },
-        {
-            "name": "Song Fa Bak Kut Teh",
-            "cuisine": "Chinese",
-            "price": "10-15",
-            "location": "Clarke Quay",
-            "rating": 4.4,
-            "diet": "Non-halal"
-        },
-        {
-            "name": "Din Tai Fung",
-            "cuisine": "Chinese",
-            "price": "20-30",
-            "location": "Various Locations",
-            "rating": 4.5,
-            "diet": "Vegetarian options available"
-        },
-        {
-            "name": "Tim Ho Wan",
-            "cuisine": "Chinese",
-            "price": "20-30",
-            "location": "Various Locations",
-            "rating": 4.4,
-            "diet": "Non-halal"
-        },
-        {
-            "name": "The Masses",
-            "cuisine": "Modern European",
-            "price": "20-40",
-            "location": "Beach Road",
-            "rating": 4.5,
-            "diet": "Vegetarian options available"
-        },
-        {
-            "name": "Nakhon Kitchen",
-            "cuisine": "Thai",
-            "price": "10-20",
-            "location": "Various Locations",
-            "rating": 4.4,
-            "diet": "Halal-certified"
-        },
-        {
-            "name": "Chatterbox",
-            "cuisine": "Local",
-            "price": "25-35",
-            "location": "Orchard",
-            "rating": 4.3,
-            "diet": "Halal-certified"
-        },
-        {
-            "name": "Prego",
-            "cuisine": "Italian",
-            "price": "40-60",
-            "location": "City Hall",
-            "rating": 4.4,
-            "diet": "Vegetarian options available"
-        },
-        {
-            "name": "Supply & Demand",
-            "cuisine": "Italian-Asian Fusion",
-            "price": "30-50",
-            "location": "Esplanade",
-            "rating": 4.3,
-            "diet": "Vegetarian options available"
-        },
-        {
-            "name": "The Halia",
-            "cuisine": "European-Asian Fusion",
-            "price": "40-60",
-            "location": "Botanic Gardens",
-            "rating": 4.4,
-            "diet": "Vegetarian options available"
-        },
-        {
-            "name": "Wild Honey",
-            "cuisine": "International",
-            "price": "30-50",
-            "location": "Orchard",
-            "rating": 4.4,
-            "diet": "Vegetarian options available"
-        },
-        {
-            "name": "Artichoke",
-            "cuisine": "Middle Eastern",
-            "price": "40-60",
-            "location": "Bugis",
-            "rating": 4.5,
-            "diet": "Vegetarian options available"
-        },
-        {
-            "name": "Blu Kouzina",
-            "cuisine": "Greek",
-            "price": "40-60",
-            "location": "Dempsey Hill",
-            "rating": 4.5,
-            "diet": "Vegetarian options available"
-        },
-        {
-            "name": "Fat Prince",
-            "cuisine": "Middle Eastern",
-            "price": "40-60",
-            "location": "Tanjong Pagar",
-            "rating": 4.4,
-            "diet": "Vegetarian options available"
-        },
-        {
-            "name": "Kinki Restaurant + Bar",
-            "cuisine": "Japanese",
-            "price": "50-70",
-            "location": "Marina Bay",
-            "rating": 4.3,
-            "diet": "Non-halal"
-        },
-        {
-            "name": "Lucha Loco",
-            "cuisine": "Mexican",
-            "price": "40-60",
-            "location": "Duxton Hill",
-            "rating": 4.4,
-            "diet": "Vegetarian options available"
-        },
-        {
-            "name": "No Signboard Seafood",
-            "cuisine": "Seafood",
-            "price": "50-80",
-            "location": "Geylang",
-            "rating": 4.3,
-            "diet": "Non-halal"
-        },
-        {
-            "name": "Penny University",
-            "cuisine": "Cafe",
-            "price": "20-30",
-            "location": "East Coast",
-            "rating": 4.4,
-            "diet": "Vegetarian options available"
-        },
-        {
-            "name": "Privé",
-            "cuisine": "International",
-            "price": "30-50",
-            "location": "Keppel Bay",
-            "rating": 4.3,
-            "diet": "Vegetarian options available"
-        },
-        {
-            "name": "PS.Cafe at Harding",
-            "cuisine": "Western",
-            "price": "40-60",
-            "location": "Dempsey Hill",
-            "rating": 4.4,
-            "diet": "Vegetarian options available"
-        },
-        {
-            "name": "Super Loco",
-            "cuisine": "Mexican",
-            "price": "40-60",
-            "location": "Robertson Quay",
-            "rating": 4.3,
-            "diet": "Vegetarian options available"
-        },
-        {
-            "name": "The Black Swan",
-            "cuisine": "European",
-            "price": "50-70",
-            "location": "Raffles Place",
-            "rating": 4.4,
-            "diet": "Vegetarian options available"
-        },
-        {
-            "name": "The Coastal Settlement",
-            "cuisine": "Western-Asian Fusion",
-            "price": "30-50",
-            "location": "Changi",
-            "rating": 4.3,
-            "diet": "Vegetarian options available"
-        },
-        {
-            "name": "The White Rabbit",
-            "cuisine": "European",
-            "price": "50-70",
-            "location": "Dempsey Hill",
-            "rating": 4.4,
-            "diet": "Vegetarian options available"
-        },
-        {
-            "name": "Tiong Bahru Bakery",
-            "cuisine": "Bakery",
-            "price": "10-20",
-            "location": "Tiong Bahru",
-            "rating": 4.5,
-            "diet": "Vegetarian options available"
-        },
-        {
-            "name": "Vatos Urban Tacos",
-            "cuisine": "Korean-Mexican Fusion",
-            "price": "30-50",
-            "location": "South Beach",
-            "rating": 4.3,
-            "diet": "Non-halal"
-        },
-        {
-            "name": "Wildseed Cafe",
-            "cuisine": "Cafe",
-            "price": "20-30",
-            "location": "Seletar",
-            "rating": 4.4,
-            "diet": "Vegetarian options available"
-        },
-        {
-            "name": "Yardbird Southern Table & Bar",
-            "cuisine": "American",
-            "price": "50-70",
-            "location": "Marina Bay Sands",
-            "rating": 4.3,
-            "diet": "Non-halal"
-        }
-         
-        
-    ]
+    {
+        "id": 1,
+        "name": "Odette",
+        "cuisine": "French",
+        "price": "350 - 500",
+        "location": "City Hall",
+        "rating": 4.8,
+        "diet": "Healthy"
+    },
+    {
+        "id": 2,
+        "name": "Burnt Ends",
+        "cuisine": "Australian Barbecue",
+        "price": "100 - 200",
+        "location": "Chinatown",
+        "rating": 4.7,
+        "diet": "Unhealthy"
+    },
+    {
+        "id": 3,
+        "name": "Les Amis",
+        "cuisine": "French",
+        "price": "300 - 450",
+        "location": "Orchard",
+        "rating": 4.8,
+        "diet": "Healthy"
+    },
+    {
+        "id": 4,
+        "name": "Candlenut",
+        "cuisine": "Peranakan",
+        "price": "80 - 150",
+        "location": "Dempsey Hill",
+        "rating": 4.6,
+        "diet": "Healthy"
+    },
+    {
+        "id": 5,
+        "name": "Hill Street Tai Hwa Pork Noodle",
+        "cuisine": "Street Food",
+        "price": "5 - 10",
+        "location": "Kallang",
+        "rating": 4.5,
+        "diet": "Unhealthy"
+    },
+    {
+        "id": 6,
+        "name": "Iggy's",
+        "cuisine": "Modern European",
+        "price": "250 - 400",
+        "location": "Orchard",
+        "rating": 4.7,
+        "diet": "Healthy"
+    },
+    {
+        "id": 7,
+        "name": "Saint Pierre",
+        "cuisine": "French",
+        "price": "250 - 400",
+        "location": "Marina Bay",
+        "rating": 4.7,
+        "diet": "Healthy"
+    },
+    {
+        "id": 8,
+        "name": "Jaan",
+        "cuisine": "Modern French",
+        "price": "250 - 400",
+        "location": "City Hall",
+        "rating": 4.7,
+        "diet": "Healthy"
+    },
+    {
+        "id": 9,
+        "name": "Shinji by Kanesaka",
+        "cuisine": "Japanese",
+        "price": "250 - 400",
+        "location": "Bras Basah",
+        "rating": 4.6,
+        "diet": "Healthy"
+    },
+    {
+        "id": 10,
+        "name": "Waku Ghin",
+        "cuisine": "Japanese-European",
+        "price": "400 - 600",
+        "location": "Marina Bay Sands",
+        "rating": 4.7,
+        "diet": "Healthy"
+    },
+    {
+        "id": 11,
+        "name": "Corner House",
+        "cuisine": "Gastro-Botanica",
+        "price": "150 - 300",
+        "location": "Botanic Gardens",
+        "rating": 4.6,
+        "diet": "Healthy"
+    },
+    {
+        "id": 12,
+        "name": "Labyrinth",
+        "cuisine": "Modern Singaporean",
+        "price": "150 - 250",
+        "location": "Esplanade",
+        "rating": 4.6,
+        "diet": "Healthy"
+    },
+    {
+        "id": 13,
+        "name": "Meta",
+        "cuisine": "Contemporary Asian",
+        "price": "150 - 250",
+        "location": "Keong Saik",
+        "rating": 4.6,
+        "diet": "Healthy"
+    },
+    {
+        "id": 14,
+        "name": "Summer Pavilion",
+        "cuisine": "Cantonese",
+        "price": "100 - 200",
+        "location": "Marina Bay",
+        "rating": 4.6,
+        "diet": "Healthy"
+    },
+    {
+        "id": 15,
+        "name": "Shisen Hanten",
+        "cuisine": "Szechuan",
+        "price": "100 - 200",
+        "location": "Orchard",
+        "rating": 4.5,
+        "diet": "Unhealthy"
+    },
+    {
+        "id": 16,
+        "name": "Sushi Ichi",
+        "cuisine": "Japanese",
+        "price": "200 - 350",
+        "location": "Orchard",
+        "rating": 4.6,
+        "diet": "Healthy"
+    },
+    {
+        "id": 17,
+        "name": "Alma by Juan Amador",
+        "cuisine": "European-Asian",
+        "price": "150 - 250",
+        "location": "Orchard",
+        "rating": 4.6,
+        "diet": "Healthy"
+    },
+    {
+        "id": 18,
+        "name": "Rhubarb Le name",
+        "cuisine": "French",
+        "price": "150 - 250",
+        "location": "Duxton Hill",
+        "rating": 4.6,
+        "diet": "Healthy"
+    },
+    {
+        "id": 19,
+        "name": "Cheek Bistro",
+        "cuisine": "Modern Australian",
+        "price": "100 - 200",
+        "location": "Boon Tat Street",
+        "rating": 4.5,
+        "diet": "Healthy"
+    },
+    {
+        "id": 20,
+        "name": "Garibaldi",
+        "cuisine": "Italian",
+        "price": "100 - 200",
+        "location": "Purvis Street",
+        "rating": 4.5,
+        "diet": "Healthy"
+    },
+    {
+        "id": 21,
+        "name": "Putien (Kitchener Road)",
+        "cuisine": "Fujian",
+        "price": "50 - 100",
+        "location": "Kitchener Road",
+        "rating": 4.4,
+        "diet": "Healthy"
+    },
+    {
+        "id": 22,
+        "name": "Song of India",
+        "cuisine": "Indian",
+        "price": "100 - 200",
+        "location": "Newton",
+        "rating": 4.4,
+        "diet": "Healthy"
+    },
+    {
+        "id": 23,
+        "name": "Whitegrass",
+        "cuisine": "Modern Australian",
+        "price": "150 - 250",
+        "location": "Chijmes",
+        "rating": 4.5,
+        "diet": "Healthy"
+    },
+    {
+        "id": 24,
+        "name": "Braci",
+        "cuisine": "Italian",
+        "price": "150 - 250",
+        "location": "Boat Quay",
+        "rating": 4.5,
+        "diet": "Healthy"
+    },
+    {
+        "id": 25,
+        "name": "Cut by Wolfgang Puck",
+        "cuisine": "Steakhouse",
+        "price": "200 - 350",
+        "location": "Marina Bay Sands",
+        "rating": 4.6,
+        "diet": "Unhealthy"
+    },
+    {
+        "id": 26,
+        "name": "Gunther's",
+        "cuisine": "French",
+        "price": "150 - 250",
+        "location": "Purvis Street",
+        "rating": 4.5,
+        "diet": "Healthy"
+    },
+    {
+        "id": 27,
+        "name": "Hashida Sushi",
+        "cuisine": "Japanese",
+        "price": "250 - 400",
+        "location": "Mohamed Sultan Road",
+        "rating": 4.6,
+        "diet": "Healthy"
+    },
+    {
+        "id": 28,
+        "name": "Lei Garden",
+        "cuisine": "Cantonese",
+        "price": "100 - 200",
+        "location": "Chijmes",
+        "rating": 4.4,
+        "diet": "Healthy"
+    },
+    {
+        "id": 29,
+        "name": "Shinji by Kanesaka (Carlton)",
+        "cuisine": "Japanese",
+        "price": "250 - 400",
+        "location": "Bras Basah",
+        "rating": 4.6,
+        "diet": "Healthy"
+    },
+    {
+        "id": 30,
+        "name": "Summerhouse",
+        "cuisine": "French-Asian",
+        "price": "100 - 200",
+        "location": "Seletar",
+        "rating": 4.5,
+        "diet": "Healthy"
+    },
+    {
+        "id": 31,
+        "name": "Teppei",
+        "cuisine": "Japanese",
+        "price": "80 - 150",
+        "location": "Tanjong Pagar",
+        "rating": 4.5,
+        "diet": "Healthy"
+    },
+    {
+        "id": 32,
+        "name": "Tippling Club",
+        "cuisine": "Modern European",
+        "price": "150 - 250",
+        "location": "Tanjong Pagar",
+        "rating": 4.5,
+        "diet": "Healthy"
+    },
+    {
+        "id": 33,
+        "name": "Violet Oon Satay Bar & Grill",
+        "cuisine": "Peranakan",
+        "price": "50 - 100",
+        "location": "Clarke Quay",
+        "rating": 4.4,
+        "diet": "Healthy"
+    },
+    {
+        "id": 34,
+        "name": "Z\u00e9n",
+        "cuisine": "Scandinavian",
+        "price": "400 - 600",
+        "location": "Bukit Pasoh",
+        "rating": 4.7,
+        "diet": "Healthy"
+    },
+    {
+        "id": 35,
+        "name": "Akira Back",
+        "cuisine": "Japanese-Korean",
+        "price": "100 - 200",
+        "location": "South Beach",
+        "rating": 4.5,
+        "diet": "Healthy"
+    },
+    {
+        "id": 36,
+        "name": "Artichoke",
+        "cuisine": "Middle Eastern",
+        "price": "50 - 100",
+        "location": "Bugis",
+        "rating": 4.4,
+        "diet": "Healthy"
+    },
+    {
+        "id": 37,
+        "name": "Bistecca Tuscan Steakhouse",
+        "cuisine": "Italian Steakhouse",
+        "price": "150 - 250",
+        "location": "Mohamed Sultan Road",
+        "rating": 4.5,
+        "diet": "Unhealthy"
+    },
+    {
+        "id": 38,
+        "name": "Blue Ginger",
+        "cuisine": "Peranakan",
+        "price": "50 - 100",
+        "location": "Tanjong Pagar",
+        "rating": 4.4,
+        "diet": "Healthy"
+    },
+    {
+        "id": 39,
+        "name": "Burnt Ends Bakery",
+        "cuisine": "Bakery",
+        "price": "10 - 20",
+        "location": "Dempsey Hill",
+        "rating": 4.5,
+        "diet": "Unhealthy"
+    },
+    {
+        "id": 40,
+        "name": "Caffe Fernet",
+        "cuisine": "Italian",
+        "price": "50 - 100",
+        "location": "Collyer Quay",
+        "rating": 4.5,
+        "diet": "Healthy"
+    },
+    {
+        "id": 41,
+        "name": "Chatterbox",
+        "cuisine": "Local",
+        "price": "30 - 50",
+        "location": "Orchard",
+        "rating": 4.3,
+        "diet": "Unhealthy"
+    },
+    {
+        "id": 42,
+        "name": "Colony",
+        "cuisine": "International Buffet",
+        "price": "80 - 150",
+        "location": "Marina Bay",
+        "rating": 4.5,
+        "diet": "Unhealthy"
+    },
+    {
+        "id": 43,
+        "name": "Cuturi Gallery",
+        "cuisine": "Italian",
+        "price": "50 - 100",
+        "location": "Orchard",
+        "rating": 4.4,
+        "diet": "Healthy"
+    },
+    {
+        "id": 44,
+        "name": "Esora",
+        "cuisine": "Japanese",
+        "price": "250 - 400",
+        "location": "Mohamed Sultan Road",
+        "rating": 4.6,
+        "diet": "Healthy"
+    },
+    {
+        "id": 45,
+        "name": "Fat Cow",
+        "cuisine": "Japanese Steakhouse",
+        "price": "150 - 250",
+        "location": "Orchard",
+        "rating": 4.5,
+        "diet": "Unhealthy"
+    },
+    {
+        "id": 46,
+        "name": "Fat Prince",
+        "cuisine": "Middle Eastern",
+        "price": "50 - 100",
+        "location": "Tanjong Pagar",
+        "rating": 4.4,
+        "diet": "Healthy"
+    },
+    {
+        "id": 47,
+        "name": "FOC Sentosa",
+        "cuisine": "Spanish",
+        "price": "100 - 200",
+        "location": "Sentosa",
+        "rating": 4.5,
+        "diet": "Healthy"
+    },
+    {
+        "id": 48,
+        "name": "Garang Grill",
+        "cuisine": "Local Grill",
+        "price": "50 - 100",
+        "location": "Bukit Timah",
+        "rating": 4.4,
+        "diet": "Unhealthy"
+    },
+    {
+        "id": 49,
+        "name": "Gattopardo Ristorante di Mare",
+        "cuisine": "Italian Seafood",
+        "price": "100 - 200",
+        "location": "Tanjong Pagar",
+        "rating": 4.5,
+        "diet": "Healthy"
+    },
+    {
+        "id": 50,
+        "name": "Gyu-Kaku",
+        "cuisine": "Japanese BBQ",
+        "price": "50 - 100",
+        "location": "Various locations",
+        "rating": 4.3,
+        "diet": "Unhealthy"
+    },
+    {
+        "id": 51,
+        "name": "Halia",
+        "cuisine": "European-Asian",
+        "price": "50 - 100",
+        "location": "Botanic Gardens",
+        "rating": 4.4,
+        "diet": "Healthy"
+    },
+    {
+        "id": 52,
+        "name": "Imperial Treasure Super Peking Duck",
+        "cuisine": "Chinese",
+        "price": "100 - 200",
+        "location": "Orchard",
+        "rating": 4.5,
+        "diet": "Unhealthy"
+    },
+    {
+        "id": 53,
+        "name": "Jaan by Kirk Westaway",
+        "cuisine": "Modern British",
+        "price": "250 - 400",
+        "location": "City Hall",
+        "rating": 4.7,
+        "diet": "Healthy"
+    },
+    {
+        "id": 54,
+        "name": "Kinki name + Bar",
+        "cuisine": "Japanese",
+        "price": "50 - 100",
+        "location": "Marina Bay",
+        "rating": 4.4,
+        "diet": "Healthy"
+    },
+    {
+        "id": 55,
+        "name": "Koma",
+        "cuisine": "Japanese",
+        "price": "150 - 250",
+        "location": "Marina Bay Sands",
+        "rating": 4.5,
+        "diet": "Healthy"
+    },
+    {
+        "id": 56,
+        "name": "Labyrinth",
+        "cuisine": "Modern Singaporean",
+        "price": "150 - 250",
+        "location": "Esplanade",
+        "rating": 4.6,
+        "diet": "Healthy"
+    },
+    {
+        "id": 57,
+        "name": "L'Atelier de Jo\u00ebl Robuchon",
+        "cuisine": "French",
+        "price": "400 - 600",
+        "location": "Sentosa",
+        "rating": 4.7,
+        "diet": "Healthy"
+    },
+    {
+        "id": 58,
+        "name": "Level33",
+        "cuisine": "European",
+        "price": "100 - 200",
+        "location": "Marina Bay",
+        "rating": 4.5,
+        "diet": "Healthy"
+    },
+    {
+        "id": 59,
+        "name": "Long Beach Seafood",
+        "cuisine": "Seafood",
+        "price": "50 - 100",
+        "location": "East Coast",
+        "rating": 4.4,
+        "diet": "Healthy"
+    },
+    {
+        "id": 60,
+        "name": "Luke's Oyster Bar & Chop House",
+        "cuisine": "American",
+        "price": "100 - 200",
+        "location": "Chinatown",
+        "rating": 4.5,
+        "diet": "Healthy"
+    },
+    {
+        "id": 61,
+        "name": "Mag's Wine Kitchen",
+        "cuisine": "French",
+        "price": "100 - 200",
+        "location": "Keong Saik",
+        "rating": 4.4,
+        "diet": "Healthy"
+    },
+    {
+        "id": 62,
+        "name": "Man Man Japanese Unagi name",
+        "cuisine": "Japanese",
+        "price": "50 - 100",
+        "location": "Tanjong Pagar",
+        "rating": 4.4,
+        "diet": "Healthy"
+    },
+    {
+        "id": 63,
+        "name": "Mott 32",
+        "cuisine": "Chinese",
+        "price": "150 - 250",
+        "location": "Marina Bay Sands",
+        "rating": 4.5,
+        "diet": "Unhealthy"
+    },
+    {
+        "id": 64,
+        "name": "National Kitchen by Violet Oon",
+        "cuisine": "Peranakan",
+        "price": "50 - 100",
+        "location": "City Hall",
+        "rating": 4.5,
+        "diet": "Healthy"
+    },
+    {
+        "id": 65,
+        "name": "Nouri",
+        "cuisine": "Modern European-Asian",
+        "price": "150 - 250",
+        "location": "Amoy Street",
+        "rating": 4.6,
+        "diet": "Healthy"
+    },
+    {
+        "id": 66,
+        "name": "Osteria Mozza",
+        "cuisine": "Italian",
+        "price": "150 - 250",
+        "location": "Marina Bay Sands",
+        "rating": 4.5,
+        "diet": "Unhealthy"
+    },
+    {
+        "id": 67,
+        "name": "Palm Beach Seafood",
+        "cuisine": "Seafood",
+        "price": "50 - 100",
+        "location": "Fullerton",
+        "rating": 4.4,
+        "diet": "Healthy"
+    },
+    {
+        "id": 68,
+        "name": "Preludio",
+        "cuisine": "Modern European",
+        "price": "150 - 250",
+        "location": "Raffles Place",
+        "rating": 4.5,
+        "diet": "Healthy"
+    },
+    {
+        "id": 69,
+        "name": "PS.Cafe",
+        "cuisine": "Western",
+        "price": "50 - 100",
+        "location": "Various locations",
+        "rating": 4.3,
+        "diet": "Unhealthy"
+    },
+    {
+        "id": 70,
+        "name": "Rang Mahal",
+        "cuisine": "Indian",
+        "price": "100 - 200",
+        "location": "Orchard",
+        "rating": 4.4,
+        "diet": "Healthy"
+    },
+    {
+        "id": 71,
+        "name": "Salted & Hung",
+        "cuisine": "Modern Australian",
+        "price": "100 - 200",
+        "location": "Purvis Street",
+        "rating": 4.5,
+        "diet": "Healthy"
+    },
+    {
+        "id": 72,
+        "name": "Sushi Kimura",
+        "cuisine": "Japanese",
+        "price": "250 - 400",
+        "location": "Orchard",
+        "rating": 4.6,
+        "diet": "Healthy"
+    },
+    {
+        "id": 73,
+        "name": "Table at 7",
+        "cuisine": "European-Asian",
+        "price": "100 - 200",
+        "location": "Mohamed Sultan Road",
+        "rating": 4.4,
+        "diet": "Healthy"
+    },
+    {
+        "id": 74,
+        "name": "The Dempsey Cookhouse & Bar",
+        "cuisine": "Modern European",
+        "price": "100 - 200",
+        "location": "Dempsey Hill",
+        "rating": 4.5,
+        "diet": "Healthy"
+    },
+    {
+        "id": 75,
+        "name": "The Song of India",
+        "cuisine": "Indian",
+        "price": "100 - 200",
+        "location": "Newton",
+        "rating": 4.4,
+        "diet": "Healthy"
+    },
+    {
+        "id": 76,
+        "name": "Vianney Massot name",
+        "cuisine": "French",
+        "price": "250 - 400",
+        "location": "Outram",
+        "rating": 4.6,
+        "diet": "Healthy"
+    },
+    {
+        "id": 77,
+        "name": "Wild Rocket",
+        "cuisine": "Modern Singaporean",
+        "price": "50 - 100",
+        "location": "Mount Emily",
+        "rating": 4.4,
+        "diet": "Healthy"
+    },
+    {
+        "id": 78,
+        "name": "Yan Ting",
+        "cuisine": "Cantonese",
+        "price": "100 - 200",
+        "location": "Orchard",
+        "rating": 4.5,
+        "diet": "Unhealthy"
+    },
+    {
+        "id": 79,
+        "name": "Wild Blaze",
+        "cuisine": "Steakhouse",
+        "price": "100 - 200",
+        "location": "Tanjong Pagar",
+        "rating": 4.5,
+        "diet": "Unhealthy"
+    },
+    {
+        "id": 80,
+        "name": "Fourgather",
+        "cuisine": "Thai",
+        "price": "50 - 100",
+        "location": "Telok Ayer",
+        "rating": 4.4,
+        "diet": "Healthy"
+    },
+    {
+        "id": 81,
+        "name": "L'Antica Pizzeria Da Michele",
+        "cuisine": "Italian",
+        "price": "50 - 100",
+        "location": "Club Street",
+        "rating": 4.5,
+        "diet": "Unhealthy"
+    },
+    {
+        "id": 82,
+        "name": "The Coconut Club",
+        "cuisine": "Malay",
+        "price": "30 - 50",
+        "location": "Beach Road",
+        "rating": 4.4,
+        "diet": "Unhealthy"
+    },
+    {
+        "id": 83,
+        "name": "The Prince",
+        "cuisine": "Middle Eastern",
+        "price": "50 - 100",
+        "location": "Tanjong Pagar",
+        "rating": 4.4,
+        "diet": "Healthy"
+    },
+    {
+        "id": 84,
+        "name": "Greenwood Fish Market",
+        "cuisine": "Seafood",
+        "price": "50 - 100",
+        "location": "Bukit Timah",
+        "rating": 4.4,
+        "diet": "Healthy"
+    },
+    {
+        "id": 85,
+        "name": "Le Clos",
+        "cuisine": "French",
+        "price": "100 - 200",
+        "location": "New Bahru",
+        "rating": 4.5,
+        "diet": "Healthy"
+    },
+    {
+        "id": 86,
+        "name": "DAILY BEER",
+        "cuisine": "Bar",
+        "price": "30 - 50",
+        "location": "Tanjong Pagar",
+        "rating": 4.3,
+        "diet": "Unhealthy"
+    },
+    {
+        "id": 87,
+        "name": "Neon Pigeon",
+        "cuisine": "Japanese",
+        "price": "50 - 100",
+        "location": "Tanjong Pagar",
+        "rating": 4.4,
+        "diet": "Healthy"
+    },
+    {
+        "id": 88,
+        "name": "FICO",
+        "cuisine": "Italian",
+        "price": "50 - 100",
+        "location": "East Coast",
+        "rating": 4.4,
+        "diet": "Unhealthy"
+    },
+    {
+        "id": 89,
+        "name": "Bar Cicheti",
+        "cuisine": "Italian",
+        "price": "50 - 100",
+        "location": "Keong Saik",
+        "rating": 4.4,
+        "diet": "Unhealthy"
+    },
+    {
+        "id": 90,
+        "name": "Nixta",
+        "cuisine": "Mexican",
+        "price": "50 - 100",
+        "location": "Tanjong Pagar",
+        "rating": 4.4,
+        "diet": "Unhealthy"
+    },
+    {
+        "id": 91,
+        "name": "Marcy's",
+        "cuisine": "Seafood",
+        "price": "50 - 100",
+        "location": "Duxton Hill",
+        "rating": 4.4,
+        "diet": "Healthy"
+    },
+    {
+        "id": 92,
+        "name": "Carlitos",
+        "cuisine": "Spanish",
+        "price": "50 - 100",
+        "location": "Tanjong Pagar",
+        "rating": 4.4,
+        "diet": "Unhealthy"
+    },
+    {
+        "id": 93,
+        "name": "Revolver",
+        "cuisine": "Indian",
+        "price": "100 - 200",
+        "location": "Tanjong Pagar",
+        "rating": 4.5,
+        "diet": "Healthy"
+    },
+    {
+        "id": 94,
+        "name": "AIR",
+        "cuisine": "Farm-to-Table",
+        "price": "100 - 200",
+        "location": "Tanjong Pagar",
+        "rating": 4.5,
+        "diet": "Healthy"
+    },
+    {
+        "id": 95,
+        "name": "Tamba",
+        "cuisine": "West-African",
+        "price": "100 - 200",
+        "location": "Tanjong Pagar",
+        "rating": 4.5,
+        "diet": "Healthy"
+    },
+    {
+        "id": 96,
+        "name": "JB Ah Meng",
+        "cuisine": "Chinese",
+        "price": "30 - 50",
+        "location": "Geylang",
+        "rating": 4.4,
+        "diet": "Unhealthy"
+    },
+    {
+        "id": 97,
+        "name": "Saint Pierre",
+        "cuisine": "French",
+        "price": "250 - 400",
+        "location": "Marina Bay",
+        "rating": 4.7,
+        "diet": "Healthy"
+    },
+    {
+        "id": 98,
+        "name": "Iggy's",
+        "cuisine": "Modern European",
+        "price": "250 - 400",
+        "location": "Orchard",
+        "rating": 4.7,
+        "diet": "Healthy"
+    },
+    {
+        "id": 99,
+        "name": "Odette",
+        "cuisine": "French",
+        "price": "350 - 500",
+        "location": "City Hall",
+        "rating": 4.8,
+        "diet": "Healthy"
+    },
+    {
+        "id": 100,
+        "name": "Burnt Ends",
+        "cuisine": "Australian Barbecue",
+        "price": "100 - 200",
+        "location": "Chinatown",
+        "rating": 4.7,
+        "diet": "Unhealthy"
+    },
+    {
+        "id": 101,
+        "name": "Les Amis",
+        "cuisine": "French",
+        "price": "300 - 450",
+        "location": "Orchard",
+        "rating": 4.8,
+        "diet": "Healthy"
+    },
+    {
+        "id": 102,
+        "name": "Candlenut",
+        "cuisine": "Peranakan",
+        "price": "80 - 150",
+        "location": "Dempsey Hill",
+        "rating": 4.6,
+        "diet": "Healthy"
+    },
+    {
+        "id": 103,
+        "name": "Hill Street Tai Hwa Pork Noodle",
+        "cuisine": "Street Food",
+        "price": "5 - 10",
+        "location": "Kallang",
+        "rating": 4.5,
+        "diet": "Unhealthy"
+    },
+    {
+        "id": 104,
+        "name": "Jaan",
+        "cuisine": "Modern French",
+        "price": "250 - 400",
+        "location": "City Hall",
+        "rating": 4.7,
+        "diet": "Healthy"
+    },
+    {
+        "id": 105,
+        "name": "Shinji by Kanesaka",
+        "cuisine": "Japanese",
+        "price": "250 - 400",
+        "location": "Bras Basah",
+        "rating": 4.6,
+        "diet": "Healthy"
+    },
+    {
+        "id": 106,
+        "name": "Waku Ghin",
+        "cuisine": "Japanese-European",
+        "price": "400 - 600",
+        "location": "Marina Bay Sands",
+        "rating": 4.7,
+        "diet": "Healthy"
+    },
+    {
+        "id": 107,
+        "name": "Corner House",
+        "cuisine": "Gastro-Botanica",
+        "price": "150 - 300",
+        "location": "Botanic Gardens",
+        "rating": 4.6,
+        "diet": "Healthy"
+    },
+    {
+        "id": 108,
+        "name": "Labyrinth",
+        "cuisine": "Modern Singaporean",
+        "price": "150 - 250",
+        "location": "Esplanade",
+        "rating": 4.6,
+        "diet": "Healthy"
+    },
+    {
+        "id": 109,
+        "name": "Meta",
+        "cuisine": "Contemporary Asian",
+        "price": "150 - 250",
+        "location": "Keong Saik",
+        "rating": 4.6,
+        "diet": "Healthy"
+    },
+    {
+        "id": 110,
+        "name": "Summer Pavilion",
+        "cuisine": "Cantonese",
+        "price": "100 - 200",
+        "location": "Marina Bay",
+        "rating": 4.6,
+        "diet": "Healthy"
+    },
+    {
+        "id": 111,
+        "name": "Shisen Hanten",
+        "cuisine": "Szechuan",
+        "price": "100 - 200",
+        "location": "Orchard",
+        "rating": 4.5,
+        "diet": "Unhealthy"
+    },
+    {
+        "id": 112,
+        "name": "Sushi Ichi",
+        "cuisine": "Japanese",
+        "price": "200 - 350",
+        "location": "Orchard",
+        "rating": 4.6,
+        "diet": "Healthy"
+    },
+    {
+        "id": 113,
+        "name": "Alma by Juan Amador",
+        "cuisine": "European-Asian",
+        "price": "150 - 250",
+        "location": "Orchard",
+        "rating": 4.6,
+        "diet": "Healthy"
+    },
+    {
+        "id": 114,
+        "name": "Rhubarb Le name",
+        "cuisine": "French",
+        "price": "150 - 250",
+        "location": "Duxton Hill",
+        "rating": 4.6,
+        "diet": "Healthy"
+    },
+    {
+        "id": 115,
+        "name": "Cheek Bistro",
+        "cuisine": "Modern Australian",
+        "price": "100 - 200",
+        "location": "Boon Tat Street",
+        "rating": 4.5,
+        "diet": "Healthy"
+    },
+    {
+        "id": 116,
+        "name": "Garibaldi",
+        "cuisine": "Italian",
+        "price": "100 - 200",
+        "location": "Purvis Street",
+        "rating": 4.5,
+        "diet": "Healthy"
+    },
+    {
+        "id": 117,
+        "name": "Putien (Kitchener Road)",
+        "cuisine": "Fujian",
+        "price": "50 - 100",
+        "location": "Kitchener Road",
+        "rating": 4.4,
+        "diet": "Healthy"
+    },
+    {
+        "id": 118,
+        "name": "Song of India",
+        "cuisine": "Indian",
+        "price": "100 - 200",
+        "location": "Newton",
+        "rating": 4.4,
+        "diet": "Healthy"
+    },
+    {
+        "id": 119,
+        "name": "Whitegrass",
+        "cuisine": "Modern Australian",
+        "price": "150 - 250",
+        "location": "Chijmes",
+        "rating": 4.5,
+        "diet": "Healthy"
+    },
+    {
+        "id": 120,
+        "name": "Braci",
+        "cuisine": "Italian",
+        "price": "150 - 250",
+        "location": "Boat Quay",
+        "rating": 4.5,
+        "diet": "Healthy"
+    },
+    {
+        "id": 121,
+        "name": "Garibaldi",
+        "cuisine": "Italian",
+        "price": "48++",
+        "location": "Purvis Street",
+        "rating": 4.5,
+        "diet": "Vegetarian options available"
+    },
+    {
+        "id": 122,
+        "name": "Corner House",
+        "cuisine": "Innovative French-Asian",
+        "price": "118++",
+        "location": "Botanic Gardens",
+        "rating": 4.6,
+        "diet": "Vegetarian and pescatarian options available"
+    },
+    {
+        "id": 123,
+        "name": "Iggy's",
+        "cuisine": "European Contemporary",
+        "price": "105++",
+        "location": "Orchard",
+        "rating": 4.7,
+        "diet": "Vegetarian options available"
+    },
+    {
+        "id": 124,
+        "name": "Nhung Kitchen",
+        "cuisine": "Vietnamese",
+        "price": "Under 9",
+        "location": "Balestier",
+        "rating": 4.7,
+        "diet": "Vegetarian options available"
+    },
+    {
+        "id": 125,
+        "name": "Katsu-an",
+        "cuisine": "Japanese",
+        "price": "5.90",
+        "location": "Suntec City",
+        "rating": 4.4,
+        "diet": "Non-halal"
+    },
+    {
+        "id": 126,
+        "name": "Tori Sanwa",
+        "cuisine": "Japanese",
+        "price": "14.90++",
+        "location": "Suntec City",
+        "rating": 4.4,
+        "diet": "Non-halal"
+    },
+    {
+        "id": 127,
+        "name": "Bincho",
+        "cuisine": "Japanese",
+        "price": "48++",
+        "location": "Moh Guan Terrace",
+        "rating": 4.5,
+        "diet": "Non-halal"
+    },
+    {
+        "id": 128,
+        "name": "Fool",
+        "cuisine": "European Contemporary",
+        "price": "99",
+        "location": "Bukit Pasoh",
+        "rating": 4.5,
+        "diet": "Vegetarian options available"
+    },
+    {
+        "id": 129,
+        "name": "Overeasy",
+        "cuisine": "American",
+        "price": "29-35",
+        "location": "Fullerton Road",
+        "rating": 4.3,
+        "diet": "Vegetarian options available"
+    },
+    {
+        "id": 130,
+        "name": "Estate",
+        "cuisine": "International Buffet",
+        "price": "62++",
+        "location": "Hilton Singapore Orchard",
+        "rating": 4.5,
+        "diet": "Vegetarian options available"
+    },
+    {
+        "id": 131,
+        "name": "Ginger",
+        "cuisine": "Local",
+        "price": "49",
+        "location": "ParkRoyal on Beach Road",
+        "rating": 4.4,
+        "diet": "Halal-certified"
+    },
+    {
+        "id": 132,
+        "name": "Kintamani Indonesian Restaurant",
+        "cuisine": "Indonesian",
+        "price": "35.80",
+        "location": "Furama Riverfront",
+        "rating": 4.3,
+        "diet": "Halal-certified"
+    },
+    {
+        "id": 133,
+        "name": "Kiseki Japanese Buffet Restaurant",
+        "cuisine": "Japanese",
+        "price": "29.90++",
+        "location": "Orchard Central",
+        "rating": 4.2,
+        "diet": "Non-halal"
+    },
+    {
+        "id": 134,
+        "name": "The Salted Plum",
+        "cuisine": "Taiwanese",
+        "price": "10+",
+        "location": "Circular Road",
+        "rating": 4.4,
+        "diet": "Non-halal"
+    },
+    {
+        "id": 135,
+        "name": "Kim Dae Mun Korean Food",
+        "cuisine": "Korean",
+        "price": "Around 10",
+        "location": "Concorde Shopping Mall",
+        "rating": 4.5,
+        "diet": "Non-halal"
+    },
+    {
+        "id": 136,
+        "name": "The Coconut Club",
+        "cuisine": "Malay",
+        "price": "12.80",
+        "location": "Ann Siang Hill",
+        "rating": 4.6,
+        "diet": "Halal-certified"
+    },
+    {
+        "id": 137,
+        "name": "Lagnaa Barefoot Dining",
+        "cuisine": "Indian",
+        "price": "20-30",
+        "location": "Little India",
+        "rating": 4.5,
+        "diet": "Vegetarian options available"
+    },
+    {
+        "id": 138,
+        "name": "Pasta Brava",
+        "cuisine": "Italian",
+        "price": "25-35",
+        "location": "Craig Road",
+        "rating": 4.4,
+        "diet": "Vegetarian options available"
+    },
+    {
+        "id": 139,
+        "name": "Hawker Chan",
+        "cuisine": "Chinese",
+        "price": "2-5",
+        "location": "Chinatown",
+        "rating": 4.3,
+        "diet": "Non-halal"
+    },
+    {
+        "id": 140,
+        "name": "Tian Tian Hainanese Chicken Rice",
+        "cuisine": "Chinese",
+        "price": "5-6",
+        "location": "Maxwell Food Centre",
+        "rating": 4.4,
+        "diet": "Non-halal"
+    },
+    {
+        "id": 141,
+        "name": "Liao Fan Hong Kong Soya Sauce Chicken Rice & Noodle",
+        "cuisine": "Chinese",
+        "price": "2-5",
+        "location": "Chinatown",
+        "rating": 4.3,
+        "diet": "Non-halal"
+    },
+    {
+        "id": 142,
+        "name": "Song Fa Bak Kut Teh",
+        "cuisine": "Chinese",
+        "price": "10-15",
+        "location": "Clarke Quay",
+        "rating": 4.4,
+        "diet": "Non-halal"
+    },
+    {
+        "id": 143,
+        "name": "Din Tai Fung",
+        "cuisine": "Chinese",
+        "price": "20-30",
+        "location": "Various Locations",
+        "rating": 4.5,
+        "diet": "Vegetarian options available"
+    },
+    {
+        "id": 144,
+        "name": "Tim Ho Wan",
+        "cuisine": "Chinese",
+        "price": "20-30",
+        "location": "Various Locations",
+        "rating": 4.4,
+        "diet": "Non-halal"
+    },
+    {
+        "id": 145,
+        "name": "The Masses",
+        "cuisine": "Modern European",
+        "price": "20-40",
+        "location": "Beach Road",
+        "rating": 4.5,
+        "diet": "Vegetarian options available"
+    },
+    {
+        "id": 146,
+        "name": "Nakhon Kitchen",
+        "cuisine": "Thai",
+        "price": "10-20",
+        "location": "Various Locations",
+        "rating": 4.4,
+        "diet": "Halal-certified"
+    },
+    {
+        "id": 147,
+        "name": "Chatterbox",
+        "cuisine": "Local",
+        "price": "25-35",
+        "location": "Orchard",
+        "rating": 4.3,
+        "diet": "Halal-certified"
+    },
+    {
+        "id": 148,
+        "name": "Prego",
+        "cuisine": "Italian",
+        "price": "40-60",
+        "location": "City Hall",
+        "rating": 4.4,
+        "diet": "Vegetarian options available"
+    },
+    {
+        "id": 149,
+        "name": "Supply & Demand",
+        "cuisine": "Italian-Asian Fusion",
+        "price": "30-50",
+        "location": "Esplanade",
+        "rating": 4.3,
+        "diet": "Vegetarian options available"
+    },
+    {
+        "id": 150,
+        "name": "The Halia",
+        "cuisine": "European-Asian Fusion",
+        "price": "40-60",
+        "location": "Botanic Gardens",
+        "rating": 4.4,
+        "diet": "Vegetarian options available"
+    },
+    {
+        "id": 151,
+        "name": "Wild Honey",
+        "cuisine": "International",
+        "price": "30-50",
+        "location": "Orchard",
+        "rating": 4.4,
+        "diet": "Vegetarian options available"
+    },
+    {
+        "id": 152,
+        "name": "Artichoke",
+        "cuisine": "Middle Eastern",
+        "price": "40-60",
+        "location": "Bugis",
+        "rating": 4.5,
+        "diet": "Vegetarian options available"
+    },
+    {
+        "id": 153,
+        "name": "Blu Kouzina",
+        "cuisine": "Greek",
+        "price": "40-60",
+        "location": "Dempsey Hill",
+        "rating": 4.5,
+        "diet": "Vegetarian options available"
+    },
+    {
+        "id": 154,
+        "name": "Fat Prince",
+        "cuisine": "Middle Eastern",
+        "price": "40-60",
+        "location": "Tanjong Pagar",
+        "rating": 4.4,
+        "diet": "Vegetarian options available"
+    },
+    {
+        "id": 155,
+        "name": "Kinki Restaurant + Bar",
+        "cuisine": "Japanese",
+        "price": "50-70",
+        "location": "Marina Bay",
+        "rating": 4.3,
+        "diet": "Non-halal"
+    },
+    {
+        "id": 156,
+        "name": "Lucha Loco",
+        "cuisine": "Mexican",
+        "price": "40-60",
+        "location": "Duxton Hill",
+        "rating": 4.4,
+        "diet": "Vegetarian options available"
+    },
+    {
+        "id": 157,
+        "name": "No Signboard Seafood",
+        "cuisine": "Seafood",
+        "price": "50-80",
+        "location": "Geylang",
+        "rating": 4.3,
+        "diet": "Non-halal"
+    },
+    {
+        "id": 158,
+        "name": "Penny University",
+        "cuisine": "Cafe",
+        "price": "20-30",
+        "location": "East Coast",
+        "rating": 4.4,
+        "diet": "Vegetarian options available"
+    },
+    {
+        "id": 159,
+        "name": "Priv\u00e9",
+        "cuisine": "International",
+        "price": "30-50",
+        "location": "Keppel Bay",
+        "rating": 4.3,
+        "diet": "Vegetarian options available"
+    },
+    {
+        "id": 160,
+        "name": "PS.Cafe at Harding",
+        "cuisine": "Western",
+        "price": "40-60",
+        "location": "Dempsey Hill",
+        "rating": 4.4,
+        "diet": "Vegetarian options available"
+    },
+    {
+        "id": 161,
+        "name": "Super Loco",
+        "cuisine": "Mexican",
+        "price": "40-60",
+        "location": "Robertson Quay",
+        "rating": 4.3,
+        "diet": "Vegetarian options available"
+    },
+    {
+        "id": 162,
+        "name": "The Black Swan",
+        "cuisine": "European",
+        "price": "50-70",
+        "location": "Raffles Place",
+        "rating": 4.4,
+        "diet": "Vegetarian options available"
+    },
+    {
+        "id": 163,
+        "name": "The Coastal Settlement",
+        "cuisine": "Western-Asian Fusion",
+        "price": "30-50",
+        "location": "Changi",
+        "rating": 4.3,
+        "diet": "Vegetarian options available"
+    },
+    {
+        "id": 164,
+        "name": "The White Rabbit",
+        "cuisine": "European",
+        "price": "50-70",
+        "location": "Dempsey Hill",
+        "rating": 4.4,
+        "diet": "Vegetarian options available"
+    },
+    {
+        "id": 165,
+        "name": "Tiong Bahru Bakery",
+        "cuisine": "Bakery",
+        "price": "10-20",
+        "location": "Tiong Bahru",
+        "rating": 4.5,
+        "diet": "Vegetarian options available"
+    },
+    {
+        "id": 166,
+        "name": "Vatos Urban Tacos",
+        "cuisine": "Korean-Mexican Fusion",
+        "price": "30-50",
+        "location": "South Beach",
+        "rating": 4.3,
+        "diet": "Non-halal"
+    },
+    {
+        "id": 167,
+        "name": "Wildseed Cafe",
+        "cuisine": "Cafe",
+        "price": "20-30",
+        "location": "Seletar",
+        "rating": 4.4,
+        "diet": "Vegetarian options available"
+    },
+    {
+        "id": 168,
+        "name": "Yardbird Southern Table & Bar",
+        "cuisine": "American",
+        "price": "50-70",
+        "location": "Marina Bay Sands",
+        "rating": 4.3,
+        "diet": "Non-halal"
+    }
+]
