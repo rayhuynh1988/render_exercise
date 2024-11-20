@@ -25,20 +25,23 @@
             margin-bottom: 1rem;
         }
 
+        .filter-container {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .filter-title {
+            font-weight: bold;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
         #filter-search {
             width: 700px; /* Set the width of the filter input */
             max-width: 100%; /* Ensure it doesn't exceed the viewport width */
             padding: 0.5rem;
             border: 1px solid #ddd;
             border-radius: 5px;
-        
-        }
-        
-        .filter-title {
-            text-align: center;
-            font-weight: bold;
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
         }
 
         .button-container {
@@ -106,36 +109,35 @@
             <h2>Dinner Suggestions</h2>
         </div>
 
-        <!-- Restaurant Data --><!-- Restaurant Data -->
-<div id="restaurant-list">
-    <% blogs.forEach(restaurant => { %>
-        <article class="post-container" 
-                 data-name="<%= restaurant.name.toLowerCase() %>"
-                 data-cuisine="<%= restaurant.cuisine.toLowerCase() %>" 
-                 data-location="<%= restaurant.location.toLowerCase() %>" 
-                 data-diet="<%= restaurant.diet.toLowerCase() %>" 
-                 data-rating="<%= restaurant.rating %>" 
-                 data-price="<%= restaurant.price %>"
-                 id="restaurant-<%= restaurant.id %>">
-            <h3><%= restaurant.name %></h3>
-            <p><strong>Cuisine:</strong> <%= restaurant.cuisine %></p>
-            <p><strong>Price Range:</strong> <%= restaurant.price %></p>
-            <p><strong>Location:</strong> <%= restaurant.location %></p>
-            <p><strong>Rating:</strong> <%= restaurant.rating %> / 5</p>
-            <p><strong>Dietary Option:</strong> <%= restaurant.diet %></p>
-            <p><strong>Happy Visits:</strong> <span class="happy-visit-count"><%= restaurant.happyVisits %></span></p>
-            <p><strong>Unhappy Visits:</strong> <span class="unhappy-visit-count"><%= restaurant.unhappyVisits %></span></p>
-            <div class="button-container">
-                <button class="happy-btn" data-id="<%= restaurant.id %>">Happy Visit</button>
-                <button class="unhappy-btn" data-id="<%= restaurant.id %>">Unhappy Visit</button>
-                <form action="/delete/<%= restaurant.id %>" method="post" onsubmit="return confirm('Do you really want to remove this suggestion?');">
-                    <button class="remove-btn" type="submit">Remove Suggestion</button>
-                </form>
-            </div>
-        </article>
-    <% }); %>
-</div>
-
+        <!-- Restaurant Data -->
+        <div id="restaurant-list">
+            <% blogs.forEach(restaurant => { %>
+                <article class="post-container" 
+                         data-name="<%= restaurant.name.toLowerCase() %>"
+                         data-cuisine="<%= restaurant.cuisine.toLowerCase() %>" 
+                         data-location="<%= restaurant.location.toLowerCase() %>" 
+                         data-diet="<%= restaurant.diet.toLowerCase() %>" 
+                         data-rating="<%= restaurant.rating %>" 
+                         data-price="<%= restaurant.price %>"
+                         id="restaurant-<%= restaurant.id %>">
+                    <h3><%= restaurant.name %></h3>
+                    <p><strong>Cuisine:</strong> <%= restaurant.cuisine %></p>
+                    <p><strong>Price Range:</strong> <%= restaurant.price %></p>
+                    <p><strong>Location:</strong> <%= restaurant.location %></p>
+                    <p><strong>Rating:</strong> <%= restaurant.rating %> / 5</p>
+                    <p><strong>Dietary Option:</strong> <%= restaurant.diet %></p>
+                    <p><strong>Happy Visits:</strong> <span class="happy-visit-count"><%= restaurant.happyVisits %></span></p>
+                    <p><strong>Unhappy Visits:</strong> <span class="unhappy-visit-count"><%= restaurant.unhappyVisits %></span></p>
+                    <div class="button-container">
+                        <button class="happy-btn" data-id="<%= restaurant.id %>">Happy Visit</button>
+                        <button class="unhappy-btn" data-id="<%= restaurant.id %>">Unhappy Visit</button>
+                        <form action="/delete/<%= restaurant.id %>" method="post" onsubmit="return confirm('Do you really want to remove this suggestion?');">
+                            <button class="remove-btn" type="submit">Remove Suggestion</button>
+                        </form>
+                    </div>
+                </article>
+            <% }); %>
+        </div>
     </main>
 
     <!-- JavaScript for Filtering and Interactions -->
@@ -162,41 +164,6 @@
         }
 
         filterSearch.addEventListener('input', filterRestaurants);
-        // Increment Counters
-        function incrementCounter(id, type) {
-            fetch(`/${type}-visit/${id}`, {
-                method: "POST",
-            })
-            .then(response => {
-                if (response.ok) {
-                    location.reload(); // Reload page to reflect updated counts
-                } else {
-                    console.error(`Failed to record ${type} visit for restaurant ID: ${id}`);
-                }
-            })
-            .catch(error => console.error("Error:", error));
-        }
-
-        // Add event listeners to buttons
-        document.addEventListener("DOMContentLoaded", () => {
-            const happyButtons = document.querySelectorAll(".happy-btn");
-            const unhappyButtons = document.querySelectorAll(".unhappy-btn");
-
-            happyButtons.forEach(button => {
-                button.addEventListener("click", () => {
-                    const id = button.getAttribute("data-id");
-                    incrementCounter(id, "happy");
-                });
-            });
-
-            unhappyButtons.forEach(button => {
-                button.addEventListener("click", () => {
-                    const id = button.getAttribute("data-id");
-                    incrementCounter(id, "unhappy");
-                });
-            });
-        });
-
     </script>
 </body>
 </html>
