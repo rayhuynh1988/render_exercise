@@ -8,11 +8,14 @@ generator client {
 }
 
 model Restaurant {
-  id       Int     @id @default(autoincrement())
-  name     String
-  cuisine  String
-  price    String
-  location String
-  rating   Float
-  diet     String
+    id           Int      @id @default(autoincrement())
+    name         String
+    cuisine      String
+    price        String
+    location     String
+    rating       Float
+    diet         String
+    happyVisits  Int      @default(0)
+    unhappyVisits Int     @default(0)
 }
+
