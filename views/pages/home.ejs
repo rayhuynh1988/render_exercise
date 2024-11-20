@@ -97,37 +97,36 @@
             <h2>Dinner Suggestions</h2>
         </div>
 
-        <!-- Restaurant Data -->
-        <div id="restaurant-list">
-            <% blogs.forEach(restaurant => { %>
-                <article class="post-container" 
-                         data-name="<%= restaurant.name.toLowerCase() %>"
-                         data-cuisine="<%= restaurant.cuisine.toLowerCase() %>" 
-                         data-location="<%= restaurant.location.toLowerCase() %>" 
-                         data-diet="<%= restaurant.diet.toLowerCase() %>" 
-                         data-rating="<%= restaurant.rating %>" 
-                         data-price="<%= restaurant.price %>"
-                         data-happy-visits="0"
-                         data-unhappy-visits="0"
-                         id="restaurant-<%= restaurant.id %>">
-                    <h3><%= restaurant.name %></h3>
-                    <p><strong>Cuisine:</strong> <%= restaurant.cuisine %></p>
-                    <p><strong>Price Range:</strong> <%= restaurant.price %></p>
-                    <p><strong>Location:</strong> <%= restaurant.location %></p>
-                    <p><strong>Rating:</strong> <%= restaurant.rating %> / 5</p>
-                    <p><strong>Dietary Option:</strong> <%= restaurant.diet %></p>
-                    <p><strong>Happy Visits:</strong> <span class="happy-visit-count">0</span></p>
-                    <p><strong>Unhappy Visits:</strong> <span class="unhappy-visit-count">0</span></p>
-                    <div class="button-container">
-                        <button class="happy-btn" data-id="<%= restaurant.id %>">Happy Visit</button>
-                        <button class="unhappy-btn" data-id="<%= restaurant.id %>">Unhappy Visit</button>
-                        <form action="/delete/<%= restaurant.id %>" method="post" onsubmit="return confirm('Do you really want to remove this suggestion?');">
-                            <button class="remove-btn" type="submit">Remove Suggestion</button>
-                        </form>
-                    </div>
-                </article>
-            <% }); %>
-        </div>
+        <!-- Restaurant Data --><!-- Restaurant Data -->
+<div id="restaurant-list">
+    <% blogs.forEach(restaurant => { %>
+        <article class="post-container" 
+                 data-name="<%= restaurant.name.toLowerCase() %>"
+                 data-cuisine="<%= restaurant.cuisine.toLowerCase() %>" 
+                 data-location="<%= restaurant.location.toLowerCase() %>" 
+                 data-diet="<%= restaurant.diet.toLowerCase() %>" 
+                 data-rating="<%= restaurant.rating %>" 
+                 data-price="<%= restaurant.price %>"
+                 id="restaurant-<%= restaurant.id %>">
+            <h3><%= restaurant.name %></h3>
+            <p><strong>Cuisine:</strong> <%= restaurant.cuisine %></p>
+            <p><strong>Price Range:</strong> <%= restaurant.price %></p>
+            <p><strong>Location:</strong> <%= restaurant.location %></p>
+            <p><strong>Rating:</strong> <%= restaurant.rating %> / 5</p>
+            <p><strong>Dietary Option:</strong> <%= restaurant.diet %></p>
+            <p><strong>Happy Visits:</strong> <span class="happy-visit-count"><%= restaurant.happyVisits %></span></p>
+            <p><strong>Unhappy Visits:</strong> <span class="unhappy-visit-count"><%= restaurant.unhappyVisits %></span></p>
+            <div class="button-container">
+                <button class="happy-btn" data-id="<%= restaurant.id %>">Happy Visit</button>
+                <button class="unhappy-btn" data-id="<%= restaurant.id %>">Unhappy Visit</button>
+                <form action="/delete/<%= restaurant.id %>" method="post" onsubmit="return confirm('Do you really want to remove this suggestion?');">
+                    <button class="remove-btn" type="submit">Remove Suggestion</button>
+                </form>
+            </div>
+        </article>
+    <% }); %>
+</div>
+
     </main>
 
     <!-- JavaScript for Filtering and Interactions -->
@@ -154,7 +153,6 @@
         }
 
         filterSearch.addEventListener('input', filterRestaurants);
-
         // Increment Counters
         function incrementCounter(id, type) {
             fetch(`/${type}-visit/${id}`, {
@@ -162,11 +160,7 @@
             })
             .then(response => {
                 if (response.ok) {
-                    const counterElement = document.querySelector(`#restaurant-${id} .${type}-visit-count`);
-                    if (counterElement) {
-                        const currentCount = parseInt(counterElement.textContent, 10) || 0;
-                        counterElement.textContent = currentCount + 1;
-                    }
+                    location.reload(); // Reload page to reflect updated counts
                 } else {
                     console.error(`Failed to record ${type} visit for restaurant ID: ${id}`);
                 }
@@ -193,6 +187,7 @@
                 });
             });
         });
+
     </script>
 </body>
 </html>
