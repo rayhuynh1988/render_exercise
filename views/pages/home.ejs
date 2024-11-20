@@ -164,6 +164,43 @@
         }
 
         filterSearch.addEventListener('input', filterRestaurants);
+
+        // Increment Happy and Unhappy Visits
+        function incrementVisit(id, type) {
+            fetch(`/${type}-visit/${id}`, { method: "POST" })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        // Update the UI counter
+                        const counterElement = document.querySelector(`#restaurant-${id} .${type}-visit-count`);
+                        if (counterElement) {
+                            counterElement.textContent = data.newCount;
+                        }
+                    } else {
+                        console.error("Error updating visit count:", data.message);
+                    }
+                })
+                .catch(error => console.error("Error:", error));
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const happyButtons = document.querySelectorAll(".happy-btn");
+            const unhappyButtons = document.querySelectorAll(".unhappy-btn");
+
+            happyButtons.forEach(button => {
+                button.addEventListener("click", () => {
+                    const id = button.getAttribute("data-id");
+                    incrementVisit(id, "happy");
+                });
+            });
+
+            unhappyButtons.forEach(button => {
+                button.addEventListener("click", () => {
+                    const id = button.getAttribute("data-id");
+                    incrementVisit(id, "unhappy");
+                });
+            });
+        });
     </script>
 </body>
 </html>

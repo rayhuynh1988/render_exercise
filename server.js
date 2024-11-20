@@ -52,18 +52,18 @@ app.post("/happy-visit/:id", async (req, res) => {
         });
 
         if (!restaurant) {
-            return res.status(404).send("Restaurant not found.");
+            return res.status(404).json({ success: false, message: "Restaurant not found." });
         }
 
-        await prisma.restaurant.update({
+        const updatedRestaurant = await prisma.restaurant.update({
             where: { id: parseInt(id) },
             data: { happyVisits: (restaurant.happyVisits || 0) + 1 },
         });
 
-        res.status(200).send("Happy visit recorded.");
+        res.json({ success: true, newCount: updatedRestaurant.happyVisits });
     } catch (error) {
         console.error("Error incrementing happy visit:", error);
-        res.status(500).send("Internal Server Error");
+        res.status(500).json({ success: false, message: "Internal Server Error" });
     }
 });
 
@@ -77,18 +77,18 @@ app.post("/unhappy-visit/:id", async (req, res) => {
         });
 
         if (!restaurant) {
-            return res.status(404).send("Restaurant not found.");
+            return res.status(404).json({ success: false, message: "Restaurant not found." });
         }
 
-        await prisma.restaurant.update({
+        const updatedRestaurant = await prisma.restaurant.update({
             where: { id: parseInt(id) },
             data: { unhappyVisits: (restaurant.unhappyVisits || 0) + 1 },
         });
 
-        res.status(200).send("Unhappy visit recorded.");
+        res.json({ success: true, newCount: updatedRestaurant.unhappyVisits });
     } catch (error) {
         console.error("Error incrementing unhappy visit:", error);
-        res.status(500).send("Internal Server Error");
+        res.status(500).json({ success: false, message: "Internal Server Error" });
     }
 });
 
